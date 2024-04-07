@@ -9,7 +9,7 @@ Also termed as **MR-ITE**.
 Code Structure:
 
 * 01_simulation: codes for simulation on ITE inference and heterogeneity testing.
-* 02_data_preprocessing: code for preprocessing the UKBB related data*
+* 02_data_preprocessing: code for preprocessing the UKBB related data.
 * 03_pleiotropy_removal: code for performing pleiotropical SNPs removal using conmix approach.
 * 04_prs_calculation: code for calculating the PRS using PRSice-2.
 * 05_ivgrf_disease: code for ITE inference on UKBB dataset.
