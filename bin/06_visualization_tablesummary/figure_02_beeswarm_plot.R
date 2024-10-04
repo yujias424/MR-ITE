@@ -24,8 +24,8 @@ for (t in 1:length(traits)){
             
             # t <- 1; d <- 1; wtype <- 1
 
-            shap_values <- fread(paste0("/home/yujia/Project/2023-07-20-individual_MR/res/02_ITE_analysis/01_table/", traits[t], "/", diseases[d], "/03_variable_importance/driv_", traits_type[wtype], "W_shap_model3.csv.gz"))
-            feature_values <- fread(paste0("/home/yujia/Project/2023-07-20-individual_MR/res/02_ITE_analysis/01_table/", traits[t], "/", diseases[d], "/03_variable_importance/driv_", traits_type[wtype], "W_value_model3.csv.gz"))
+            shap_values <- fread(paste0("/mnt/md0/yujia/project/2023-07-20-individual_MR/res/02_ITE_analysis/01_table/", traits[t], "/", diseases[d], "/03_variable_importance/driv_", traits_type[wtype], "W_shap_model3.csv.gz"))
+            feature_values <- fread(paste0("/mnt/md0/yujia/project/2023-07-20-individual_MR/res/02_ITE_analysis/01_table/", traits[t], "/", diseases[d], "/03_variable_importance/driv_", traits_type[wtype], "W_value_model3.csv.gz"))
 
             if (traits[t] == "LDL"){
                 shap_values  <- shap_values  %>% 
@@ -169,9 +169,13 @@ for (t in 1:length(traits)){
     # break
 }
 
-p.final <- (ggobject.LDL.CAD.continuousW | ggobject.TC.CAD.continuousW) / (ggobject.LDL.CAD.binaryW | ggobject.TC.CAD.binaryW) + plot_annotation(tag_levels = 'A') & theme(plot.tag = element_text(size = 35))
+save(ggobject.LDL.CAD.continuousW, ggobject.TC.CAD.continuousW, 
+     ggobject.LDL.CAD.binaryW, ggobject.TC.CAD.binaryW,
+     file = "/mnt/md0/yujia/project/2023-07-20-individual_MR/res/03_plot/beeswarm.RData")
+
+# p.final <- (ggobject.LDL.CAD.continuousW | ggobject.TC.CAD.continuousW) / (ggobject.LDL.CAD.binaryW | ggobject.TC.CAD.binaryW) + plot_annotation(tag_levels = 'A') & theme(plot.tag = element_text(size = 35))
 # p.final <- (ggobject.LDL.CAD.binaryW | ggobject.TC.CAD.binaryW) + plot_annotation(tag_levels = 'A') & theme(plot.tag = element_text(size = 35))
 # p.final <- (ggobject.TC.CAD.continuousW | ggobject.TC.CAD.binaryW) + plot_annotation(tag_levels = 'A') & theme(plot.tag = element_text(size = 35))
 
-ggsave('/home/yujia/Project/2023-07-20-individual_MR/res/03_plot/figure2_variable_importance_beeswarm.png', p.final, dpi=300, 
-        width = 60, height = 40, units = "cm", scale = 2)
+# ggsave('/mnt/md0/yujia/project/2023-07-20-individual_MR/res/03_plot/figure2_variable_importance_beeswarm.png', p.final, dpi=300, 
+#         width = 60, height = 40, units = "cm", scale = 2)

@@ -36,18 +36,18 @@ for (tp in top_porp){
 
             for (ts in tau_scene){
 
-                ate_cf_bias_c_top <- c()
-                late_all_bias_c_top <- c()
-                late_few_bias_c_top <- c()
-                ite_cf_bias_c_top <- c()
-                ite_ivcf_all_bias_c_top <- c()
-                ite_ivcf_few_bias_c_top <- c()
+                ate_cf_bias_c_tail <- c()
+                late_all_bias_c_tail <- c()
+                late_few_bias_c_tail <- c()
+                ite_cf_bias_c_tail <- c()
+                ite_ivcf_all_bias_c_tail <- c()
+                ite_ivcf_few_bias_c_tail <- c()
 
                 for (st in sim_times){
 
-                    tau_estimate <- fread(paste0("/home/yujia/Project/2023-07-20-individual_MR/res/01_simulation/tau/estimate/", 
+                    tau_estimate <- fread(paste0("/mnt/md0/yujia/project/2023-07-20-individual_MR/res/01_simulation/tau/estimate/", 
                                                     ps, "_", vs, "_", ts, "_", st, "_estimate.csv.gz"))
-                    tau_std <- fread(paste0("/home/yujia/Project/2023-07-20-individual_MR/res/01_simulation/tau/std/", 
+                    tau_std <- fread(paste0("/mnt/md0/yujia/project/2023-07-20-individual_MR/res/01_simulation/tau/std/", 
                                                     ps, "_", vs, "_", ts, "_", st, "_std.csv.gz"))
 
                     ate_cf_mat <- as.data.frame(matrix(rnorm(10000 * 1, mean = tau_estimate$ATE_CF, sd = 0), nrow=10000))
@@ -71,32 +71,31 @@ for (tp in top_porp){
 
                     selected_p_c <- 10000 * tp
 
-                    # calculate the bias (top 10%)
-                    ate_cf_bias_top <- bias(ate_cf_mat[1:selected_p_c,1], true_tau_mat[1:selected_p_c,1])
-                    late_all_bias_top <- bias(late_all_mat[1:selected_p_c,1], true_tau_mat[1:selected_p_c,1])
-                    late_few_bias_top <- bias(late_few_mat[1:selected_p_c,1], true_tau_mat[1:selected_p_c,1])
-                    ite_cf_bias_top <- bias(ite_cf_mat[1:selected_p_c,1], true_tau_mat[1:selected_p_c,1])
-                    ite_ivcf_all_bias_top <- bias(ite_ivcf_all_mat[1:selected_p_c,1], true_tau_mat[1:selected_p_c,1])
-                    ite_ivcf_few_bias_top <- bias(ite_ivcf_few_mat[1:selected_p_c,1], true_tau_mat[1:selected_p_c,1])
+                    # calculate the bias (tail 10%)
+                    ate_cf_bias_tail <- bias(ate_cf_mat[(10000-selected_p_c):10000,1], true_tau_mat[(10000-selected_p_c):10000,1])
+                    late_all_bias_tail <- bias(late_all_mat[(10000-selected_p_c):10000,1], true_tau_mat[(10000-selected_p_c):10000,1])
+                    late_few_bias_tail <- bias(late_few_mat[(10000-selected_p_c):10000,1], true_tau_mat[(10000-selected_p_c):10000,1])
+                    ite_cf_bias_tail <- bias(ite_cf_mat[(10000-selected_p_c):10000,1], true_tau_mat[(10000-selected_p_c):10000,1])
+                    ite_ivcf_all_bias_tail <- bias(ite_ivcf_all_mat[(10000-selected_p_c):10000,1], true_tau_mat[(10000-selected_p_c):10000,1])
+                    ite_ivcf_few_bias_tail <- bias(ite_ivcf_few_mat[(10000-selected_p_c):10000,1], true_tau_mat[(10000-selected_p_c):10000,1])
 
-                    ate_cf_bias_c_top <- c(ate_cf_bias_c_top, abs(ate_cf_bias_top))
-                    late_all_bias_c_top <- c(late_all_bias_c_top, abs(late_all_bias_top))
-                    late_few_bias_c_top <- c(late_few_bias_c_top, abs(late_few_bias_top))
-                    ite_cf_bias_c_top <- c(ite_cf_bias_c_top, abs(ite_cf_bias_top))
-                    ite_ivcf_all_bias_c_top <- c(ite_ivcf_all_bias_c_top, abs(ite_ivcf_all_bias_top))
-                    ite_ivcf_few_bias_c_top <- c(ite_ivcf_few_bias_c_top, abs(ite_ivcf_few_bias_top))
+                    ate_cf_bias_c_tail <- c(ate_cf_bias_c_tail, abs(ate_cf_bias_tail))
+                    late_all_bias_c_tail <- c(late_all_bias_c_tail, abs(late_all_bias_tail))
+                    late_few_bias_c_tail <- c(late_few_bias_c_tail, abs(late_few_bias_tail))
+                    ite_cf_bias_c_tail <- c(ite_cf_bias_c_tail, abs(ite_cf_bias_tail))
+                    ite_ivcf_all_bias_c_tail <- c(ite_ivcf_all_bias_c_tail, abs(ite_ivcf_all_bias_tail))
+                    ite_ivcf_few_bias_c_tail <- c(ite_ivcf_few_bias_c_tail, abs(ite_ivcf_few_bias_tail))
 
-                    # break
                 }
 
                 print(summary(true_tau_mat$V1))
 
-                bias_df <- data.frame("ITE" = ite_cf_bias_c_top,
-                                      "MR-ITE (keep pleiotropy)" = ite_ivcf_all_bias_c_top,
-                                      "MR-ITE (remove pleiotropy)" = ite_ivcf_few_bias_c_top,
-                                      "ATE" = ate_cf_bias_c_top,
-                                      "MR-ATE (keep pleiotropy)" = late_all_bias_c_top,
-                                      "MR-ATE (remove pleiotropy)" = late_few_bias_c_top)
+                bias_df <- data.frame("ITE" = ite_cf_bias_c_tail,
+                                      "MR-ITE (keep pleiotropy)" = ite_ivcf_all_bias_c_tail,
+                                      "MR-ITE (remove pleiotropy)" = ite_ivcf_few_bias_c_tail,
+                                      "ATE" = ate_cf_bias_c_tail,
+                                      "MR-ATE (keep pleiotropy)" = late_all_bias_c_tail,
+                                      "MR-ATE (remove pleiotropy)" = late_few_bias_c_tail)
                 
                 bias_df$id <- rownames(bias_df)
 
@@ -123,7 +122,6 @@ for (tp in top_porp){
 
             colnames(bias_df_res)[2:3] <- c("Methods", "Bias")
 
-            # break
         }
 
         if (first_ps){
@@ -132,7 +130,6 @@ for (tp in top_porp){
         } else {
             bias_table_final <- rbind(bias_table_final, bias_df_res)
         }
-        # break
     }
 
     bias_table <- bias_table_final %>%
@@ -141,7 +138,7 @@ for (tp in top_porp){
     bias_table <- as.data.frame(bias_table)
     colnames(bias_table) <- c("Methods", "Tau Scenario", "Pleiotropy Scenario", "Bias")
 
-    fwrite(bias_table, paste0("/home/yujia/Project/2023-07-20-individual_MR/res/01_simulation/table/bias_table_", tp, ".csv"))
+    fwrite(bias_table, paste0("/mnt/md0/yujia/project/2023-07-20-individual_MR/res/01_simulation/table/bias_table_", tp, ".csv"))
 
 }
 

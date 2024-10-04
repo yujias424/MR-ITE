@@ -35,8 +35,7 @@ n.experiments <- 30
 seed <- 1
 set.seed(seed)
 
-# pleiotropy_scen <- c(2, 3, 4) # must be 2,3,4 sinece ps=1 means xi=0, a=0
-pleiotropy_scen <- c(3, 4, 2)
+pleiotropy_scen <- c(2, 3, 4) # must be 2,3,4 sinece ps=1 means xi=0, a=0
 invalid_snps_n_set <- c(20, 40, 60)
 
 for (ps in pleiotropy_scen){
@@ -77,7 +76,7 @@ for (ps in pleiotropy_scen){
                                     bxse = out.zx$coefficients[, 2],
                                     by =  out.zy$coefficients[, 1],
                                     byse = out.zy$coefficients[, 2])
-        # MRAllObject_conmix <- mr_conmix(MRInputObject_1)
+
         tryCatch({
           MRAllObject_conmix <- withTimeout({
             mr_conmix(MRInputObject_1)
@@ -149,41 +148,13 @@ for (ps in pleiotropy_scen){
                                                         num.threads = 40, 
                                                         sample.fraction = 0.1, num.trees = 3000, min.node.size = 5)
 
-        # denominator.fewsnps <- rowSums(as.data.frame(dat5$Z[, colnames(dat5$Z)[colnames(dat5$Z) %in% MRAllObject_conmix@ValidSNPs]]))
-        # denominator.allsnps <- rowSums(as.data.frame(dat5$Z))
-        
         Z_allsnps <- predict(regression_forest_allsnps, newdata = dat1$`Z`[30001:40000, ], num.threads = 40)$predictions
         Z_fewsnps <- predict(regression_forest_fewsnps, newdata = dat1$Z[30001:40000, colnames(dat1$Z)[colnames(dat1$Z) %in% MRAllObject_conmix@ValidSNPs]], num.threads = 40)$predictions
 
         # Calculate the PRS score.
-        # # avg
-        # prs.fewsnps <- Z_fewsnps/denominator.fewsnps
-        # prs.allsnps <- Z_allsnps/denominator.allsnps
-
-        # # sum
-        # prs.fewsnps <- Z_fewsnps
-        # prs.allsnps <- Z_allsnps
-
         # std
         prs.fewsnps <- (Z_fewsnps-mean(Z_fewsnps))/sd(Z_fewsnps)
         prs.allsnps <- (Z_allsnps-mean(Z_allsnps))/sd(Z_allsnps)
-
-        # cor.test(prs.fewsnps, dat5$`T`)
-        # cor.test(prs.allsnps, dat5$`T`)
-
-        # lm.allsnps <- cbind(as.data.frame(dat4$Z), dat4$T)
-        # colnames(lm.allsnps)[101] <- "X"
-        # lm.allsnps.res <- lm(X ~ ., data = lm.allsnps)
-        # out.lm.allsnps.res <- summary(lm.allsnps.res)
-
-        # lm.fewsnps <- cbind(as.data.frame(dat4$Z[, colnames(dat4$Z)[colnames(dat4$Z) %in% MRAllObject_conmix@ValidSNPs]]), dat4$T)
-        # colnames(lm.fewsnps)[dim(lm.fewsnps)[2]] <- "X"
-        # lm.fewsnps.res <- lm(X ~ ., data = lm.fewsnps)
-        # out.lm.fewsnps.res <- summary(lm.fewsnps.res)
-
-        # res.1 <- predict(lm.fewsnps.res, as.data.frame(dat5$Z[, colnames(dat5$Z)[colnames(dat5$Z) %in% MRAllObject_conmix@ValidSNPs]]))
-        # denominator <- rowSums(as.data.frame(dat5$Z[, colnames(dat5$Z)[colnames(dat5$Z) %in% MRAllObject_conmix@ValidSNPs]]))
-        # prs.fewsnps <- res.1/denominator
 
         # MR-ITE (IVgrf approach)
         iv.tau.forest.allsnps <- instrumental_forest(X = dat1$`X`[30001:40000, ], Y = dat1$`Y`[30001:40000], 
@@ -336,7 +307,7 @@ for (ps in pleiotropy_scen){
 
         ne <- ne + 1
         rm(MRAllObject_conmix) # since we use MRAllObject_conmix == NULL as the criterion to jump
-        # break
+
       }
 
       res.mat <- as.data.frame(res.mat)
@@ -349,10 +320,7 @@ for (ps in pleiotropy_scen){
 
       fwrite(res.mat, paste0("/home/yujia/Project/2023-07-20-individual_MR/res/01_simulation/mse/", scenario.index, "_", isns, "_", i, "_res.csv"))
 
-      # break      
     }
-    # break
   }
-  # break
 }
 

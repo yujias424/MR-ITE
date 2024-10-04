@@ -29,16 +29,14 @@ for (t in 1:length(traits)){
             
             # t <- 1; d <- 1; wtype <- 1
             if (wtype == 1){
-                shap_values <- fread(paste0("/home/yujia/Project/2023-07-20-individual_MR/res/02_ITE_analysis/01_table/", traits[t], "/", diseases[d], "/03_variable_importance/driv_", traits_type[wtype], "W_shap_model3.csv.gz"))
-                feature_values <- fread(paste0("/home/yujia/Project/2023-07-20-individual_MR/res/02_ITE_analysis/01_table/", traits[t], "/", diseases[d], "/03_variable_importance/driv_", traits_type[wtype], "W_value_model3.csv.gz"))
-                taus <- fread(paste0("/home/yujia/Project/2023-07-20-individual_MR/res/02_ITE_analysis/01_table/", traits[t], "/", diseases[d], "/01_individual_treatment_effect/driv_full_", traits_type[wtype], "W_continuousZ_te_ul_model3.csv"))
-                # taus <- fread(paste0("/home/yujia/Project/2023-07-20-individual_MR/res/02_ITE_analysis/01_table/", traits[t], "/", diseases[d], "/01_individual_treatment_effect/ivgrf_full_", traits_type[wtype], "W_continuousZ_pvalue_model3.csv"))
+                shap_values <- fread(paste0("/mnt/md0/yujia/project/2023-07-20-individual_MR/res/02_ITE_analysis/01_table/", traits[t], "/", diseases[d], "/03_variable_importance/driv_", traits_type[wtype], "W_shap_model3.csv.gz"))
+                feature_values <- fread(paste0("/mnt/md0/yujia/project/2023-07-20-individual_MR/res/02_ITE_analysis/01_table/", traits[t], "/", diseases[d], "/03_variable_importance/driv_", traits_type[wtype], "W_value_model3.csv.gz"))
+                taus <- fread(paste0("/mnt/md0/yujia/project/2023-07-20-individual_MR/res/02_ITE_analysis/01_table/", traits[t], "/", diseases[d], "/01_individual_treatment_effect/driv_full_", traits_type[wtype], "W_continuousZ_te_ul_model3.csv"))
             
             } else {
-                shap_values <- fread(paste0("/home/yujia/Project/2023-07-20-individual_MR/res/02_ITE_analysis/01_table/", traits[t], "/", diseases[d], "/03_variable_importance/driv_", traits_type[wtype], "W_shap_model3.csv.gz"))
-                feature_values <- fread(paste0("/home/yujia/Project/2023-07-20-individual_MR/res/02_ITE_analysis/01_table/", traits[t], "/", diseases[d], "/03_variable_importance/driv_", traits_type[wtype], "W_value_model3.csv.gz"))
-                taus <- fread(paste0("/home/yujia/Project/2023-07-20-individual_MR/res/02_ITE_analysis/01_table/", traits[t], "/", diseases[d], "/01_individual_treatment_effect/driv_full_", traits_type[wtype], "W_te_ul_model3.csv"))
-                # taus <- fread(paste0("/home/yujia/Project/2023-07-20-individual_MR/res/02_ITE_analysis/01_table/", traits[t], "/", diseases[d], "/01_individual_treatment_effect/ivgrf_full_", traits_type[wtype], "W_pvalue_model3.csv"))
+                shap_values <- fread(paste0("/mnt/md0/yujia/project/2023-07-20-individual_MR/res/02_ITE_analysis/01_table/", traits[t], "/", diseases[d], "/03_variable_importance/driv_", traits_type[wtype], "W_shap_model3.csv.gz"))
+                feature_values <- fread(paste0("/mnt/md0/yujia/project/2023-07-20-individual_MR/res/02_ITE_analysis/01_table/", traits[t], "/", diseases[d], "/03_variable_importance/driv_", traits_type[wtype], "W_value_model3.csv.gz"))
+                taus <- fread(paste0("/mnt/md0/yujia/project/2023-07-20-individual_MR/res/02_ITE_analysis/01_table/", traits[t], "/", diseases[d], "/01_individual_treatment_effect/driv_full_", traits_type[wtype], "W_te_ul_model3.csv"))
             }
             
             if (traits[t] == "LDL"){
@@ -108,10 +106,10 @@ for (t in 1:length(traits)){
             
             # # can also plot top important variable based on ivgrf
             # if (wtype == 1){
-            #     shaporder <- read.csv(paste0("/home/yujia/Project/2023-07-20-individual_MR/res/02_ITE_analysis/01_table/", traits[t], "/CAD/03_variable_importance/ivgrf_binaryW_continuousZ_variable_importance_model3.csv"))
+            #     shaporder <- read.csv(paste0("/mnt/md0/yujia/project/2023-07-20-individual_MR/res/02_ITE_analysis/01_table/", traits[t], "/CAD/03_variable_importance/ivgrf_binaryW_continuousZ_variable_importance_model3.csv"))
             #     shaporder <- shaporder[order(shaporder$Importance, decreasing = T), ]$Variable
             # } else {
-            #     shaporder <- read.csv(paste0("/home/yujia/Project/2023-07-20-individual_MR/res/02_ITE_analysis/01_table/", traits[t], "/CAD/03_variable_importance/ivgrf_continuousW_variable_importance_model3.csv"))
+            #     shaporder <- read.csv(paste0("/mnt/md0/yujia/project/2023-07-20-individual_MR/res/02_ITE_analysis/01_table/", traits[t], "/CAD/03_variable_importance/ivgrf_continuousW_variable_importance_model3.csv"))
             #     shaporder <- shaporder[order(shaporder$Importance, decreasing = T), ]$Variable
             # }
 
@@ -235,12 +233,18 @@ for (t in 1:length(traits)){
                         p.shap.feature.4 / p.tau.feature.4 / p.shap.feature.9 / p.tau.feature.9 |
                         p.shap.feature.5 / p.tau.feature.5 / p.shap.feature.10 / p.tau.feature.10) + 
                         plot_annotation(tag_levels = 'A') & theme(plot.tag = element_text(size = 35))
+
+            save(p.shap.feature.1, p.tau.feature.1, p.shap.feature.6, p.tau.feature.6, 
+                 p.shap.feature.2, p.tau.feature.2, p.shap.feature.7, p.tau.feature.7, 
+                 p.shap.feature.3, p.tau.feature.3, p.shap.feature.8, p.tau.feature.8, 
+                 p.shap.feature.4, p.tau.feature.4, p.shap.feature.9, p.tau.feature.9, 
+                 p.shap.feature.5, p.tau.feature.5, p.shap.feature.10, p.tau.feature.10,
+                 file = paste0("/mnt/md0/yujia/project/2023-07-20-individual_MR/res/03_plot/figure3_variable_importance_", traits[t], "_", diseases[d], "_", traits_type[wtype], "W_boxplot.RData"))
                 
-            ggsave(paste0("/home/yujia/Project/2023-07-20-individual_MR/res/03_plot/figure3_variable_importance_", traits[t], "_", diseases[d], "_", traits_type[wtype], "W_boxplot.png"), p.final, dpi=300, 
-                        width = 70, height = 60, units = "cm", scale = 2, limitsize = FALSE)
-            message("\n\n=========================\n\n")
+            # ggsave(paste0("/mnt/md0/yujia/project/2023-07-20-individual_MR/res/03_plot/figure3_variable_importance_", traits[t], "_", diseases[d], "_", traits_type[wtype], "W_boxplot.png"), p.final, dpi=300, 
+            #             width = 70, height = 60, units = "cm", scale = 2, limitsize = FALSE)
+            # message("\n\n=========================\n\n")
             # break
-            
         }
         # break
     }

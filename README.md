@@ -1,6 +1,6 @@
 ### MR-ITE
 
-This is the github repository to store all analysis code for the project 
+This is the github repository to store all analysis code for the MR-ITE project 
 
 A framework for detecting causal effects of risk factors at an individual level based on principles of Mendelian randomization: Applications to modelling individualized effects of lipids on coronary artery disease
 

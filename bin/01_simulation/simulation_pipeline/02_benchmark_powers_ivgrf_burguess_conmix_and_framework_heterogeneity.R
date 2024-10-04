@@ -39,14 +39,11 @@ invalid_snps_n_set <- c(40)
 for (ps in pleiotropy_scen){
   for (isns in invalid_snps_n_set){
     
-    # ps <- pleiotropy_scen[2]
-
     message(paste0("Running pleiotropy scenario ", ps))
     message(paste0("With invalid SNPs ", isns))
    
     for (i in 1:8){
       
-      # i <- 7
       message(paste0("Running scenario ", i))
       res.mat <- matrix(0, nrow = n.experiments, ncol = 2)
       
@@ -76,7 +73,6 @@ for (ps in pleiotropy_scen){
                                     bxse = out.zx$coefficients[, 2],
                                     by =  out.zy$coefficients[, 1],
                                     byse = out.zy$coefficients[, 2])
-        # MRAllObject_conmix <- mr_conmix(MRInputObject_1)
 
         tryCatch({
           MRAllObject_conmix <- withTimeout({
@@ -98,18 +94,9 @@ for (ps in pleiotropy_scen){
                                                         num.threads = 40, 
                                                         sample.fraction = 0.1, num.trees = 3000, min.node.size = 10)
 
-        # denominator.fewsnps <- rowSums(as.data.frame(dat5$Z[30001:40000, colnames(dat5$Z)[colnames(dat5$Z) %in% MRAllObject_conmix@ValidSNPs]]))
-
         Z_fewsnps <- predict(regression_forest_fewsnps, newdata = dat1$Z[30001:40000, colnames(dat1$Z)[colnames(dat1$Z) %in% MRAllObject_conmix@ValidSNPs]], num.threads = 40)$predictions
 
-        # # avg
-        # prs.fewsnps <- Z_fewsnps/denominator.fewsnps
-        # prs.allsnps <- Z_allsnps/denominator.allsnps
-
-        # # sum
-        # prs.fewsnps <- Z_fewsnps
-        # prs.allsnps <- Z_allsnps
-
+        # Calculate the PRS
         # std
         prs.fewsnps <- (Z_fewsnps-mean(Z_fewsnps))/sd(Z_fewsnps)
 
@@ -158,15 +145,13 @@ for (ps in pleiotropy_scen){
 
         res.mat[ne, ] <- res.p
         ne <- ne + 1
-        # break
+
       }
-      # break
+
       colnames(res.mat) <- c("perm-var", "perm-tau-risk")
       res.mat <- as.data.frame(res.mat)
       fwrite(res.mat, paste0("~/Project/2023-07-20-individual_MR/res/01_simulation/framework_sims_HTE/", ps, "_", isns, "_", i, "_res.csv"))
 
     }
-    # break
   }
-  # break
 }

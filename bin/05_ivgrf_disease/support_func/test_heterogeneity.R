@@ -254,24 +254,27 @@ ivgrf <- function(X, Y, W, Z, Y.hat = NULL, W.hat = NULL, Z.hat = NULL,
   #' @param W.hat: check grf doc
   #' @param Z.hat: check grf doc
   #' @param num.trees: default 5000, should increase in need.
-  #' @param node.size: default 10, can increase in need.
+  #' @param min.node.size: default 10, can increase in need.
+  #' @param sample.fraction: default 0.2, can increase in need.
+  #' @param ci.group.size: default 5, can increase in need.
+  #' @param num.threads: default 10, can increase in need.
   #' 
   #' @return: the instrumental forest
   
   if ((is.null(W.hat) + is.null(W.hat)) == 1) stop("Y.hat and W.hat should be provided at the same time!")
   
   tau.forest <- grf::instrumental_forest(X = X,
-                              Y = Y,
-                              W = W,
-                              Z = Z,
-                              Y.hat = Y.hat,
-                              W.hat = W.hat,
-                              Z.hat = Z.hat,
-                              ci.group.size = ci.group.size,
-                              sample.fraction = sample.fraction,  # When confidence intervals are enabled, the sampling fraction must be less than 0.5.
-                              num.trees = num.trees,
-                              min.node.size = min.node.size,   # previous setting is 10
-                              num.threads = num.threads)
+                                         Y = Y,
+                                         W = W,
+                                         Z = Z,
+                                         Y.hat = Y.hat,
+                                         W.hat = W.hat,
+                                         Z.hat = Z.hat,
+                                         ci.group.size = ci.group.size,
+                                         sample.fraction = sample.fraction,  # When confidence intervals are enabled, the sampling fraction must be less than 0.5.
+                                         num.trees = num.trees,
+                                         min.node.size = min.node.size,   # previous setting is 10
+                                         num.threads = num.threads)
   return(tau.forest)
 }
 
@@ -358,14 +361,14 @@ simes.partial <- function(u, pvec) {  # equation 2 in the above reference
   return(partial.conj.p)
 }
 
-assess.explained.tau.fixed.YW.risk <- function(fitted.obj, newdata = NULL, Y, Y.hat, treatment, W.hat, Z, Z.hat, constant.tau = NULL) {
+assess.explained.tau.fixed.YW.risk <- function(fitted.obj, newdata = NULL, Y, Y.hat, W, W.hat, Z, Z.hat, constant.tau = NULL, num.threads = 10) {
   
-  #' function to calculate tau-risk_R
+  #' function to calculate tau-risk R
   #' 
   #' @param fitted.obj: the forest 
   #' @param Y: outcome
   #' @param Y.hat: estimated outcome
-  #' @param treatment: treatment assignment
+  #' @param W: treatment assignment
   #' @param W.hat: estimated W, E[W|X]
   #' @param Z: instrument
   #' @param Z.hat estimated Z, E[Z|X]
@@ -373,136 +376,79 @@ assess.explained.tau.fixed.YW.risk <- function(fitted.obj, newdata = NULL, Y, Y.
   #' 
   #' @return: risk can be explained via the formula
   
-  tau.pred <- predict(fitted.obj, newdata = newdata, estimate.variance = TRUE, num.threads = 10)
-  tau.1 <- Y - Y.hat
+  tau.pred <- predict(fitted.obj, newdata = newdata, estimate.variance = TRUE, num.threads = num.threads)
+  center.Y <- Y - Y.hat
   center.Z <- Z - Z.hat
   
   if (is.null(constant.tau)) {
-    mean.tau <- (treatment - W.hat) * mean(tau.pred$predictions)
-    tau.2 <- (treatment - W.hat) * tau.pred$predictions
+    mean.tau <- (W - W.hat) * mean(tau.pred$predictions)
+    tau.2 <- (W - W.hat) * tau.pred$predictions
   } else {
-    mean.tau <- (treatment - W.hat) * mean(constant.tau)
-    tau.2 <- (treatment - W.hat) * constant.tau
+    mean.tau <- (W - W.hat) * mean(constant.tau)
+    tau.2 <- (W - W.hat) * tau.pred$predictions
   }
   
-  risk.total <- (center.Z * (tau.1 - mean.tau))^2 # discuss with So in the next meeting.
-  risk.unexplained <- (center.Z * (tau.1 - tau.2))^2
+  risk.total <- (center.Z * (center.Y - mean.tau))^2 
+  risk.unexplained <- (center.Z * (center.Y - tau.2))^2
 
   risk.explained <- mean(risk.total - risk.unexplained)
   
   return(risk.explained)
 }
 
-assess.explained.tau.fixed.YW.risk.neuralips <- function(fitted.obj, newdata = NULL, Y, Y.hat, W.hat.XZ, W.hat, Z, Z.hat, constant.tau = NULL) {
-  
-  #' function to calculate tau-risk_R, however, this time we use the updated R-loss based on formula 4 in neuralps paper.
-  #' 
-  #' @param fitted.obj: the forest 
-  #' @param Y: outcome
-  #' @param Y.hat: estimated outcome
-  #' @param W.hat.XZ: E[W|Z,X]
-  #' @param W.hat: estimated W, E[W|X]
-  #' @param Z: instrument
-  #' @param Z.hat estimated Z, E[Z|X]
-  #' @param constant.tau: a constant tau to estimate the tau
-  #' 
-  #' @return: risk can be explained via the formula
-  
-  tau.pred <- predict(fitted.obj, newdata = newdata, estimate.variance = TRUE, num.threads = 10)
-  tau.1 <- Y - Y.hat
-  center.Z <- Z - Z.hat
-  
-  if (is.null(constant.tau)) {
-    mean.tau <- (W.hat.XZ - W.hat) * mean(tau.pred$predictions)
-    tau.2 <- (W.hat.XZ - W.hat) * tau.pred$predictions
-  } else {
-    mean.tau <- (W.hat.XZ - W.hat) * mean(constant.tau)
-    tau.2 <- (W.hat.XZ - W.hat) * constant.tau
-  }
-  
-  risk.total <- ((tau.1 - mean.tau))^2 # discuss with So in the next meeting.
-  risk.unexplained <- ((tau.1 - tau.2))^2
-  risk.explained <- mean(risk.total - risk.unexplained)
-  
-  return(risk.explained)
-}
-
-paralleled.perm.cf <- function(covariates,
-                               Y, treatment,
-                               Y.hat, W.hat, W.hat.XZ,
+paralleled.perm.cf <- function(X, Y, W,
+                               Y.hat, W.hat,
                                Z, Z.hat,
                                num.trees,
                                num.perm,
                                min.node.size,
                                sample.fraction = 0.5,
                                ci.group.size = 5,
+                               num.threads = 10, 
                                seed = NULL,
-                               is_save = F,
-                               file_prefix = NULL,
                                cluster_id = NULL,
-                               reestimate = FALSE,
-                               updatedRloss = FALSE,
                                fitted_object = None) {
   
   #' function to perform permutation variance test and permutation risk test
   #' 
-  #' @param covariates: the X covariates
+  #' @param X: the X covariates
   #' @param Y: outcome
+  #' @param W: treatment assignment W
   #' @param Y.hat: estimated Y, E[Y|X]
-  #' @param treatment: treatment assignment W
   #' @param W.hat: estimated W, E[W|X]
-  #' @param W.hat.XZ: estimate W, E[W|Z,X]
   #' @param Z: instrument
   #' @param Z.hat: estimated instrument Z, , E[Z|X]
   #' @param num.trees: tree number
+  #' @param num.perm: number of permutations
   #' @param min.node.size: min.node.size, default is 5
   #' @param sample.fraction: sample fraction used to estimate each tree. default: 0.5
   #' @param ci.group.size: ci.group.size setting for causal forest
   #' @param seed: random seed
   #' @param is_save: whether to save the results of each permutation
-  #' @param file_prefix: the file prefix to store the results of each permutation
   #' @param cluster_id: whether we need to do a stratified permutation to keep cluster heterogeneity present.
   #' @param reestimate: whether to re-estimate the Y.hat, Z.hat and W.hat using the permuted covariates.
   #' @param updatedRloss: whether to use updated R-loss based on neuralps paper.
   #' 
   #' @return: results containing permutation variance p-value and permutation risk variance.  
   
-  col_names <- c("obs.Y", "obs.Y.hat", "obs.treatment", "obs.W.hat", "perm.Y.hat", "perm.W.hat")
   cf.estimator <- ivgrf 
   
-  perm.risk.mat <- foreach(i = seq(num.perm), .combine = "rbind", .options.multicore = list(set.seed = T)) %dopar%  {
+  perm.risk.mat <- foreach(i = seq(num.perm), .combine = "rbind", .options.multicore = list(set.seed = T)) %do%  {
     
     # if cluster_id is provided, we do a stratified permutation to keep cluter heterogeneity present
     if (is.null(cluster_id)) {
-      samp <- sample(dim(covariates)[1], dim(covariates)[1], replace = F)
+      samp <- sample(dim(X)[1], dim(X)[1], replace = F)
     } else {
       samp <- stratified.permutation(cluster_id)
     }
     
-    sampled.covariates <- covariates[samp, ]
-
-    # What about we also permute for Z and Y? Follow the pemutation paper "Polygenic modelling of treatment effect heterogeneity"
-    # Y <- Y[samp]
-    # Y.hat <- Y.hat[samp]cf.estimator
-    # Z <- Z[samp]
-    # Z.hat <- Z.hat[samp]
-
-    # I believe that we should use regression_forest() to re-restimate the Y.hat, W.hat and Z.hat use the permuted covariates
-    if (reestimate == TRUE){
-      Y.forest.perm <- regression_forest(sampled.covariates, Y, num.trees = num.trees, min.node.size = min.node.size)
-      W.forest.perm <- regression_forest(sampled.covariates, treatment, num.trees = num.trees, min.node.size = min.node.size)
-      Z.forest.perm <- regression_forest(sampled.covariates, Z, num.trees = num.trees, min.node.size = min.node.size)
-
-      Y.hat <- predict(Y.forest.perm)$predictions
-      W.hat <- predict(W.forest.perm)$predictions
-      Z.hat <- predict(Z.forest.perm)$predictions
-    }
+    sampled.X <- X[samp, ]
 
     # changed this line 
-    perm.tau.forest <- cf.estimator(X = sampled.covariates,
+    perm.tau.forest <- cf.estimator(X = sampled.X,
                                     Y = Y, 
                                     Y.hat = Y.hat,
-                                    W = treatment,
+                                    W = W,
                                     W.hat = W.hat,
                                     Z = Z,
                                     Z.hat = Z.hat,
@@ -510,70 +456,51 @@ paralleled.perm.cf <- function(covariates,
                                     ci.group.size = ci.group.size,
                                     sample.fraction = sample.fraction,
                                     num.trees = num.trees,
-                                    min.node.size = min.node.size)
+                                    min.node.size = min.node.size,
+                                    num.threads = num.threads)
     perm.var <- var(perm.tau.forest$predictions)
     
-    if (is_save) {
-      rslt <- cbind(Y, Y.hat, treatment, W.hat, Z, Z.hat, perm.tau.forest[["Y.hat"]], perm.tau.forest[["W.hat"]], perm.tau.forest[["Z.hat"]])
-      ord <- sort(samp, index.return = T)
-      write.csv(rslt[ord$ix, ], file = paste0(file_prefix, "_repeat_", i, ".csv"), row.names = F, col.names = col_names, quote = F)
-    }
+    assess.explained.tau.fixed.YW.risk.inline <- assess.explained.tau.fixed.YW.risk
+    perm.risk <- assess.explained.tau.fixed.YW.risk.inline(fitted.obj = perm.tau.forest, 
+                                                           Y = Y, 
+                                                           Y.hat = Y.hat, 
+                                                           W = W, 
+                                                           W.hat = W.hat, 
+                                                           Z = Z,
+                                                           Z.hat = Z.hat,
+                                                           num.threads = num.threads)
 
-    if (updatedRloss == FALSE){
-      assess.explained.tau.fixed.YW.risk.inline <- assess.explained.tau.fixed.YW.risk
-      perm.risk <- assess.explained.tau.fixed.YW.risk.inline(fitted.obj = perm.tau.forest, 
-                                                             Y = Y, 
-                                                             Y.hat = Y.hat, 
-                                                             treatment = treatment, 
-                                                             W.hat = W.hat, 
-                                                             Z = Z,
-                                                             Z.hat = Z.hat)
-    } else {
-      assess.explained.tau.fixed.YW.risk.inline <- assess.explained.tau.fixed.YW.risk.neuralips
-      perm.risk <- assess.explained.tau.fixed.YW.risk.inline(fitted.obj = perm.tau.forest, 
-                                                             Y = Y, 
-                                                             Y.hat = Y.hat,
-                                                             W.hat.XZ = W.hat.XZ,
-                                                             W.hat = W.hat, 
-                                                             Z = Z,
-                                                             Z.hat = Z.hat)
-    }
     c(perm.var, perm.risk)
   }
   return(perm.risk.mat)
 }
 
-permutate.covariates.testing <- function(covariates, 
+permutate.covariates.testing <- function(X, 
                                          Y,
                                          Y.hat,
-                                         treatment,
+                                         W,
                                          W.hat,
-                                         W.hat.XZ,
                                          Z,
                                          Z.hat,
                                          fixed.YW.tau.risk,
                                          tau.var,
-                                         is_save = F,
-                                         file_prefix = NULL,
                                          cluster_id = NULL,
+                                         num.threads = 10, 
                                          num.trees = 1000,
-                                         num.strap = 500,
+                                         num.perm = 50,
                                          min.node.size = 20,
                                          ci.group.size = 5,
-                                         seed = NULL,
-                                         resetimate = FALSE,
-                                         updatedRloss = FALSE) {
+                                         seed = NULL) {
   
-  #' function is to permute covariates with Y, W, Y.hat, and W.hat, to investigate whether covariates contribute to HTE
+  #' function is to permute X with Y, W, Y.hat, and W.hat, to investigate whether covariates contribute to HTE
   #' Note: if is_save is T, then file_prefix must be provided. 
   #' file_prefix is a prefix for saving, since several results will be saved. 
   #' 
-  #' @param covariates: the X covariates
+  #' @param X: the X covariates
   #' @param Y: outcome
   #' @param Y.hat: estimated Y, E[Y|X]
-  #' @param treatment: treatment assignment
+  #' @param W: treatment assignment
   #' @param W.hat: estimated W, E[W|X]
-  #' @param W.hat.XZ: estimate W, E[W|Z,X]
   #' @param Z: instrument
   #' @param Z.hat: estimated Z, E[Z|X]
   #' @param fixed.YW.tau.risk: tau risk calculated in the default model
@@ -581,40 +508,24 @@ permutate.covariates.testing <- function(covariates,
   #' @param num_trees: tree number 
   #' @param ci.group.size: ci.group.size setting for causal forest
   #' @param seed: random seed
-  #' @param is_save: whether to save the results of each permutation
-  #' @param file_prefix: the file prefix to store the results of each permutation
   #' @param cluster_id: whether we need to do a stratified permutation to keep cluster heterogeneity present.
-  #' @param reestimate: whether to re-estimate the Y.hat, Z.hat and W.hat using the permuted covariates.
-  #' @param updatedRloss: whether to use updated R-loss based on neuralps paper.
   #' 
   #' @return: tau.risk for each permutation
   
-  if (is_save && is.null(file_prefix)) stop("if is_save is TRUE, then file_prefix must be provided.")
-  
-  perm.risk.mat <- paralleled.perm.cf(covariates = covariates,
+  perm.risk.mat <- paralleled.perm.cf(X = X,
                                       Y = Y, 
-                                      treatment = treatment,
+                                      W = W,
+                                      Z = Z,
                                       Y.hat = Y.hat, 
                                       W.hat = W.hat,
-                                      W.hat.XZ = W.hat.XZ,
-                                      Z = Z,
                                       Z.hat = Z.hat,
                                       num.trees = num.trees,
-                                      num.perm = num.strap,
+                                      num.perm = num.perm,
                                       min.node.size = min.node.size,
                                       ci.group.size = ci.group.size,
                                       seed = seed,
-                                      is_save = F,
-                                      file_prefix = file_prefix,
                                       cluster_id = NULL,
-                                      resetimate = resetimate,
-                                      updatedRloss = updatedRloss)
-
-  if (is_save) {
-    observed_risk <- c(tau.var, fixed.YW.tau.risk)
-    write.csv(perm.risk.mat, file = paste0(file_prefix, "_fixed_YW_permutation_risk_result.csv"), quote = F, row_names = F)
-    write_csv(observed_risk, file = paste0(file_prefix, "_fixed_YW_observed_risk_result.csv"), quote = F, row.names = F)
-  }
+                                      num.threads = num.threads)
   
   # calculate the P-value, based on formula: Pr(Null) = #(Var_perm(tau) >= Var_observed(tau))/N
   permute.var.pval <- mean(perm.risk.mat[, 1] > tau.var) 
@@ -625,7 +536,7 @@ permutate.covariates.testing <- function(covariates,
 
 adaptive.permutate.covariates.testing <- function(X, 
                                                   Y, Y.hat,
-                                                  W, W.hat, W.hat.XZ, 
+                                                  W, W.hat, 
                                                   Z, Z.hat,
                                                   fixed.YW.tau.risk,
                                                   tau.var,
@@ -638,11 +549,8 @@ adaptive.permutate.covariates.testing <- function(X,
                                                   ci.group.size = 5,
                                                   sample.fraction = 0.5,
                                                   BinomCI_method = "wilson",
-                                                  is_save = F,
-                                                  file_prefix = NULL,
-                                                  seed = NULL,
-                                                  resetimate = F,
-                                                  updatedRloss = F) {
+                                                  num.threads = num.threads,
+                                                  seed = NULL) {
   
   #' function to permute X to investigate whether X contribute to HTE
   #' 
@@ -679,25 +587,21 @@ adaptive.permutate.covariates.testing <- function(X,
     
     if (perm_num >= num.strap) break
     
-    perm.risk.mat <- paralleled.perm.cf(covariates = X, 
-                                        Y = Y, 
-                                        Y.hat = Y.hat,
-                                        treatment = W,
-                                        W.hat = W.hat,
-                                        W.hat.XZ = W.hat.XZ,
+    perm.risk.mat <- paralleled.perm.cf(X = X, 
+                                        Y = Y,
+                                        W = W,
                                         Z = Z,
+                                        Y.hat = Y.hat,
+                                        W.hat = W.hat,
                                         Z.hat = Z.hat,
                                         num.trees = num.trees,
                                         num.perm = min.perm,
                                         min.node.size = min.node.size,
                                         ci.group.size = ci.group.size,
                                         sample.fraction = sample.fraction,
+                                        num.threads = num.threads,
                                         seed = NULL,
-                                        is_save = F,
-                                        file_prefix = paste0(file_prefix, ".", idx),
-                                        cluster_id = NULL,
-                                        reestimate = resetimate,
-                                        updatedRloss = updatedRloss)
+                                        cluster_id = NULL)
     # print(perm.risk.mat)
     if (is.null(old.perm.risk.mat)) {
       old.perm.risk.mat <- perm.risk.mat
@@ -717,51 +621,14 @@ adaptive.permutate.covariates.testing <- function(X,
   permute.var.pval <- mean(old.perm.risk.mat[, 1] > tau.var) 
   fixed.YW.permute.pval <- mean(old.perm.risk.mat[, 2] > fixed.YW.tau.risk)
   
-  if (is_save) {
-    write.csv(old.perm.risk.mat, file = paste0(file_prefix, "_permutation_risk_fixed_YW_result.csv"), quote = F, row.names = F)
-  }
   return(c(permute.var.pval, fixed.YW.permute.pval))
-}
-
-assess.explained.tau.fixed.YW.risk.bootstrap <- function(taus, Y, Y.hat, treatment, W.hat, Z, Z.hat, constant.tau = NULL) {
-  
-  #' function to calculate tau-risk_R
-  #' 
-  #' @param fitted.obj: the forest 
-  #' @param Y: outcome
-  #' @param Y.hat: estimated outcome
-  #' @param treatment: treatment assignment
-  #' @param W.hat: estimated W, E[W|X]
-  #' @param Z: instrument
-  #' @param Z.hat estimated Z, E[Z|X]
-  #' @param constant.tau: a constant tau to estimate the tau
-  #' 
-  #' @return: risk can be explained via the formula
-  
-  tau.1 <- Y - Y.hat
-  center.Z <- Z - Z.hat
-  
-  if (is.null(constant.tau)) {
-    mean.tau <- (treatment - W.hat) * mean(taus)
-    tau.2 <- (treatment - W.hat) * taus
-  } else {
-    mean.tau <- (treatment - W.hat) * mean(constant.tau)
-    tau.2 <- (treatment - W.hat) * constant.tau
-  }
-  
-  risk.total <- (center.Z * (tau.1 - mean.tau))^2 # discuss with So in the next meeting.
-  risk.unexplained <- (center.Z * (tau.1 - tau.2))^2
-
-  risk.explained <- mean(risk.total - risk.unexplained)
-  
-  return(risk.explained)
 }
 
 test_heterogeneity <- function(X, Y, W, Z, 
                                Y.hat = NULL, W.hat = NULL, Z.hat = NULL, 
                                num.trees = 10000, seed = 309,
-                               sample.fraction = 0.15, min.node.size = 100, ci.group.size = 10, min.perm = 30,
-                               num.strap = 100){
+                               sample.fraction = 0.15, min.node.size = 100, ci.group.size = 10, min.perm = 30, num.threads = 10,
+                               num.strap = 100, constant.tau = NULL){
 
   #' function to permute X to investigate whether X contribute to HTE
   #' 
@@ -782,7 +649,7 @@ test_heterogeneity <- function(X, Y, W, Z,
                                               Y.hat = Y.hat,
                                               W.hat = W.hat,
                                               Z.hat = Z.hat,
-                                              num.threads = 10, num.trees = num.trees, 
+                                              num.threads = num.threads, num.trees = num.trees, 
                                               sample.fraction = sample.fraction, min.node.size = min.node.size, ci.group.size = ci.group.size, seed = seed)
   iv.pred.continuous <- predict(iv.forest.continuous, estimate.variance = TRUE)
   iv.pred.stats.continuous <- compute_stats(iv.pred.continuous)
@@ -791,56 +658,32 @@ test_heterogeneity <- function(X, Y, W, Z,
   fixed.YW.tau.risk.continuous <- assess.explained.tau.fixed.YW.risk(fitted.obj = iv.forest.continuous, 
                                                                      Y = Y, 
                                                                      Y.hat = iv.forest.continuous[["Y.hat"]], 
-                                                                     treatment = W,  
+                                                                     W = W,  
                                                                      W.hat = iv.forest.continuous[["W.hat"]],
                                                                      Z = Z, 
-                                                                     Z.hat = iv.forest.continuous[["Z.hat"]])
+                                                                     Z.hat = iv.forest.continuous[["Z.hat"]],
+                                                                     constant.tau = constant.tau,
+                                                                     num.threads = num.threads)
   
   print(fixed.YW.tau.risk.continuous)
-
-  r_loss_improve <- c()
-  # bootstrap
-  for (kk in 1:1000){
-    resamples <- sort(sample(seq(1, length(Y)), replace = T))
-    W_bootstrap <- W[resamples]
-    X_bootstrap <- X[resamples, ]
-    Y_bootstrap <- Y[resamples]
-    Z_bootstrap <- Z[resamples]
-    tau_bootstrap <- iv.pred.continuous$predictions[resamples]
-
-    fixed.YW.tau.risk.bootstrap <- assess.explained.tau.fixed.YW.risk.bootstrap(taus = tau_bootstrap, 
-                                                                                Y = Y_bootstrap, 
-                                                                                Y.hat = iv.forest.continuous[["Y.hat"]][resamples], 
-                                                                                treatment = W_bootstrap, 
-                                                                                W.hat = iv.forest.continuous[["W.hat"]][resamples],
-                                                                                Z = Z_bootstrap,
-                                                                                Z.hat = iv.forest.continuous[["Z.hat"]][resamples])
-    r_loss_improve <- c(r_loss_improve, fixed.YW.tau.risk.bootstrap)
-  }
-
-  res_bootstrap <- t.test(r_loss_improve, alternative = "greater")
-
-  res_bootstrap
-
-  # perm.pvals.continuous <- adaptive.permutate.covariates.testing(X = X,
-  #                                                                Y = Y,  
-  #                                                                Y.hat = iv.forest.continuous[["Y.hat"]],
-  #                                                                W = W, 
-  #                                                                W.hat = iv.forest.continuous[["W.hat"]],
-  #                                                                Z = Z, 
-  #                                                                Z.hat = iv.forest.continuous[["Z.hat"]],
-  #                                                                fixed.YW.tau.risk = fixed.YW.tau.risk.continuous,
-  #                                                                tau.var = var(iv.pred.continuous$predictions),
-  #                                                                is_save = F,
-  #                                                                file_prefix = file_prefix,
-  #                                                                min.node.size = min.node.size, # may check changing here.
-  #                                                                sample.fraction = sample.fraction,
-  #                                                                ci.group.size = ci.group.size,
-  #                                                                num.trees = 2000, 
-  #                                                                num.strap = num.strap,
-  #                                                                min.perm = min.perm)
+  perm.pvals.continuous <- adaptive.permutate.covariates.testing(X = X,
+                                                                 Y = Y,  
+                                                                 Y.hat = iv.forest.continuous[["Y.hat"]],
+                                                                 W = W, 
+                                                                 W.hat = iv.forest.continuous[["W.hat"]],
+                                                                 Z = Z, 
+                                                                 Z.hat = iv.forest.continuous[["Z.hat"]],
+                                                                 fixed.YW.tau.risk = fixed.YW.tau.risk.continuous,
+                                                                 tau.var = var(iv.pred.continuous$predictions),
+                                                                 min.node.size = min.node.size,
+                                                                 sample.fraction = sample.fraction,
+                                                                 ci.group.size = ci.group.size,
+                                                                 num.trees = num.trees, 
+                                                                 num.strap = num.strap,
+                                                                 min.perm = min.perm,
+                                                                 num.threads = num.threads)
   
-  # perm.pvals.continuous
+  perm.pvals.continuous
 }
 
 #' ##################################
