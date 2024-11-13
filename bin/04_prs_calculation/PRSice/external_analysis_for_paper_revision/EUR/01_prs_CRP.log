@@ -1,447 +1,0 @@
-nohup: ignoring input
-Currently running CRP on CAD.
-Running P-value cut-off 1e-08
-PRSice 2.3.5 (2021-09-20) 
-https://github.com/choishingwan/PRSice
-(C) 2016-2020 Shing Wan (Sam) Choi and Paul F. O'Reilly
-GNU General Public License v3
-If you use PRSice in any published work, please cite:
-Choi SW, O'Reilly PF.
-PRSice-2: Polygenic Risk Score Software for Biobank-Scale Data.
-GigaScience 8, no. 7 (July 1, 2019)
-2024-08-30 16:06:28
-/home/yujia/Software/PRSice/PRSice_linux \
-    --a1 A1 \
-    --a2 A2 \
-    --bar-levels 1e-08,5e-08,7e-08,9e-08,1e-07,5e-07,7e-07,9e-07,1e-06,5e-06,7e-06,9e-06,1e-05,5e-05,0.0001,0.0005,0.001,0.005,0.01,0.05,0.1,0.5,1 \
-    --base /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/02_base_data/CRP/QC/CRP.QC.gz \
-    --beta  \
-    --binary-target F \
-    --bp BP \
-    --chr CHR \
-    --clump-kb 250kb \
-    --clump-p 1.000000 \
-    --clump-r2 0.100000 \
-    --cov /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/CRP/CAD/ukbb.covariate.prs.CRP.set1 \
-    --cov-factor Genotype_Batch,Gender \
-    --extract /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/06_PRS_calculation/external_analysis_for_paper_revision/PRSice2/CRP/CAD/selected_snps_1e-08.csv \
-    --fastscore  \
-    --num-auto 22 \
-    --out CRP_prs \
-    --pheno /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/CRP/CAD/ukbb.phenotype.CRP.mgdL \
-    --print-snp  \
-    --pvalue P \
-    --score con-std \
-    --seed 2389825711 \
-    --snp SNP \
-    --stat BETA \
-    --target /mnt/md0/public_data/UKBB_data/genotype/GWAS_ukbb_maf0.001_info0.8/bed/allchrs/ukb_allchrs \
-    --thread 35
-
-Initializing Genotype file: 
-/mnt/md0/public_data/UKBB_data/genotype/GWAS_ukbb_maf0.001_info0.8/bed/allchrs/ukb_allchrs 
-(bed) 
-
-Start processing CRP.QC 
-================================================== 
-
-Only one column detected, will assume only SNP ID is 
-provided 
-
-Base file: 
-/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/02_base_data/CRP/QC/CRP.QC.gz 
-GZ file detected. Header of file is: 
-CHR	BP	SNP	A1	A2	SE	P	BETA 
-
-Reading 100.00%
-9053049 variant(s) observed in base file, with: 
-9031018 variant(s) excluded based on user input 
-1 NA stat/p-value observed 
-22030 total variant(s) included from base file 
-
-Loading Genotype info from target 
-================================================== 
-
-443630 people (204889 male(s), 238674 female(s)) observed 
-443630 founder(s) included 
-
-2287244 variant(s) not found in previous data 
-18 variant(s) with mismatch information 
-516 variant(s) included 
-
-Phenotype file: 
-/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/CRP/CAD/ukbb.phenotype.CRP.mgdL 
-Column Name of Sample ID: FID+IID 
-Note: If the phenotype file does not contain a header, the 
-column name will be displayed as the Sample ID which is 
-expected. 
-
-There are a total of 1 phenotype to process 
-
-Start performing clumping 
-
-Clumping Progress: 0.19%Clumping Progress: 0.39%Clumping Progress: 0.58%Clumping Progress: 0.78%Clumping Progress: 0.97%Clumping Progress: 1.16%Clumping Progress: 1.36%Clumping Progress: 1.55%Clumping Progress: 1.74%Clumping Progress: 1.94%Clumping Progress: 2.13%Clumping Progress: 2.33%Clumping Progress: 2.52%Clumping Progress: 2.71%Clumping Progress: 2.91%Clumping Progress: 3.10%Clumping Progress: 3.29%Clumping Progress: 3.49%Clumping Progress: 3.68%Clumping Progress: 3.88%Clumping Progress: 4.07%Clumping Progress: 4.26%Clumping Progress: 4.46%Clumping Progress: 4.65%Clumping Progress: 4.84%Clumping Progress: 5.04%Clumping Progress: 5.23%Clumping Progress: 5.43%Clumping Progress: 5.62%Clumping Progress: 5.81%Clumping Progress: 6.01%Clumping Progress: 6.20%Clumping Progress: 6.40%Clumping Progress: 6.59%Clumping Progress: 6.78%Clumping Progress: 6.98%Clumping Progress: 7.17%Clumping Progress: 7.36%Clumping Progress: 7.56%Clumping Progress: 7.75%Clumping Progress: 7.95%Clumping Progress: 8.14%Clumping Progress: 8.33%Clumping Progress: 8.53%Clumping Progress: 8.72%Clumping Progress: 8.91%Clumping Progress: 9.11%Clumping Progress: 9.30%Clumping Progress: 9.50%Clumping Progress: 9.69%Clumping Progress: 9.88%Clumping Progress: 10.08%Clumping Progress: 10.27%Clumping Progress: 10.47%Clumping Progress: 10.66%Clumping Progress: 10.85%Clumping Progress: 11.05%Clumping Progress: 11.24%Clumping Progress: 11.43%Clumping Progress: 11.63%Clumping Progress: 11.82%Clumping Progress: 12.02%Clumping Progress: 12.21%Clumping Progress: 12.40%Clumping Progress: 12.60%Clumping Progress: 12.79%Clumping Progress: 12.98%Clumping Progress: 13.18%Clumping Progress: 13.37%Clumping Progress: 13.57%Clumping Progress: 13.76%Clumping Progress: 13.95%Clumping Progress: 14.15%Clumping Progress: 14.34%Clumping Progress: 14.53%Clumping Progress: 14.73%Clumping Progress: 14.92%Clumping Progress: 15.12%Clumping Progress: 15.31%Clumping Progress: 15.50%Clumping Progress: 15.70%Clumping Progress: 15.89%Clumping Progress: 16.09%Clumping Progress: 16.28%Clumping Progress: 16.47%Clumping Progress: 16.67%Clumping Progress: 16.86%Clumping Progress: 17.05%Clumping Progress: 17.25%Clumping Progress: 17.44%Clumping Progress: 17.64%Clumping Progress: 17.83%Clumping Progress: 18.02%Clumping Progress: 18.22%Clumping Progress: 18.41%Clumping Progress: 18.60%Clumping Progress: 18.80%Clumping Progress: 18.99%Clumping Progress: 19.19%Clumping Progress: 19.38%Clumping Progress: 19.57%Clumping Progress: 19.77%Clumping Progress: 19.96%Clumping Progress: 20.16%Clumping Progress: 20.35%Clumping Progress: 20.54%Clumping Progress: 20.74%Clumping Progress: 20.93%Clumping Progress: 21.12%Clumping Progress: 21.32%Clumping Progress: 21.51%Clumping Progress: 21.71%Clumping Progress: 21.90%Clumping Progress: 22.09%Clumping Progress: 22.29%Clumping Progress: 22.48%Clumping Progress: 22.67%Clumping Progress: 22.87%Clumping Progress: 23.06%Clumping Progress: 23.26%Clumping Progress: 23.45%Clumping Progress: 23.64%Clumping Progress: 23.84%Clumping Progress: 24.03%Clumping Progress: 24.22%Clumping Progress: 24.42%Clumping Progress: 24.61%Clumping Progress: 24.81%Clumping Progress: 25.00%Clumping Progress: 25.19%Clumping Progress: 25.39%Clumping Progress: 25.58%Clumping Progress: 25.78%Clumping Progress: 25.97%Clumping Progress: 26.16%Clumping Progress: 26.36%Clumping Progress: 26.55%Clumping Progress: 26.74%Clumping Progress: 26.94%Clumping Progress: 27.13%Clumping Progress: 27.33%Clumping Progress: 27.52%Clumping Progress: 27.71%Clumping Progress: 27.91%Clumping Progress: 28.10%Clumping Progress: 28.29%Clumping Progress: 28.49%Clumping Progress: 28.68%Clumping Progress: 28.88%Clumping Progress: 29.07%Clumping Progress: 29.26%Clumping Progress: 29.46%Clumping Progress: 29.65%Clumping Progress: 29.84%Clumping Progress: 30.04%Clumping Progress: 30.23%Clumping Progress: 30.43%Clumping Progress: 30.62%Clumping Progress: 30.81%Clumping Progress: 31.01%Clumping Progress: 31.20%Clumping Progress: 31.40%Clumping Progress: 31.59%Clumping Progress: 31.78%Clumping Progress: 31.98%Clumping Progress: 32.17%Clumping Progress: 32.36%Clumping Progress: 32.56%Clumping Progress: 32.75%Clumping Progress: 32.95%Clumping Progress: 33.14%Clumping Progress: 33.33%Clumping Progress: 33.53%Clumping Progress: 33.72%Clumping Progress: 33.91%Clumping Progress: 34.11%Clumping Progress: 34.30%Clumping Progress: 34.50%Clumping Progress: 34.69%Clumping Progress: 34.88%Clumping Progress: 35.08%Clumping Progress: 35.27%Clumping Progress: 35.47%Clumping Progress: 35.66%Clumping Progress: 35.85%Clumping Progress: 36.05%Clumping Progress: 36.24%Clumping Progress: 36.43%Clumping Progress: 36.63%Clumping Progress: 36.82%Clumping Progress: 37.02%Clumping Progress: 37.21%Clumping Progress: 37.40%Clumping Progress: 37.60%Clumping Progress: 37.79%Clumping Progress: 37.98%Clumping Progress: 38.18%Clumping Progress: 38.37%Clumping Progress: 38.57%Clumping Progress: 38.76%Clumping Progress: 38.95%Clumping Progress: 39.15%Clumping Progress: 39.34%Clumping Progress: 39.53%Clumping Progress: 39.73%Clumping Progress: 39.92%Clumping Progress: 40.12%Clumping Progress: 40.31%Clumping Progress: 40.50%Clumping Progress: 40.70%Clumping Progress: 40.89%Clumping Progress: 41.09%Clumping Progress: 41.28%Clumping Progress: 41.47%Clumping Progress: 41.67%Clumping Progress: 41.86%Clumping Progress: 42.05%Clumping Progress: 42.25%Clumping Progress: 42.44%Clumping Progress: 42.64%Clumping Progress: 42.83%Clumping Progress: 43.02%Clumping Progress: 43.22%Clumping Progress: 43.41%Clumping Progress: 43.60%Clumping Progress: 43.80%Clumping Progress: 43.99%Clumping Progress: 44.19%Clumping Progress: 44.38%Clumping Progress: 44.57%Clumping Progress: 44.77%Clumping Progress: 44.96%Clumping Progress: 45.16%Clumping Progress: 45.35%Clumping Progress: 45.54%Clumping Progress: 45.74%Clumping Progress: 45.93%Clumping Progress: 46.12%Clumping Progress: 46.32%Clumping Progress: 46.51%Clumping Progress: 46.71%Clumping Progress: 46.90%Clumping Progress: 47.09%Clumping Progress: 47.29%Clumping Progress: 47.48%Clumping Progress: 47.67%Clumping Progress: 47.87%Clumping Progress: 48.06%Clumping Progress: 48.26%Clumping Progress: 48.45%Clumping Progress: 48.64%Clumping Progress: 48.84%Clumping Progress: 49.03%Clumping Progress: 49.22%Clumping Progress: 49.42%Clumping Progress: 49.61%Clumping Progress: 49.81%Clumping Progress: 50.00%Clumping Progress: 50.19%Clumping Progress: 50.39%Clumping Progress: 50.58%Clumping Progress: 50.78%Clumping Progress: 50.97%Clumping Progress: 51.16%Clumping Progress: 51.36%Clumping Progress: 51.55%Clumping Progress: 51.74%Clumping Progress: 51.94%Clumping Progress: 52.13%Clumping Progress: 52.33%Clumping Progress: 52.52%Clumping Progress: 52.71%Clumping Progress: 52.91%Clumping Progress: 53.10%Clumping Progress: 53.29%Clumping Progress: 53.49%Clumping Progress: 53.68%Clumping Progress: 53.88%Clumping Progress: 54.07%Clumping Progress: 54.26%Clumping Progress: 54.46%Clumping Progress: 54.65%Clumping Progress: 54.84%Clumping Progress: 55.04%Clumping Progress: 55.23%Clumping Progress: 55.43%Clumping Progress: 55.62%Clumping Progress: 55.81%Clumping Progress: 56.01%Clumping Progress: 56.20%Clumping Progress: 56.40%Clumping Progress: 56.59%Clumping Progress: 56.78%Clumping Progress: 56.98%Clumping Progress: 57.17%Clumping Progress: 57.36%Clumping Progress: 57.56%Clumping Progress: 57.75%Clumping Progress: 57.95%Clumping Progress: 58.14%Clumping Progress: 58.33%Clumping Progress: 58.53%Clumping Progress: 58.72%Clumping Progress: 58.91%Clumping Progress: 59.11%Clumping Progress: 59.30%Clumping Progress: 59.50%Clumping Progress: 59.69%Clumping Progress: 59.88%Clumping Progress: 60.08%Clumping Progress: 60.27%Clumping Progress: 60.47%Clumping Progress: 60.66%Clumping Progress: 60.85%Clumping Progress: 61.05%Clumping Progress: 61.24%Clumping Progress: 61.43%Clumping Progress: 61.63%Clumping Progress: 61.82%Clumping Progress: 62.02%Clumping Progress: 62.21%Clumping Progress: 62.40%Clumping Progress: 62.60%Clumping Progress: 62.79%Clumping Progress: 62.98%Clumping Progress: 63.18%Clumping Progress: 63.37%Clumping Progress: 63.57%Clumping Progress: 100.00%
-Number of variant(s) after clumping : 341 
-
-Processing the 1 th phenotype 
-
-Phenotype is a continuous phenotype 
-12646 sample(s) without phenotype 
-430984 sample(s) with valid phenotype 
-
-Processing the covariate file: 
-/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/CRP/CAD/ukbb.covariate.prs.CRP.set1 
-============================== 
-
-Include Covariates: 
-Name	Missing	Number of levels 
-Gender	0	2 
-Genotype_Batch	0	106 
-PC1	0	- 
-PC2	0	- 
-PC3	0	- 
-PC4	0	- 
-PC5	0	- 
-PC6	0	- 
-PC7	0	- 
-PC8	0	- 
-PC9	0	- 
-PC10	0	- 
-ethnic_group	0	- 
-Age	0	- 
-
-After reading the covariate file, 430984 sample(s) included 
-in the analysis 
-
-
-Start Processing
-Processing 0.00%Processing 100.00%Processing 100.00%
-There are 1 region(s) with p-value less than 1e-5. Please 
-note that these results are inflated due to the overfitting 
-inherent in finding the best-fit PRS (but it's still best 
-to find the best-fit PRS!). 
-You can use the --perm option (see manual) to calculate an 
-empirical P-value. 
-
-==================================================
-
-Currently running CRP on CAD.
-Running P-value cut-off 1e-08
-PRSice 2.3.5 (2021-09-20) 
-https://github.com/choishingwan/PRSice
-(C) 2016-2020 Shing Wan (Sam) Choi and Paul F. O'Reilly
-GNU General Public License v3
-If you use PRSice in any published work, please cite:
-Choi SW, O'Reilly PF.
-PRSice-2: Polygenic Risk Score Software for Biobank-Scale Data.
-GigaScience 8, no. 7 (July 1, 2019)
-2024-08-30 16:06:45
-/home/yujia/Software/PRSice/PRSice_linux \
-    --a1 A1 \
-    --a2 A2 \
-    --bar-levels 1e-08,5e-08,7e-08,9e-08,1e-07,5e-07,7e-07,9e-07,1e-06,5e-06,7e-06,9e-06,1e-05,5e-05,0.0001,0.0005,0.001,0.005,0.01,0.05,0.1,0.5,1 \
-    --base /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/02_base_data/CRP/QC/CRP.QC.gz \
-    --beta  \
-    --binary-target F \
-    --bp BP \
-    --chr CHR \
-    --clump-kb 250kb \
-    --clump-p 1.000000 \
-    --clump-r2 0.100000 \
-    --cov /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/CRP/CAD/ukbb.covariate.prs.CRP.set2 \
-    --cov-factor Genotype_Batch,Gender,Non_smoker,Previous_smoker,Current_smoker,Non_alcohol_drinker,Previous_alcohol_drinker,Current_alcohol_drinker,Cholesterol_lowering_medication,Blood_pressure_medication,Insulin,htn,t2dm,heart_failure,hemorrhage_stroke,ischemic_stroke \
-    --extract /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/06_PRS_calculation/external_analysis_for_paper_revision/PRSice2/CRP/CAD/selected_snps_1e-08.csv \
-    --fastscore  \
-    --num-auto 22 \
-    --out CRP_prs \
-    --pheno /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/CRP/CAD/ukbb.phenotype.CRP.mgdL \
-    --print-snp  \
-    --pvalue P \
-    --score con-std \
-    --seed 2389825711 \
-    --snp SNP \
-    --stat BETA \
-    --target /mnt/md0/public_data/UKBB_data/genotype/GWAS_ukbb_maf0.001_info0.8/bed/allchrs/ukb_allchrs \
-    --thread 35
-
-Initializing Genotype file: 
-/mnt/md0/public_data/UKBB_data/genotype/GWAS_ukbb_maf0.001_info0.8/bed/allchrs/ukb_allchrs 
-(bed) 
-
-Start processing CRP.QC 
-================================================== 
-
-Only one column detected, will assume only SNP ID is 
-provided 
-
-Base file: 
-/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/02_base_data/CRP/QC/CRP.QC.gz 
-GZ file detected. Header of file is: 
-CHR	BP	SNP	A1	A2	SE	P	BETA 
-
-Reading 100.00%
-9053049 variant(s) observed in base file, with: 
-9031018 variant(s) excluded based on user input 
-1 NA stat/p-value observed 
-22030 total variant(s) included from base file 
-
-Loading Genotype info from target 
-================================================== 
-
-443630 people (204889 male(s), 238674 female(s)) observed 
-443630 founder(s) included 
-
-2287244 variant(s) not found in previous data 
-18 variant(s) with mismatch information 
-516 variant(s) included 
-
-Phenotype file: 
-/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/CRP/CAD/ukbb.phenotype.CRP.mgdL 
-Column Name of Sample ID: FID+IID 
-Note: If the phenotype file does not contain a header, the 
-column name will be displayed as the Sample ID which is 
-expected. 
-
-There are a total of 1 phenotype to process 
-
-Start performing clumping 
-
-Clumping Progress: 0.19%Clumping Progress: 0.39%Clumping Progress: 0.58%Clumping Progress: 0.78%Clumping Progress: 0.97%Clumping Progress: 1.16%Clumping Progress: 1.36%Clumping Progress: 1.55%Clumping Progress: 1.74%Clumping Progress: 1.94%Clumping Progress: 2.13%Clumping Progress: 2.33%Clumping Progress: 2.52%Clumping Progress: 2.71%Clumping Progress: 2.91%Clumping Progress: 3.10%Clumping Progress: 3.29%Clumping Progress: 3.49%Clumping Progress: 3.68%Clumping Progress: 3.88%Clumping Progress: 4.07%Clumping Progress: 4.26%Clumping Progress: 4.46%Clumping Progress: 4.65%Clumping Progress: 4.84%Clumping Progress: 5.04%Clumping Progress: 5.23%Clumping Progress: 5.43%Clumping Progress: 5.62%Clumping Progress: 5.81%Clumping Progress: 6.01%Clumping Progress: 6.20%Clumping Progress: 6.40%Clumping Progress: 6.59%Clumping Progress: 6.78%Clumping Progress: 6.98%Clumping Progress: 7.17%Clumping Progress: 7.36%Clumping Progress: 7.56%Clumping Progress: 7.75%Clumping Progress: 7.95%Clumping Progress: 8.14%Clumping Progress: 8.33%Clumping Progress: 8.53%Clumping Progress: 8.72%Clumping Progress: 8.91%Clumping Progress: 9.11%Clumping Progress: 9.30%Clumping Progress: 9.50%Clumping Progress: 9.69%Clumping Progress: 9.88%Clumping Progress: 10.08%Clumping Progress: 10.27%Clumping Progress: 10.47%Clumping Progress: 10.66%Clumping Progress: 10.85%Clumping Progress: 11.05%Clumping Progress: 11.24%Clumping Progress: 11.43%Clumping Progress: 11.63%Clumping Progress: 11.82%Clumping Progress: 12.02%Clumping Progress: 12.21%Clumping Progress: 12.40%Clumping Progress: 12.60%Clumping Progress: 12.79%Clumping Progress: 12.98%Clumping Progress: 13.18%Clumping Progress: 13.37%Clumping Progress: 13.57%Clumping Progress: 13.76%Clumping Progress: 13.95%Clumping Progress: 14.15%Clumping Progress: 14.34%Clumping Progress: 14.53%Clumping Progress: 14.73%Clumping Progress: 14.92%Clumping Progress: 15.12%Clumping Progress: 15.31%Clumping Progress: 15.50%Clumping Progress: 15.70%Clumping Progress: 15.89%Clumping Progress: 16.09%Clumping Progress: 16.28%Clumping Progress: 16.47%Clumping Progress: 16.67%Clumping Progress: 16.86%Clumping Progress: 17.05%Clumping Progress: 17.25%Clumping Progress: 17.44%Clumping Progress: 17.64%Clumping Progress: 17.83%Clumping Progress: 18.02%Clumping Progress: 18.22%Clumping Progress: 18.41%Clumping Progress: 18.60%Clumping Progress: 18.80%Clumping Progress: 18.99%Clumping Progress: 19.19%Clumping Progress: 19.38%Clumping Progress: 19.57%Clumping Progress: 19.77%Clumping Progress: 19.96%Clumping Progress: 20.16%Clumping Progress: 20.35%Clumping Progress: 20.54%Clumping Progress: 20.74%Clumping Progress: 20.93%Clumping Progress: 21.12%Clumping Progress: 21.32%Clumping Progress: 21.51%Clumping Progress: 21.71%Clumping Progress: 21.90%Clumping Progress: 22.09%Clumping Progress: 22.29%Clumping Progress: 22.48%Clumping Progress: 22.67%Clumping Progress: 22.87%Clumping Progress: 23.06%Clumping Progress: 23.26%Clumping Progress: 23.45%Clumping Progress: 23.64%Clumping Progress: 23.84%Clumping Progress: 24.03%Clumping Progress: 24.22%Clumping Progress: 24.42%Clumping Progress: 24.61%Clumping Progress: 24.81%Clumping Progress: 25.00%Clumping Progress: 25.19%Clumping Progress: 25.39%Clumping Progress: 25.58%Clumping Progress: 25.78%Clumping Progress: 25.97%Clumping Progress: 26.16%Clumping Progress: 26.36%Clumping Progress: 26.55%Clumping Progress: 26.74%Clumping Progress: 26.94%Clumping Progress: 27.13%Clumping Progress: 27.33%Clumping Progress: 27.52%Clumping Progress: 27.71%Clumping Progress: 27.91%Clumping Progress: 28.10%Clumping Progress: 28.29%Clumping Progress: 28.49%Clumping Progress: 28.68%Clumping Progress: 28.88%Clumping Progress: 29.07%Clumping Progress: 29.26%Clumping Progress: 29.46%Clumping Progress: 29.65%Clumping Progress: 29.84%Clumping Progress: 30.04%Clumping Progress: 30.23%Clumping Progress: 30.43%Clumping Progress: 30.62%Clumping Progress: 30.81%Clumping Progress: 31.01%Clumping Progress: 31.20%Clumping Progress: 31.40%Clumping Progress: 31.59%Clumping Progress: 31.78%Clumping Progress: 31.98%Clumping Progress: 32.17%Clumping Progress: 32.36%Clumping Progress: 32.56%Clumping Progress: 32.75%Clumping Progress: 32.95%Clumping Progress: 33.14%Clumping Progress: 33.33%Clumping Progress: 33.53%Clumping Progress: 33.72%Clumping Progress: 33.91%Clumping Progress: 34.11%Clumping Progress: 34.30%Clumping Progress: 34.50%Clumping Progress: 34.69%Clumping Progress: 34.88%Clumping Progress: 35.08%Clumping Progress: 35.27%Clumping Progress: 35.47%Clumping Progress: 35.66%Clumping Progress: 35.85%Clumping Progress: 36.05%Clumping Progress: 36.24%Clumping Progress: 36.43%Clumping Progress: 36.63%Clumping Progress: 36.82%Clumping Progress: 37.02%Clumping Progress: 37.21%Clumping Progress: 37.40%Clumping Progress: 37.60%Clumping Progress: 37.79%Clumping Progress: 37.98%Clumping Progress: 38.18%Clumping Progress: 38.37%Clumping Progress: 38.57%Clumping Progress: 38.76%Clumping Progress: 38.95%Clumping Progress: 39.15%Clumping Progress: 39.34%Clumping Progress: 39.53%Clumping Progress: 39.73%Clumping Progress: 39.92%Clumping Progress: 40.12%Clumping Progress: 40.31%Clumping Progress: 40.50%Clumping Progress: 40.70%Clumping Progress: 40.89%Clumping Progress: 41.09%Clumping Progress: 41.28%Clumping Progress: 41.47%Clumping Progress: 41.67%Clumping Progress: 41.86%Clumping Progress: 42.05%Clumping Progress: 42.25%Clumping Progress: 42.44%Clumping Progress: 42.64%Clumping Progress: 42.83%Clumping Progress: 43.02%Clumping Progress: 43.22%Clumping Progress: 43.41%Clumping Progress: 43.60%Clumping Progress: 43.80%Clumping Progress: 43.99%Clumping Progress: 44.19%Clumping Progress: 44.38%Clumping Progress: 44.57%Clumping Progress: 44.77%Clumping Progress: 44.96%Clumping Progress: 45.16%Clumping Progress: 45.35%Clumping Progress: 45.54%Clumping Progress: 45.74%Clumping Progress: 45.93%Clumping Progress: 46.12%Clumping Progress: 46.32%Clumping Progress: 46.51%Clumping Progress: 46.71%Clumping Progress: 46.90%Clumping Progress: 47.09%Clumping Progress: 47.29%Clumping Progress: 47.48%Clumping Progress: 47.67%Clumping Progress: 47.87%Clumping Progress: 48.06%Clumping Progress: 48.26%Clumping Progress: 48.45%Clumping Progress: 48.64%Clumping Progress: 48.84%Clumping Progress: 49.03%Clumping Progress: 49.22%Clumping Progress: 49.42%Clumping Progress: 49.61%Clumping Progress: 49.81%Clumping Progress: 50.00%Clumping Progress: 50.19%Clumping Progress: 50.39%Clumping Progress: 50.58%Clumping Progress: 50.78%Clumping Progress: 50.97%Clumping Progress: 51.16%Clumping Progress: 51.36%Clumping Progress: 51.55%Clumping Progress: 51.74%Clumping Progress: 51.94%Clumping Progress: 52.13%Clumping Progress: 52.33%Clumping Progress: 52.52%Clumping Progress: 52.71%Clumping Progress: 52.91%Clumping Progress: 53.10%Clumping Progress: 53.29%Clumping Progress: 53.49%Clumping Progress: 53.68%Clumping Progress: 53.88%Clumping Progress: 54.07%Clumping Progress: 54.26%Clumping Progress: 54.46%Clumping Progress: 54.65%Clumping Progress: 54.84%Clumping Progress: 55.04%Clumping Progress: 55.23%Clumping Progress: 55.43%Clumping Progress: 55.62%Clumping Progress: 55.81%Clumping Progress: 56.01%Clumping Progress: 56.20%Clumping Progress: 56.40%Clumping Progress: 56.59%Clumping Progress: 56.78%Clumping Progress: 56.98%Clumping Progress: 57.17%Clumping Progress: 57.36%Clumping Progress: 57.56%Clumping Progress: 57.75%Clumping Progress: 57.95%Clumping Progress: 58.14%Clumping Progress: 58.33%Clumping Progress: 58.53%Clumping Progress: 58.72%Clumping Progress: 58.91%Clumping Progress: 59.11%Clumping Progress: 59.30%Clumping Progress: 59.50%Clumping Progress: 59.69%Clumping Progress: 59.88%Clumping Progress: 60.08%Clumping Progress: 60.27%Clumping Progress: 60.47%Clumping Progress: 60.66%Clumping Progress: 60.85%Clumping Progress: 61.05%Clumping Progress: 61.24%Clumping Progress: 61.43%Clumping Progress: 61.63%Clumping Progress: 61.82%Clumping Progress: 62.02%Clumping Progress: 62.21%Clumping Progress: 62.40%Clumping Progress: 62.60%Clumping Progress: 62.79%Clumping Progress: 62.98%Clumping Progress: 63.18%Clumping Progress: 63.37%Clumping Progress: 63.57%Clumping Progress: 63.76%Clumping Progress: 100.00%
-Number of variant(s) after clumping : 341 
-
-Processing the 1 th phenotype 
-
-Phenotype is a continuous phenotype 
-12646 sample(s) without phenotype 
-430984 sample(s) with valid phenotype 
-
-Processing the covariate file: 
-/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/CRP/CAD/ukbb.covariate.prs.CRP.set2 
-============================== 
-
-Include Covariates: 
-Name	Missing	Number of levels 
-Gender	0	2 
-Genotype_Batch	0	106 
-4079-0.0	0	- 
-4080-0.0	0	- 
-189-0.0	0	- 
-Non_smoker	0	2 
-Previous_smoker	0	2 
-Current_smoker	0	2 
-Non_alcohol_drinker	0	2 
-Previous_alcohol_drinker	0	2 
-Current_alcohol_drinker	0	2 
-Cholesterol_lowering_medication	0	2 
-Blood_pressure_medication	0	2 
-Insulin	0	2 
-21001-0.0	0	- 
-23099-0.0	0	- 
-21002-0.0	0	- 
-PC1	0	- 
-PC2	0	- 
-PC3	0	- 
-PC4	0	- 
-PC5	0	- 
-PC6	0	- 
-PC7	0	- 
-PC8	0	- 
-PC9	0	- 
-PC10	0	- 
-ethnic_group	0	- 
-htn	0	2 
-t2dm	0	2 
-heart_failure	0	2 
-hemorrhage_stroke	0	2 
-ischemic_stroke	0	2 
-Age	0	- 
-[1;33mWarning: More than 8.600319% of your samples were removed! 
-         You should check if your covariate file is correct [0m
-
-After reading the covariate file, 393918 sample(s) included 
-in the analysis 
-
-
-Start Processing
-Processing 0.00%Processing 100.00%Processing 100.00%
-There are 1 region(s) with p-value less than 1e-5. Please 
-note that these results are inflated due to the overfitting 
-inherent in finding the best-fit PRS (but it's still best 
-to find the best-fit PRS!). 
-You can use the --perm option (see manual) to calculate an 
-empirical P-value. 
-
-==================================================
-
-Currently running CRP on CAD.
-Running P-value cut-off 1e-08
-PRSice 2.3.5 (2021-09-20) 
-https://github.com/choishingwan/PRSice
-(C) 2016-2020 Shing Wan (Sam) Choi and Paul F. O'Reilly
-GNU General Public License v3
-If you use PRSice in any published work, please cite:
-Choi SW, O'Reilly PF.
-PRSice-2: Polygenic Risk Score Software for Biobank-Scale Data.
-GigaScience 8, no. 7 (July 1, 2019)
-2024-08-30 16:07:02
-/home/yujia/Software/PRSice/PRSice_linux \
-    --a1 A1 \
-    --a2 A2 \
-    --bar-levels 1e-08,5e-08,7e-08,9e-08,1e-07,5e-07,7e-07,9e-07,1e-06,5e-06,7e-06,9e-06,1e-05,5e-05,0.0001,0.0005,0.001,0.005,0.01,0.05,0.1,0.5,1 \
-    --base /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/02_base_data/CRP/QC/CRP.QC.gz \
-    --beta  \
-    --binary-target F \
-    --bp BP \
-    --chr CHR \
-    --clump-kb 250kb \
-    --clump-p 1.000000 \
-    --clump-r2 0.100000 \
-    --cov /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/CRP/CAD/ukbb.covariate.prs.CRP.set3 \
-    --cov-factor Genotype_Batch,Gender,Non_smoker,Previous_smoker,Current_smoker,Non_alcohol_drinker,Previous_alcohol_drinker,Current_alcohol_drinker,Cholesterol_lowering_medication,Blood_pressure_medication,Insulin,htn,t2dm,heart_failure,hemorrhage_stroke,ischemic_stroke \
-    --extract /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/06_PRS_calculation/external_analysis_for_paper_revision/PRSice2/CRP/CAD/selected_snps_1e-08.csv \
-    --fastscore  \
-    --num-auto 22 \
-    --out CRP_prs \
-    --pheno /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/CRP/CAD/ukbb.phenotype.CRP.mgdL \
-    --print-snp  \
-    --pvalue P \
-    --score con-std \
-    --seed 2389825711 \
-    --snp SNP \
-    --stat BETA \
-    --target /mnt/md0/public_data/UKBB_data/genotype/GWAS_ukbb_maf0.001_info0.8/bed/allchrs/ukb_allchrs \
-    --thread 35
-
-Initializing Genotype file: 
-/mnt/md0/public_data/UKBB_data/genotype/GWAS_ukbb_maf0.001_info0.8/bed/allchrs/ukb_allchrs 
-(bed) 
-
-Start processing CRP.QC 
-================================================== 
-
-Only one column detected, will assume only SNP ID is 
-provided 
-
-Base file: 
-/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/02_base_data/CRP/QC/CRP.QC.gz 
-GZ file detected. Header of file is: 
-CHR	BP	SNP	A1	A2	SE	P	BETA 
-
-Reading 100.00%
-9053049 variant(s) observed in base file, with: 
-9031018 variant(s) excluded based on user input 
-1 NA stat/p-value observed 
-22030 total variant(s) included from base file 
-
-Loading Genotype info from target 
-================================================== 
-
-443630 people (204889 male(s), 238674 female(s)) observed 
-443630 founder(s) included 
-
-2287244 variant(s) not found in previous data 
-18 variant(s) with mismatch information 
-516 variant(s) included 
-
-Phenotype file: 
-/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/CRP/CAD/ukbb.phenotype.CRP.mgdL 
-Column Name of Sample ID: FID+IID 
-Note: If the phenotype file does not contain a header, the 
-column name will be displayed as the Sample ID which is 
-expected. 
-
-There are a total of 1 phenotype to process 
-
-Start performing clumping 
-
-Clumping Progress: 0.19%Clumping Progress: 0.39%Clumping Progress: 0.58%Clumping Progress: 0.78%Clumping Progress: 0.97%Clumping Progress: 1.16%Clumping Progress: 1.36%Clumping Progress: 1.55%Clumping Progress: 1.74%Clumping Progress: 1.94%Clumping Progress: 2.13%Clumping Progress: 2.33%Clumping Progress: 2.52%Clumping Progress: 2.71%Clumping Progress: 2.91%Clumping Progress: 3.10%Clumping Progress: 3.29%Clumping Progress: 3.49%Clumping Progress: 3.68%Clumping Progress: 3.88%Clumping Progress: 4.07%Clumping Progress: 4.26%Clumping Progress: 4.46%Clumping Progress: 4.65%Clumping Progress: 4.84%Clumping Progress: 5.04%Clumping Progress: 5.23%Clumping Progress: 5.43%Clumping Progress: 5.62%Clumping Progress: 5.81%Clumping Progress: 6.01%Clumping Progress: 6.20%Clumping Progress: 6.40%Clumping Progress: 6.59%Clumping Progress: 6.78%Clumping Progress: 6.98%Clumping Progress: 7.17%Clumping Progress: 7.36%Clumping Progress: 7.56%Clumping Progress: 7.75%Clumping Progress: 7.95%Clumping Progress: 8.14%Clumping Progress: 8.33%Clumping Progress: 8.53%Clumping Progress: 8.72%Clumping Progress: 8.91%Clumping Progress: 9.11%Clumping Progress: 9.30%Clumping Progress: 9.50%Clumping Progress: 9.69%Clumping Progress: 9.88%Clumping Progress: 10.08%Clumping Progress: 10.27%Clumping Progress: 10.47%Clumping Progress: 10.66%Clumping Progress: 10.85%Clumping Progress: 11.05%Clumping Progress: 11.24%Clumping Progress: 11.43%Clumping Progress: 11.63%Clumping Progress: 11.82%Clumping Progress: 12.02%Clumping Progress: 12.21%Clumping Progress: 12.40%Clumping Progress: 12.60%Clumping Progress: 12.79%Clumping Progress: 12.98%Clumping Progress: 13.18%Clumping Progress: 13.37%Clumping Progress: 13.57%Clumping Progress: 13.76%Clumping Progress: 13.95%Clumping Progress: 14.15%Clumping Progress: 14.34%Clumping Progress: 14.53%Clumping Progress: 14.73%Clumping Progress: 14.92%Clumping Progress: 15.12%Clumping Progress: 15.31%Clumping Progress: 15.50%Clumping Progress: 15.70%Clumping Progress: 15.89%Clumping Progress: 16.09%Clumping Progress: 16.28%Clumping Progress: 16.47%Clumping Progress: 16.67%Clumping Progress: 16.86%Clumping Progress: 17.05%Clumping Progress: 17.25%Clumping Progress: 17.44%Clumping Progress: 17.64%Clumping Progress: 17.83%Clumping Progress: 18.02%Clumping Progress: 18.22%Clumping Progress: 18.41%Clumping Progress: 18.60%Clumping Progress: 18.80%Clumping Progress: 18.99%Clumping Progress: 19.19%Clumping Progress: 19.38%Clumping Progress: 19.57%Clumping Progress: 19.77%Clumping Progress: 19.96%Clumping Progress: 20.16%Clumping Progress: 20.35%Clumping Progress: 20.54%Clumping Progress: 20.74%Clumping Progress: 20.93%Clumping Progress: 21.12%Clumping Progress: 21.32%Clumping Progress: 21.51%Clumping Progress: 21.71%Clumping Progress: 21.90%Clumping Progress: 22.09%Clumping Progress: 22.29%Clumping Progress: 22.48%Clumping Progress: 22.67%Clumping Progress: 22.87%Clumping Progress: 23.06%Clumping Progress: 23.26%Clumping Progress: 23.45%Clumping Progress: 23.64%Clumping Progress: 23.84%Clumping Progress: 24.03%Clumping Progress: 24.22%Clumping Progress: 24.42%Clumping Progress: 24.61%Clumping Progress: 24.81%Clumping Progress: 25.00%Clumping Progress: 25.19%Clumping Progress: 25.39%Clumping Progress: 25.58%Clumping Progress: 25.78%Clumping Progress: 25.97%Clumping Progress: 26.16%Clumping Progress: 26.36%Clumping Progress: 26.55%Clumping Progress: 26.74%Clumping Progress: 26.94%Clumping Progress: 27.13%Clumping Progress: 27.33%Clumping Progress: 27.52%Clumping Progress: 27.71%Clumping Progress: 27.91%Clumping Progress: 28.10%Clumping Progress: 28.29%Clumping Progress: 28.49%Clumping Progress: 28.68%Clumping Progress: 28.88%Clumping Progress: 29.07%Clumping Progress: 29.26%Clumping Progress: 29.46%Clumping Progress: 29.65%Clumping Progress: 29.84%Clumping Progress: 30.04%Clumping Progress: 30.23%Clumping Progress: 30.43%Clumping Progress: 30.62%Clumping Progress: 30.81%Clumping Progress: 31.01%Clumping Progress: 31.20%Clumping Progress: 31.40%Clumping Progress: 31.59%Clumping Progress: 31.78%Clumping Progress: 31.98%Clumping Progress: 32.17%Clumping Progress: 32.36%Clumping Progress: 32.56%Clumping Progress: 32.75%Clumping Progress: 32.95%Clumping Progress: 33.14%Clumping Progress: 33.33%Clumping Progress: 33.53%Clumping Progress: 33.72%Clumping Progress: 33.91%Clumping Progress: 34.11%Clumping Progress: 34.30%Clumping Progress: 34.50%Clumping Progress: 34.69%Clumping Progress: 34.88%Clumping Progress: 35.08%Clumping Progress: 35.27%Clumping Progress: 35.47%Clumping Progress: 35.66%Clumping Progress: 35.85%Clumping Progress: 36.05%Clumping Progress: 36.24%Clumping Progress: 36.43%Clumping Progress: 36.63%Clumping Progress: 36.82%Clumping Progress: 37.02%Clumping Progress: 37.21%Clumping Progress: 37.40%Clumping Progress: 37.60%Clumping Progress: 37.79%Clumping Progress: 37.98%Clumping Progress: 38.18%Clumping Progress: 38.37%Clumping Progress: 38.57%Clumping Progress: 38.76%Clumping Progress: 38.95%Clumping Progress: 39.15%Clumping Progress: 39.34%Clumping Progress: 39.53%Clumping Progress: 39.73%Clumping Progress: 39.92%Clumping Progress: 40.12%Clumping Progress: 40.31%Clumping Progress: 40.50%Clumping Progress: 40.70%Clumping Progress: 40.89%Clumping Progress: 41.09%Clumping Progress: 41.28%Clumping Progress: 41.47%Clumping Progress: 41.67%Clumping Progress: 41.86%Clumping Progress: 42.05%Clumping Progress: 42.25%Clumping Progress: 42.44%Clumping Progress: 42.64%Clumping Progress: 42.83%Clumping Progress: 43.02%Clumping Progress: 43.22%Clumping Progress: 43.41%Clumping Progress: 43.60%Clumping Progress: 43.80%Clumping Progress: 43.99%Clumping Progress: 44.19%Clumping Progress: 44.38%Clumping Progress: 44.57%Clumping Progress: 44.77%Clumping Progress: 44.96%Clumping Progress: 45.16%Clumping Progress: 45.35%Clumping Progress: 45.54%Clumping Progress: 45.74%Clumping Progress: 45.93%Clumping Progress: 46.12%Clumping Progress: 46.32%Clumping Progress: 46.51%Clumping Progress: 46.71%Clumping Progress: 46.90%Clumping Progress: 47.09%Clumping Progress: 47.29%Clumping Progress: 47.48%Clumping Progress: 47.67%Clumping Progress: 47.87%Clumping Progress: 48.06%Clumping Progress: 48.26%Clumping Progress: 48.45%Clumping Progress: 48.64%Clumping Progress: 48.84%Clumping Progress: 49.03%Clumping Progress: 49.22%Clumping Progress: 49.42%Clumping Progress: 49.61%Clumping Progress: 49.81%Clumping Progress: 50.00%Clumping Progress: 50.19%Clumping Progress: 50.39%Clumping Progress: 50.58%Clumping Progress: 50.78%Clumping Progress: 50.97%Clumping Progress: 51.16%Clumping Progress: 51.36%Clumping Progress: 51.55%Clumping Progress: 51.74%Clumping Progress: 51.94%Clumping Progress: 52.13%Clumping Progress: 52.33%Clumping Progress: 52.52%Clumping Progress: 52.71%Clumping Progress: 52.91%Clumping Progress: 53.10%Clumping Progress: 53.29%Clumping Progress: 53.49%Clumping Progress: 53.68%Clumping Progress: 53.88%Clumping Progress: 54.07%Clumping Progress: 54.26%Clumping Progress: 54.46%Clumping Progress: 54.65%Clumping Progress: 54.84%Clumping Progress: 55.04%Clumping Progress: 55.23%Clumping Progress: 55.43%Clumping Progress: 55.62%Clumping Progress: 55.81%Clumping Progress: 56.01%Clumping Progress: 56.20%Clumping Progress: 56.40%Clumping Progress: 56.59%Clumping Progress: 56.78%Clumping Progress: 56.98%Clumping Progress: 57.17%Clumping Progress: 57.36%Clumping Progress: 57.56%Clumping Progress: 57.75%Clumping Progress: 57.95%Clumping Progress: 58.14%Clumping Progress: 58.33%Clumping Progress: 58.53%Clumping Progress: 58.72%Clumping Progress: 58.91%Clumping Progress: 59.11%Clumping Progress: 59.30%Clumping Progress: 59.50%Clumping Progress: 59.69%Clumping Progress: 59.88%Clumping Progress: 60.08%Clumping Progress: 60.27%Clumping Progress: 60.47%Clumping Progress: 60.66%Clumping Progress: 60.85%Clumping Progress: 61.05%Clumping Progress: 61.24%Clumping Progress: 61.43%Clumping Progress: 61.63%Clumping Progress: 61.82%Clumping Progress: 62.02%Clumping Progress: 62.21%Clumping Progress: 62.40%Clumping Progress: 62.60%Clumping Progress: 62.79%Clumping Progress: 62.98%Clumping Progress: 63.18%Clumping Progress: 63.37%Clumping Progress: 63.57%Clumping Progress: 63.76%Clumping Progress: 100.00%
-Number of variant(s) after clumping : 341 
-
-Processing the 1 th phenotype 
-
-Phenotype is a continuous phenotype 
-12646 sample(s) without phenotype 
-430984 sample(s) with valid phenotype 
-
-Processing the covariate file: 
-/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/CRP/CAD/ukbb.covariate.prs.CRP.set3 
-============================== 
-
-Include Covariates: 
-Name	Missing	Number of levels 
-Gender	0	2 
-Genotype_Batch	0	106 
-4079-0.0	0	- 
-4080-0.0	0	- 
-189-0.0	0	- 
-Non_smoker	0	2 
-Previous_smoker	0	2 
-Current_smoker	0	2 
-Non_alcohol_drinker	0	2 
-Previous_alcohol_drinker	0	2 
-Current_alcohol_drinker	0	2 
-Cholesterol_lowering_medication	0	2 
-Blood_pressure_medication	0	2 
-Insulin	0	2 
-21001-0.0	0	- 
-23099-0.0	0	- 
-21002-0.0	0	- 
-PC1	0	- 
-PC2	0	- 
-PC3	0	- 
-PC4	0	- 
-PC5	0	- 
-PC6	0	- 
-PC7	0	- 
-PC8	0	- 
-PC9	0	- 
-PC10	0	- 
-30630-0.0	0	- 
-30640-0.0	0	- 
-30650-0.0	0	- 
-30660-0.0	0	- 
-30670-0.0	0	- 
-30690-0.0	0	- 
-30700-0.0	0	- 
-30720-0.0	0	- 
-30680-0.0	0	- 
-30730-0.0	0	- 
-30740-0.0	0	- 
-30750-0.0	0	- 
-30760-0.0	0	- 
-30770-0.0	0	- 
-30780-0.0	0	- 
-30790-0.0	0	- 
-30810-0.0	0	- 
-30830-0.0	0	- 
-30840-0.0	0	- 
-30860-0.0	0	- 
-30850-0.0	0	- 
-30870-0.0	0	- 
-30880-0.0	0	- 
-30890-0.0	0	- 
-ethnic_group	0	- 
-htn	0	2 
-t2dm	0	2 
-heart_failure	0	2 
-hemorrhage_stroke	0	2 
-ischemic_stroke	0	2 
-Age	0	- 
-[1;33mWarning: More than 13.965716% of your samples were removed! 
-         You should check if your covariate file is correct [0m
-
-After reading the covariate file, 370794 sample(s) included 
-in the analysis 
-
-
-Start Processing
-Processing 0.00%Processing 100.00%Processing 100.00%
-There are 1 region(s) with p-value less than 1e-5. Please 
-note that these results are inflated due to the overfitting 
-inherent in finding the best-fit PRS (but it's still best 
-to find the best-fit PRS!). 
-You can use the --perm option (see manual) to calculate an 
-empirical P-value. 
-
-==================================================
-
