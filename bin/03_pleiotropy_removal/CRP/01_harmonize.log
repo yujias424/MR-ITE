@@ -1,0 +1,156 @@
+nohup: ignoring input
+Warning message:
+In format_data(as.data.frame(exposure_dat), type = "exposure", snps = NULL,  :
+  The following columns are not present but are helpful for harmonisation
+eaf
+
+Currently we run on pvalue cutoff 1e-08.
+[1] 34856    14
+API: public: http://gwas-api.mrcieu.ac.uk/
+Extracting data for 34856 SNP(s) from 1 GWAS(s)
+1 of 1 outcomes
+ [>] 1 of 4 chunks
+ [>] 2 of 4 chunks
+ [>] 3 of 4 chunks
+ [>] 4 of 4 chunks
+Finding proxies for 3737 SNPs in outcome ebi-a-GCST003116
+Extracting data for 3737 SNP(s) from 1 GWAS(s)
+1 of 1 outcomes
+ [>] 1 of 8 chunks
+ [>] 2 of 8 chunks
+ [>] 3 of 8 chunks
+ [>] 4 of 8 chunks
+Server code: 502; Server is possibly experiencing traffic, trying again...
+Retry succeeded!
+ [>] 5 of 8 chunks
+ [>] 6 of 8 chunks
+ [>] 7 of 8 chunks
+ [>] 8 of 8 chunks
+Harmonising CRP (9KT8mY) and Coronary artery disease || id:ebi-a-GCST003116 (ebi-a-GCST003116)
+Removing the following SNPs for incompatible alleles:
+rs62120561
+[1] 31754     9
+
+
+
+Finished running on pvalue cutoff 1e-08.
+
+=================================
+
+
+Currently we run on pvalue cutoff 1e-07.
+[1] 43057    14
+Extracting data for 43057 SNP(s) from 1 GWAS(s)
+1 of 1 outcomes
+ [>] 1 of 5 chunks
+ [>] 2 of 5 chunks
+ [>] 3 of 5 chunks
+ [>] 4 of 5 chunks
+ [>] 5 of 5 chunks
+Finding proxies for 4628 SNPs in outcome ebi-a-GCST003116
+Extracting data for 4628 SNP(s) from 1 GWAS(s)
+1 of 1 outcomes
+ [>] 1 of 10 chunks
+ [>] 2 of 10 chunks
+ [>] 3 of 10 chunks
+ [>] 4 of 10 chunks
+ [>] 5 of 10 chunks
+ [>] 6 of 10 chunks
+ [>] 7 of 10 chunks
+ [>] 8 of 10 chunks
+ [>] 9 of 10 chunks
+ [>] 10 of 10 chunks
+Harmonising CRP (9KT8mY) and Coronary artery disease || id:ebi-a-GCST003116 (ebi-a-GCST003116)
+Removing the following SNPs for incompatible alleles:
+rs10962187, rs62120561
+[1] 39202     9
+
+
+
+Finished running on pvalue cutoff 1e-07.
+
+=================================
+
+
+Currently we run on pvalue cutoff 1e-06.
+[1] 55619    14
+Extracting data for 55619 SNP(s) from 1 GWAS(s)
+1 of 1 outcomes
+ [>] 1 of 6 chunks
+ [>] 2 of 6 chunks
+ [>] 3 of 6 chunks
+ [>] 4 of 6 chunks
+ [>] 5 of 6 chunks
+ [>] 6 of 6 chunks
+Finding proxies for 6118 SNPs in outcome ebi-a-GCST003116
+Extracting data for 6118 SNP(s) from 1 GWAS(s)
+1 of 1 outcomes
+ [>] 1 of 13 chunks
+ [>] 2 of 13 chunks
+ [>] 3 of 13 chunks
+ [>] 4 of 13 chunks
+ [>] 5 of 13 chunks
+ [>] 6 of 13 chunks
+ [>] 7 of 13 chunks
+ [>] 8 of 13 chunks
+ [>] 9 of 13 chunks
+ [>] 10 of 13 chunks
+ [>] 11 of 13 chunks
+ [>] 12 of 13 chunks
+ [>] 13 of 13 chunks
+Harmonising CRP (9KT8mY) and Coronary artery disease || id:ebi-a-GCST003116 (ebi-a-GCST003116)
+Removing the following SNPs for incompatible alleles:
+rs10962187, rs62120561
+[1] 50519     9
+
+
+
+Finished running on pvalue cutoff 1e-06.
+
+=================================
+
+
+Currently we run on pvalue cutoff 1e-05.
+[1] 75719    14
+Extracting data for 75719 SNP(s) from 1 GWAS(s)
+1 of 1 outcomes
+ [>] 1 of 8 chunks
+ [>] 2 of 8 chunks
+ [>] 3 of 8 chunks
+ [>] 4 of 8 chunks
+ [>] 5 of 8 chunks
+ [>] 6 of 8 chunks
+ [>] 7 of 8 chunks
+ [>] 8 of 8 chunks
+Finding proxies for 8369 SNPs in outcome ebi-a-GCST003116
+Extracting data for 8369 SNP(s) from 1 GWAS(s)
+1 of 1 outcomes
+ [>] 1 of 17 chunks
+ [>] 2 of 17 chunks
+ [>] 3 of 17 chunks
+ [>] 4 of 17 chunks
+ [>] 5 of 17 chunks
+ [>] 6 of 17 chunks
+ [>] 7 of 17 chunks
+ [>] 8 of 17 chunks
+ [>] 9 of 17 chunks
+ [>] 10 of 17 chunks
+ [>] 11 of 17 chunks
+ [>] 12 of 17 chunks
+ [>] 13 of 17 chunks
+ [>] 14 of 17 chunks
+ [>] 15 of 17 chunks
+ [>] 16 of 17 chunks
+ [>] 17 of 17 chunks
+Harmonising CRP (9KT8mY) and Coronary artery disease || id:ebi-a-GCST003116 (ebi-a-GCST003116)
+Removing the following SNPs for incompatible alleles:
+rs10962187, rs2077111, rs2629448, rs62120561
+[1] 68733     9
+
+
+
+Finished running on pvalue cutoff 1e-05.
+
+=================================
+
+

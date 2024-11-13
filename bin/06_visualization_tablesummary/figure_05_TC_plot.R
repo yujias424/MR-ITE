@@ -42,22 +42,22 @@ for (i in ls()){
 
 }
 
-# design <- "ABCDEF
-#            AGHIJK
-#            LMNOPQ
-#            LRSTUV"
+design <- "ABCDEF
+           AGHIJK
+           LMNOPQ
+           LRSTUV"
 
-# final_plot <- ggobject.TC.CAD.continuousW + 
-#               continousW.TC.p.shap.feature.1 + continousW.TC.p.shap.feature.2 + continousW.TC.p.shap.feature.3 + continousW.TC.p.shap.feature.4 + continousW.TC.p.shap.feature.5 + 
-#               continousW.TC.p.tau.feature.1 + continousW.TC.p.tau.feature.2 + continousW.TC.p.tau.feature.3 + continousW.TC.p.tau.feature.4 + continousW.TC.p.tau.feature.5 + 
-#               ggobject.TC.CAD.binaryW + 
-#               binaryW.TC.p.shap.feature.1 + binaryW.TC.p.shap.feature.2 + binaryW.TC.p.shap.feature.3 + binaryW.TC.p.shap.feature.4 + binaryW.TC.p.shap.feature.5 + 
-#               binaryW.TC.p.tau.feature.1 + binaryW.TC.p.tau.feature.2 + binaryW.TC.p.tau.feature.3 + binaryW.TC.p.tau.feature.4 + binaryW.TC.p.tau.feature.5 + 
-#               plot_layout(design = design) +
-#               plot_annotation(tag_levels = 'A') & theme(plot.tag = element_text(size = 30)) 
+final_plot <- ggobject.TC.CAD.continuousW + 
+              continousW.TC.p.shap.feature.1 + continousW.TC.p.shap.feature.2 + continousW.TC.p.shap.feature.3 + continousW.TC.p.shap.feature.4 + continousW.TC.p.shap.feature.5 + 
+              continousW.TC.p.tau.feature.1 + continousW.TC.p.tau.feature.2 + continousW.TC.p.tau.feature.3 + continousW.TC.p.tau.feature.4 + continousW.TC.p.tau.feature.5 + 
+              ggobject.TC.CAD.binaryW + 
+              binaryW.TC.p.shap.feature.1 + binaryW.TC.p.shap.feature.2 + binaryW.TC.p.shap.feature.3 + binaryW.TC.p.shap.feature.4 + binaryW.TC.p.shap.feature.5 + 
+              binaryW.TC.p.tau.feature.1 + binaryW.TC.p.tau.feature.2 + binaryW.TC.p.tau.feature.3 + binaryW.TC.p.tau.feature.4 + binaryW.TC.p.tau.feature.5 + 
+              plot_layout(design = design) +
+              plot_annotation(tag_levels = 'a') & theme(plot.tag = element_text(size = 45)) 
               
-# ggsave("/mnt/md0/yujia/project/2023-07-20-individual_MR/res/03_plot/figure5_TC.png", final_plot, dpi=300, 
-#         width = 17, height = 15, units = "cm", scale = 10, limitsize = FALSE)
+ggsave("/mnt/md0/yujia/project/2023-07-20-individual_MR/res/03_plot/figure5_TC.png", final_plot, dpi=300, 
+        width = 17, height = 15, units = "cm", scale = 10, limitsize = FALSE)
 
 design <- "ABCDE
            FGHIJ
@@ -69,6 +69,6 @@ final_plot <- continousW.TC.p.shap.feature.6 + continousW.TC.p.shap.feature.7 + 
               binaryW.TC.p.shap.feature.6 + binaryW.TC.p.shap.feature.7 + binaryW.TC.p.shap.feature.8 + binaryW.TC.p.shap.feature.9 + binaryW.TC.p.shap.feature.10 + 
               binaryW.TC.p.tau.feature.6 + binaryW.TC.p.tau.feature.7 + binaryW.TC.p.tau.feature.8 + binaryW.TC.p.tau.feature.9 + binaryW.TC.p.tau.feature.10 + 
               plot_layout(design = design) +
-              plot_annotation(tag_levels = 'A') & theme(plot.tag = element_text(size = 30)) 
+              plot_annotation(tag_levels = 'a') & theme(plot.tag = element_text(size = 45)) 
 ggsave("/mnt/md0/yujia/project/2023-07-20-individual_MR/res/03_plot/figure5_TC_supp.png", final_plot, dpi=300, 
         width = 17, height = 15, units = "cm", scale = 10, limitsize = FALSE)

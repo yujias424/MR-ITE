@@ -30,15 +30,13 @@ n.experiments <- 50
 seed <- 1
 set.seed(seed)
 
-# pleiotropy_scen <- c(2, 3, 4) # must be 2,3,4 sinece ps=1 means xi=0, a=0
-pleiotropy_scen <- c(2, 3, 4)
-# invalid_snps_n_set <- c(20, 40, 60)
+pleiotropy_scen <- c(2, 3, 4) # must be 2,3,4 sinece ps=1 means xi=0, a=0
 invalid_snps_n_set <- c(40)
 
 # test #
 for (ps in pleiotropy_scen){
   for (isns in invalid_snps_n_set){
-    
+
     message(paste0("Running pleiotropy scenario ", ps))
     message(paste0("With invalid SNPs ", isns))
    
@@ -73,6 +71,7 @@ for (ps in pleiotropy_scen){
                                     bxse = out.zx$coefficients[, 2],
                                     by =  out.zy$coefficients[, 1],
                                     byse = out.zy$coefficients[, 2])
+        # MRAllObject_conmix <- mr_conmix(MRInputObject_1)
 
         tryCatch({
           MRAllObject_conmix <- withTimeout({
@@ -96,7 +95,7 @@ for (ps in pleiotropy_scen){
 
         Z_fewsnps <- predict(regression_forest_fewsnps, newdata = dat1$Z[30001:40000, colnames(dat1$Z)[colnames(dat1$Z) %in% MRAllObject_conmix@ValidSNPs]], num.threads = 40)$predictions
 
-        # Calculate the PRS
+        # PRS calculation
         # std
         prs.fewsnps <- (Z_fewsnps-mean(Z_fewsnps))/sd(Z_fewsnps)
 
@@ -145,7 +144,6 @@ for (ps in pleiotropy_scen){
 
         res.mat[ne, ] <- res.p
         ne <- ne + 1
-
       }
 
       colnames(res.mat) <- c("perm-var", "perm-tau-risk")

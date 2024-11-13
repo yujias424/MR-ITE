@@ -111,7 +111,7 @@ cor.test(iv.tau.PRSice2, iv.tau.LDPred2)
 p1 <- (p.continuousW.LDL.CAD | p.continuousW.TC.CAD | p.continuousW.IGF1.CAD)
 p1_title <- wrap_elements(p1 + plot_annotation("Coronary Artery Disease\n Continuous Treatment", theme=theme(plot.title = element_text(hjust = 0.5), text = element_text(size = 35)))) 
 
-histogram_p <- (p1_title) + plot_layout(guides = "collect") + plot_annotation(tag_levels = 'A') & theme(plot.tag = element_text(size = 35), legend.position = "right")
+histogram_p <- (p1_title) + plot_layout(guides = "collect") + plot_annotation(tag_levels = 'a') & theme(plot.tag = element_text(size = 45), legend.position = "right")
 # ggsave(paste0("/mnt/md0/yujia/project/2023-07-20-individual_MR/res/03_plot/extra_analysis_for_paper_revision/figure_supp_fig1_diffPRS_", ml, ".png"), histogram_p, dpi=300, 
 #         width = 30, height = 20, units = "cm",scale = 3, limitsize = FALSE)
 ggsave(paste0("/mnt/md0/yujia/project/2023-07-20-individual_MR/res/03_plot/extra_analysis_for_paper_revision/figure_supp_fig1_diffPRS_", ml, "_withPvalue.png"), histogram_p, dpi=300, 

@@ -1,0 +1,283 @@
+nohup: ignoring input
+Starting analyze Coronary Artery Disease.
+
+[1] 486416     16
+[1] 486416     55
+[1] 430984      2
+[1] 430984      2
+[1] 486416      3
+[1] 502464      3
+[1] 433427      8
+Patient Info for model 1b
+[1] 370794     16
+[1] 370794     16
+[1] 370794     16
+[1] 370794     16
+
+     0      1 
+353269  17525 
+Patient Info for model 3
+[1] 370794     60
+[1] 370794      2
+[1] 370794      3
+[1] 370794      2
+
+     0      1 
+353269  17525 
+[1] 370794      1
+[1] 370794     14
+[1] 370794      1
+[1] 370794      1
+[1] 370794      1
+[1] 370794     58
+[1] 370794      1
+[1] 370794      1
+[1] 361946     17
+
+Call:
+ivreg(formula = CAD ~ . - W - PRS | W | PRS, data = WHtest.mat.model1b)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.23534 -0.06239 -0.04463 -0.02613  1.03239 
+
+Coefficients:
+                   Estimate Std. Error t value Pr(>|t|)    
+(Intercept)      -1.309e-01  4.036e-02  -3.243  0.00118 ** 
+W                 1.495e-03  1.299e-03   1.151  0.24960    
+Gender            2.612e-02  1.514e-03  17.252  < 2e-16 ***
+Age               2.478e-03  2.378e-04  10.424  < 2e-16 ***
+`Genotype Batch` -7.668e-05  1.183e-05  -6.483 9.02e-11 ***
+PC1               1.195e-04  9.949e-05   1.201  0.22985    
+PC2              -8.792e-05  1.146e-04  -0.767  0.44301    
+PC3               2.737e-04  1.579e-04   1.733  0.08301 .  
+PC4               2.049e-04  7.757e-05   2.642  0.00825 ** 
+PC5              -1.401e-04  6.455e-05  -2.170  0.03000 *  
+PC6               1.685e-04  1.350e-04   1.249  0.21179    
+PC7               4.038e-05  8.392e-05   0.481  0.63041    
+PC8               2.417e-05  1.019e-04   0.237  0.81253    
+PC9               8.004e-04  7.755e-05  10.322  < 2e-16 ***
+PC10              2.593e-04  1.477e-04   1.756  0.07907 .  
+ethnic_group             NA         NA      NA       NA    
+
+Diagnostic tests:
+                    df1    df2 statistic p-value    
+Weak instruments      1 361931   893.452  <2e-16 ***
+Wu-Hausman            1 361930     2.072    0.15    
+Sargan                0     NA        NA      NA    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.2106 on 361931 degrees of freedom
+Multiple R-Squared: 0.00954,	Adjusted R-squared: 0.009501 
+Wald test: 306.6 on 14 and 361931 DF,  p-value: < 2.2e-16 
+
+[1] 361946     61
+
+Call:
+ivreg(formula = CAD ~ . - W - PRS | W | PRS, data = WHtest.mat.model3)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.32110 -0.06386 -0.03649 -0.01361  1.04156 
+
+Coefficients:
+                                    Estimate Std. Error t value Pr(>|t|)    
+(Intercept)                       -1.079e-01  4.098e-02  -2.634 0.008435 ** 
+W                                  2.071e-03  1.430e-03   1.448 0.147495    
+Gender                             2.449e-02  2.578e-03   9.500  < 2e-16 ***
+Age                                1.466e-03  2.387e-04   6.141 8.20e-10 ***
+`Genotype Batch`                  -3.750e-05  1.138e-05  -3.294 0.000989 ***
+`diastolic blood pressure`        -3.609e-04  4.827e-05  -7.476 7.70e-14 ***
+`systolic blood pressure`          1.243e-04  2.762e-05   4.502 6.72e-06 ***
+`Townsend deprivation index`       8.950e-04  1.428e-04   6.266 3.71e-10 ***
+`Non-smoker`                      -1.658e-02  1.408e-03 -11.775  < 2e-16 ***
+`Previous smoker`                 -1.140e-02  1.366e-03  -8.347  < 2e-16 ***
+`Current smoker`                          NA         NA      NA       NA    
+`Non-alcohol drinker`              3.813e-03  2.117e-03   1.801 0.071695 .  
+`Previous alcohol drinker`         4.977e-03  2.024e-03   2.459 0.013931 *  
+`Current alcohol drinker`                 NA         NA      NA       NA    
+`Cholesterol lowering medication`  9.553e-03  1.360e-03   7.023 2.17e-12 ***
+`Blood pressure medication`       -8.186e-03  1.397e-03  -5.859 4.65e-09 ***
+Insulin                            2.349e-02  9.398e-03   2.499 0.012450 *  
+BMI                                9.736e-04  3.577e-04   2.722 0.006497 ** 
+`Body Fat Percentage`             -7.912e-06  1.305e-04  -0.061 0.951670    
+Weight                            -1.004e-04  8.312e-05  -1.208 0.227192    
+PC1                                3.595e-05  9.791e-05   0.367 0.713532    
+PC2                               -1.017e-04  1.133e-04  -0.898 0.369413    
+PC3                                2.560e-04  1.560e-04   1.641 0.100769    
+PC4                                1.842e-04  7.624e-05   2.416 0.015672 *  
+PC5                               -1.050e-04  5.189e-05  -2.025 0.042912 *  
+PC6                                1.422e-04  1.330e-04   1.069 0.284871    
+PC7                                2.329e-05  8.287e-05   0.281 0.778713    
+PC8                               -9.363e-06  1.007e-04  -0.093 0.925930    
+PC9                                5.563e-04  7.688e-05   7.236 4.63e-13 ***
+PC10                               1.036e-04  1.458e-04   0.710 0.477561    
+`Apolipoprotein A`                -3.451e-03  4.461e-03  -0.774 0.439212    
+`Apolipoprotein B`                 1.976e-02  8.136e-03   2.429 0.015124 *  
+`Aspartate aminotransferase`      -1.229e-05  7.201e-05  -0.171 0.864506    
+`Direct bilirubin`                 2.219e-04  1.473e-03   0.151 0.880242    
+Urea                               2.325e-04  3.695e-04   0.629 0.529224    
+Cholesterol                       -2.512e-03  2.970e-03  -0.846 0.397722    
+Creatinine                        -8.684e-05  4.015e-05  -2.163 0.030570 *  
+`C-reactive protein`               5.304e-04  1.782e-04   2.977 0.002911 ** 
+`Cystatin C`                       2.142e-02  3.877e-03   5.526 3.28e-08 ***
+Calcium                           -1.484e-02  8.327e-03  -1.782 0.074699 .  
+`Gamma glutamyltransferase`        1.786e-05  1.118e-05   1.597 0.110266    
+Glucose                           -6.139e-04  4.096e-04  -1.499 0.133951    
+HbA1c                              3.604e-04  8.988e-05   4.010 6.08e-05 ***
+`HDL-C`                           -4.014e-03  3.668e-03  -1.094 0.273774    
+`LDL-C`                            3.277e-03  3.263e-03   1.004 0.315167    
+`Lipoprotein A`                    4.176e-05  7.554e-06   5.528 3.24e-08 ***
+Phosphate                         -9.443e-04  3.081e-03  -0.307 0.759221    
+SHBG                               1.891e-04  7.508e-05   2.519 0.011771 *  
+`Total bilirubin`                 -1.087e-04  2.714e-04  -0.401 0.688779    
+`Total protein`                   -3.087e-05  1.073e-04  -0.288 0.773641    
+Testosterone                      -1.543e-04  1.482e-04  -1.041 0.297708    
+Triglycerides                      1.214e-03  8.216e-04   1.477 0.139547    
+Urate                              5.071e-06  1.296e-05   0.391 0.695563    
+`Vitamin D`                        4.539e-06  2.167e-05   0.209 0.834065    
+ethnic_group                              NA         NA      NA       NA    
+`Hypertension history`             3.108e-02  9.325e-04  33.329  < 2e-16 ***
+`Type 2 diabetes history`          2.310e-02  1.607e-03  14.374  < 2e-16 ***
+`Heart failure history`            9.385e-02  1.442e-03  65.086  < 2e-16 ***
+`Hemorrhage Stroke history`       -2.035e-02  5.060e-03  -4.022 5.78e-05 ***
+`Ischemic Stroke history`          2.126e-02  2.431e-03   8.746  < 2e-16 ***
+
+Diagnostic tests:
+                    df1    df2 statistic p-value    
+Weak instruments      1 361889   823.305  <2e-16 ***
+Wu-Hausman            1 361888     1.962   0.161    
+Sargan                0     NA        NA      NA    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.208 on 361889 degrees of freedom
+Multiple R-Squared: 0.03389,	Adjusted R-squared: 0.03374 
+Wald test:   242 on 56 and 361889 DF,  p-value: < 2.2e-16 
+
+Warning message:
+In printHypothesis(L, rhs, names(b)) :
+  one or more coefficients in the hypothesis include
+     arithmetic operators in their names;
+  the printed representation of the hypothesis will be omitted
+
+Continuous W IV-grf model 1b
+  predictions         variance.estimates  debiased.error     
+ Min.   :-0.0035469   Min.   :1.474e-06   Min.   :0.0003596  
+ 1st Qu.: 0.0008311   1st Qu.:3.835e-06   1st Qu.:0.0010966  
+ Median : 0.0017750   Median :5.322e-06   Median :0.0019750  
+ Mean   : 0.0017592   Mean   :6.730e-06   Mean   :0.0442755  
+ 3rd Qu.: 0.0026988   3rd Qu.:8.468e-06   3rd Qu.:0.0037216  
+ Max.   : 0.0067270   Max.   :5.197e-05   Max.   :0.9566495  
+  excess.error            IID         
+ Min.   :2.914e-08   Min.   :1000013  
+ 1st Qu.:3.893e-08   1st Qu.:2255902  
+ Median :5.027e-08   Median :3513233  
+ Mean   :6.830e-08   Mean   :3512897  
+ 3rd Qu.:7.904e-08   3rd Qu.:4768930  
+ Max.   :7.267e-07   Max.   :6026167  
+      tau                tau.zval          tau.pval          tau.p.adjust   
+ Min.   :-0.0035469   Min.   :-2.1951   Min.   :0.0001043   Min.   :0.9321  
+ 1st Qu.: 0.0008311   1st Qu.: 0.3399   1st Qu.:0.2672837   1st Qu.:0.9321  
+ Median : 0.0017750   Median : 0.7099   Median :0.4726678   Median :0.9321  
+ Mean   : 0.0017592   Mean   : 0.7371   Mean   :0.4884663   Mean   :0.9412  
+ 3rd Qu.: 0.0026988   3rd Qu.: 1.1074   3rd Qu.:0.7051658   3rd Qu.:0.9402  
+ Max.   : 0.0067270   Max.   : 3.8803   Max.   :0.9999997   Max.   :1.0000  
+      IID         
+ Min.   :1000013  
+ 1st Qu.:2255902  
+ Median :3513233  
+ Mean   :3512897  
+ 3rd Qu.:4768930  
+ Max.   :6026167  
+
+Continuous W IV-grf model 3
+  predictions        variance.estimates  debiased.error     
+ Min.   :-0.002528   Min.   :2.009e-06   Min.   :0.0001431  
+ 1st Qu.: 0.001212   1st Qu.:6.119e-06   1st Qu.:0.0007865  
+ Median : 0.001797   Median :8.687e-06   Median :0.0017258  
+ Mean   : 0.001818   Mean   :1.053e-05   Mean   :0.0433446  
+ 3rd Qu.: 0.002402   3rd Qu.:1.327e-05   3rd Qu.:0.0037417  
+ Max.   : 0.006536   Max.   :6.472e-05   Max.   :0.9732683  
+  excess.error            IID         
+ Min.   :2.442e-08   Min.   :1000013  
+ 1st Qu.:4.271e-08   1st Qu.:2255902  
+ Median :5.428e-08   Median :3513233  
+ Mean   :7.155e-08   Mean   :3512897  
+ 3rd Qu.:8.226e-08   3rd Qu.:4768930  
+ Max.   :8.447e-07   Max.   :6026167  
+      tau               tau.zval          tau.pval         tau.p.adjust   
+ Min.   :-0.002528   Min.   :-0.9301   Min.   :0.009235   Min.   :0.9146  
+ 1st Qu.: 0.001212   1st Qu.: 0.3802   1st Qu.:0.410907   1st Qu.:0.9146  
+ Median : 0.001797   Median : 0.5842   Median :0.559087   Median :0.9146  
+ Mean   : 0.001818   Mean   : 0.6170   Mean   :0.557221   Mean   :0.9178  
+ 3rd Qu.: 0.002402   3rd Qu.: 0.8223   3rd Qu.:0.703618   3rd Qu.:0.9146  
+ Max.   : 0.006536   Max.   : 2.6032   Max.   :0.999996   Max.   :1.0000  
+      IID         
+ Min.   :1000013  
+ 1st Qu.:2255902  
+ Median :3513233  
+ Mean   :3512897  
+ 3rd Qu.:4768930  
+ Max.   :6026167  
+
+Binary W continuous Z IV-grf model 1b
+  predictions        variance.estimates  debiased.error     
+ Min.   :-0.070997   Min.   :0.0004323   Min.   :0.0003792  
+ 1st Qu.: 0.007926   1st Qu.:0.0012585   1st Qu.:0.0011371  
+ Median : 0.023645   Median :0.0018764   Median :0.0019387  
+ Mean   : 0.023444   Mean   :0.0023324   Mean   :0.0442769  
+ 3rd Qu.: 0.039031   3rd Qu.:0.0029922   3rd Qu.:0.0037417  
+ Max.   : 0.111293   Max.   :0.0206718   Max.   :0.9610819  
+  excess.error            IID         
+ Min.   :2.902e-08   Min.   :1000013  
+ 1st Qu.:3.876e-08   1st Qu.:2255902  
+ Median :5.002e-08   Median :3513233  
+ Mean   :6.808e-08   Mean   :3512897  
+ 3rd Qu.:7.871e-08   3rd Qu.:4768930  
+ Max.   :7.419e-07   Max.   :6026167  
+      tau               tau.zval          tau.pval          tau.p.adjust
+ Min.   :-0.070997   Min.   :-2.2157   Min.   :0.0002817   Min.   :1    
+ 1st Qu.: 0.007926   1st Qu.: 0.1721   1st Qu.:0.3727732   1st Qu.:1    
+ Median : 0.023645   Median : 0.5137   Median :0.5912401   Median :1    
+ Mean   : 0.023444   Mean   : 0.5459   Mean   :0.5752805   Mean   :1    
+ 3rd Qu.: 0.039031   3rd Qu.: 0.8843   3rd Qu.:0.7951335   3rd Qu.:1    
+ Max.   : 0.111293   Max.   : 3.6315   Max.   :0.9999990   Max.   :1    
+      IID         
+ Min.   :1000013  
+ 1st Qu.:2255902  
+ Median :3513233  
+ Mean   :3512897  
+ 3rd Qu.:4768930  
+ Max.   :6026167  
+
+Binary W continuous Z IV-grf model 3
+  predictions       variance.estimates debiased.error       excess.error      
+ Min.   :-0.03989   Min.   :0.000421   Min.   :0.0001399   Min.   :2.522e-08  
+ 1st Qu.: 0.01646   1st Qu.:0.001287   1st Qu.:0.0007862   1st Qu.:4.279e-08  
+ Median : 0.02685   Median :0.001813   Median :0.0017313   Median :5.417e-08  
+ Mean   : 0.02729   Mean   :0.002293   Mean   :0.0433598   Mean   :7.109e-08  
+ 3rd Qu.: 0.03760   3rd Qu.:0.002870   3rd Qu.:0.0037999   3rd Qu.:8.167e-08  
+ Max.   : 0.10826   Max.   :0.019122   Max.   :0.9731831   Max.   :8.483e-07  
+      IID         
+ Min.   :1000013  
+ 1st Qu.:2255902  
+ Median :3513233  
+ Mean   :3512897  
+ 3rd Qu.:4768930  
+ Max.   :6026167  
+      tau              tau.zval          tau.pval         tau.p.adjust   
+ Min.   :-0.03989   Min.   :-1.1232   Min.   :0.002417   Min.   :0.9482  
+ 1st Qu.: 0.01646   1st Qu.: 0.3549   1st Qu.:0.381415   1st Qu.:0.9482  
+ Median : 0.02685   Median : 0.5956   Median :0.551157   Median :0.9482  
+ Mean   : 0.02729   Mean   : 0.6318   Mean   :0.550395   Mean   :0.9510  
+ 3rd Qu.: 0.03760   3rd Qu.: 0.8753   3rd Qu.:0.720439   3rd Qu.:0.9482  
+ Max.   : 0.10826   Max.   : 3.0336   Max.   :1.000000   Max.   :1.0000  
+      IID         
+ Min.   :1000013  
+ 1st Qu.:2255902  
+ Median :3513233  
+ Mean   :3512897  
+ 3rd Qu.:4768930  
+ Max.   :6026167  

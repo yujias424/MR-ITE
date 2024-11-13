@@ -44,9 +44,9 @@ for (tp in top_porp){
 
                 for (st in sim_times){
 
-                    tau_estimate <- fread(paste0("/home/yujia/Project/2023-07-20-individual_MR/res/01_simulation/tau/estimate/", 
+                    tau_estimate <- fread(paste0("/mnt/md0/yujia/project/2023-07-20-individual_MR/res/01_simulation/tau/estimate/", 
                                                     ps, "_", vs, "_", ts, "_", st, "_estimate.csv.gz"))
-                    tau_std <- fread(paste0("/home/yujia/Project/2023-07-20-individual_MR/res/01_simulation/tau/std/", 
+                    tau_std <- fread(paste0("/mnt/md0/yujia/project/2023-07-20-individual_MR/res/01_simulation/tau/std/", 
                                                     ps, "_", vs, "_", ts, "_", st, "_std.csv.gz"))
 
                     ate_cf_mat <- as.data.frame(matrix(rnorm(10000 * 1, mean = tau_estimate$ATE_CF, sd = 0), nrow=10000))
@@ -171,9 +171,9 @@ for (tp in top_porp){
     p.final <- ((plot_1_20 | plot_1_40 | plot_1_60) /
                 (plot_2_20 | plot_2_40 | plot_2_60) /
                 (plot_3_20 | plot_3_40 | plot_3_60)) +
-                plot_annotation(tag_levels = 'A') & theme(plot.tag = element_text(size = 35))
+                plot_annotation(tag_levels = 'a') & theme(plot.tag = element_text(size = 45))
 
-    ggsave(paste0("/home/yujia/Project/2023-07-20-individual_MR/plot/mse/all_mse_", tp * 100,".png"), p.final, dpi=300, 
+    ggsave(paste0("/mnt/md0/yujia/project/2023-07-20-individual_MR/plot/mse/all_mse_", tp * 100,".png"), p.final, dpi=300, 
             width = 100, height = 60, units = "cm", scale = 1.6, limitsize = F)
     
 }

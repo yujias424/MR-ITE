@@ -1,0 +1,12 @@
+nohup: ignoring input
+Currently we run on pvalue cutoff 0.1.
+[1] 223272      14
+Extracting data for 29 SNP(s) from 1 GWAS(s)
+Harmonising LDL (Auw6Gb) and Coronary artery disease || id:ebi-a-GCST003116 (ebi-a-GCST003116)
+[1] 223272      9
+
+
+
+Finished running on pvalue cutoff 0.1.
+
+=================================

@@ -1,0 +1,117 @@
+nohup: ignoring input
+Currently we run on pvalue cutoff 1e-08.
+[1] 29 14
+Extracting data for 29 SNP(s) from 1 GWAS(s)
+Harmonising IGF1 (Auw6Gb) and Coronary artery disease || id:ebi-a-GCST003116 (ebi-a-GCST003116)
+[1] 29  9
+
+
+
+Finished running on pvalue cutoff 1e-08.
+
+=================================
+
+
+Currently we run on pvalue cutoff 5e-08.
+[1] 60 14
+Extracting data for 60 SNP(s) from 1 GWAS(s)
+Finding proxies for 1 SNPs in outcome ebi-a-GCST003116
+Extracting data for 1 SNP(s) from 1 GWAS(s)
+Harmonising IGF1 (Auw6Gb) and Coronary artery disease || id:ebi-a-GCST003116 (ebi-a-GCST003116)
+[1] 59  9
+
+
+
+Finished running on pvalue cutoff 5e-08.
+
+=================================
+
+
+Currently we run on pvalue cutoff 1e-07.
+[1] 105  14
+Extracting data for 105 SNP(s) from 1 GWAS(s)
+Finding proxies for 1 SNPs in outcome ebi-a-GCST003116
+Extracting data for 1 SNP(s) from 1 GWAS(s)
+Harmonising IGF1 (Auw6Gb) and Coronary artery disease || id:ebi-a-GCST003116 (ebi-a-GCST003116)
+[1] 104   9
+
+
+
+Finished running on pvalue cutoff 1e-07.
+
+=================================
+
+
+Currently we run on pvalue cutoff 5e-07.
+[1] 238  14
+Extracting data for 238 SNP(s) from 1 GWAS(s)
+Finding proxies for 1 SNPs in outcome ebi-a-GCST003116
+Extracting data for 1 SNP(s) from 1 GWAS(s)
+Harmonising IGF1 (Auw6Gb) and Coronary artery disease || id:ebi-a-GCST003116 (ebi-a-GCST003116)
+[1] 237   9
+
+
+
+Finished running on pvalue cutoff 5e-07.
+
+=================================
+
+
+Currently we run on pvalue cutoff 1e-06.
+[1] 268  14
+Extracting data for 268 SNP(s) from 1 GWAS(s)
+Finding proxies for 1 SNPs in outcome ebi-a-GCST003116
+Extracting data for 1 SNP(s) from 1 GWAS(s)
+Harmonising IGF1 (Auw6Gb) and Coronary artery disease || id:ebi-a-GCST003116 (ebi-a-GCST003116)
+[1] 267   9
+
+
+
+Finished running on pvalue cutoff 1e-06.
+
+=================================
+
+
+Currently we run on pvalue cutoff 5e-06.
+[1] 425  14
+Extracting data for 425 SNP(s) from 1 GWAS(s)
+Finding proxies for 1 SNPs in outcome ebi-a-GCST003116
+Extracting data for 1 SNP(s) from 1 GWAS(s)
+Harmonising IGF1 (Auw6Gb) and Coronary artery disease || id:ebi-a-GCST003116 (ebi-a-GCST003116)
+[1] 424   9
+
+
+
+Finished running on pvalue cutoff 5e-06.
+
+=================================
+
+
+Currently we run on pvalue cutoff 1e-05.
+[1] 494  14
+Extracting data for 494 SNP(s) from 1 GWAS(s)
+Finding proxies for 2 SNPs in outcome ebi-a-GCST003116
+Extracting data for 2 SNP(s) from 1 GWAS(s)
+Harmonising IGF1 (Auw6Gb) and Coronary artery disease || id:ebi-a-GCST003116 (ebi-a-GCST003116)
+[1] 492   9
+
+
+
+Finished running on pvalue cutoff 1e-05.
+
+=================================
+
+
+Currently we run on pvalue cutoff 5e-05.
+[1] 741  14
+Extracting data for 741 SNP(s) from 1 GWAS(s)
+Finding proxies for 3 SNPs in outcome ebi-a-GCST003116
+Extracting data for 3 SNP(s) from 1 GWAS(s)
+Harmonising IGF1 (Auw6Gb) and Coronary artery disease || id:ebi-a-GCST003116 (ebi-a-GCST003116)
+[1] 738   9
+
+
+
+Finished running on pvalue cutoff 5e-05.
+
+=================================

@@ -76,7 +76,7 @@ for (ps in pleiotropy_scen){
                                     bxse = out.zx$coefficients[, 2],
                                     by =  out.zy$coefficients[, 1],
                                     byse = out.zy$coefficients[, 2])
-
+        # MRAllObject_conmix <- mr_conmix(MRInputObject_1)
         tryCatch({
           MRAllObject_conmix <- withTimeout({
             mr_conmix(MRInputObject_1)
@@ -147,7 +147,7 @@ for (ps in pleiotropy_scen){
         regression_forest_fewsnps <- regression_forest(X = dat1$Z[20001:30000, colnames(dat1$Z)[colnames(dat1$Z) %in% MRAllObject_conmix@ValidSNPs]], Y = dat1$T[20001:30000], 
                                                         num.threads = 40, 
                                                         sample.fraction = 0.1, num.trees = 3000, min.node.size = 5)
-
+        
         Z_allsnps <- predict(regression_forest_allsnps, newdata = dat1$`Z`[30001:40000, ], num.threads = 40)$predictions
         Z_fewsnps <- predict(regression_forest_fewsnps, newdata = dat1$Z[30001:40000, colnames(dat1$Z)[colnames(dat1$Z) %in% MRAllObject_conmix@ValidSNPs]], num.threads = 40)$predictions
 
@@ -307,7 +307,7 @@ for (ps in pleiotropy_scen){
 
         ne <- ne + 1
         rm(MRAllObject_conmix) # since we use MRAllObject_conmix == NULL as the criterion to jump
-
+        # break
       }
 
       res.mat <- as.data.frame(res.mat)
@@ -319,7 +319,7 @@ for (ps in pleiotropy_scen){
                               "LATE_IVW_All_SNPs_MSE", "LATE_IVW_Valid_SNPs_MSE", "Conmix_aacuracy")
 
       fwrite(res.mat, paste0("/home/yujia/Project/2023-07-20-individual_MR/res/01_simulation/mse/", scenario.index, "_", isns, "_", i, "_res.csv"))
-
+    
     }
   }
 }

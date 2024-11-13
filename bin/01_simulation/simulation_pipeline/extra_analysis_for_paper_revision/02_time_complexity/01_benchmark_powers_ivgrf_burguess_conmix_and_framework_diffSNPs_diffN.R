@@ -1,8 +1,7 @@
-#' This code is to benchmark the performance between our proposed framework and the traditional causal forest using simulation dataset,
-#' we aim to check the correlation between true tau and the predicted tau.
+#' This code is to perform the time-complexity analysis.
 #' 
 #' @author Yujia Shi
-#' @date 2023.08.25
+#' @date 2024.08.25
 
 suppressPackageStartupMessages({
   
@@ -55,7 +54,7 @@ for (ps in pleiotropy_scen){
     message(paste0("With invalid SNPs ", isns))
     message("              ")
   
-    for (i in 1:8){ 
+    for (i in 1:8){  
       
       message(paste0("Running scenario ", i))
       res.mat <- matrix(0, nrow = n.experiments, ncol = 11)
@@ -86,7 +85,6 @@ for (ps in pleiotropy_scen){
                                       bxse = out.zx$coefficients[, 2],
                                       by =  out.zy$coefficients[, 1],
                                       byse = out.zy$coefficients[, 2])
-          # MRAllObject_conmix <- mr_conmix(MRInputObject_1)
           tryCatch({
             MRAllObject_conmix <- withTimeout({
               mr_conmix(MRInputObject_1)
@@ -159,7 +157,7 @@ for (ps in pleiotropy_scen){
           regression_forest_fewsnps <- regression_forest(X = dat1$Z[100001:150000, colnames(dat1$Z)[colnames(dat1$Z) %in% MRAllObject_conmix@ValidSNPs]], Y = dat1$T[100001:150000], 
                                                           num.threads = 40, 
                                                           sample.fraction = 0.1, num.trees = 3000, min.node.size = 25)
-
+          
           Z_allsnps <- predict(regression_forest_allsnps, newdata = dat1$`Z`[150001:200000, ], num.threads = 40)$predictions
           Z_fewsnps <- predict(regression_forest_fewsnps, newdata = dat1$Z[150001:200000, colnames(dat1$Z)[colnames(dat1$Z) %in% MRAllObject_conmix@ValidSNPs]], num.threads = 40)$predictions
 
@@ -195,7 +193,7 @@ for (ps in pleiotropy_scen){
           iv.pred.allsnps.std <- sqrt(iv.pred.allsnps$variance.estimates)
           iv.pred.fewsnps.std <- sqrt(iv.pred.fewsnps$variance.estimates)
           iv.pred.prs.std <- sqrt(iv.pred.prs$variance.estimates)
-          
+
           # LATE
           tmp.ivreg.allsnps <- dat1$`X`[150001:200000, ]
           tmp.ivreg.allsnps$Y <- dat1$`Y`[150001:200000]
@@ -279,7 +277,7 @@ for (ps in pleiotropy_scen){
       invalid_snps_array <- c(invalid_snps_array, isns)
       pleiotropy_scen_array <- c(pleiotropy_scen_array, ps)
       tau_scenario_array <- c(tau_scenario_array, i)
-   
+    
     }
   }
 }

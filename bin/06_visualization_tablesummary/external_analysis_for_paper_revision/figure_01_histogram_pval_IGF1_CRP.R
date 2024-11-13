@@ -200,7 +200,7 @@ for (ml in models){
   # ggsave(paste0("/mnt/md0/yujia/project/2023-07-20-individual_MR/res/03_plot/extra_analysis_for_paper_revision/figure1_normal_pvalue_", ml, ".png"), histogram_p, dpi=300, 
   #         width = 50, height = 40, units = "cm",scale = 3, limitsize = FALSE)
 
-  histogram_p <- (p1_title) + plot_layout(guides = "collect") + plot_annotation(tag_levels = 'A') & theme(plot.tag = element_text(size = 35), legend.position = "right")
+  histogram_p <- (p1_title) + plot_layout(guides = "collect") + plot_annotation(tag_levels = 'a') & theme(plot.tag = element_text(size = 45), legend.position = "right")
   ggsave(paste0("/mnt/md0/yujia/project/2023-07-20-individual_MR/res/03_plot/extra_analysis_for_paper_revision/figure1_normal_pvalue_", ml, ".png"), histogram_p, dpi=300, 
           width = 30, height = 20, units = "cm",scale = 3, limitsize = FALSE)
   # break

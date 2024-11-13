@@ -1,0 +1,3533 @@
+nohup: ignoring input
+Currently running LDL on CAD.
+Running P-value cut-off 1e-08
+PRSice 2.3.5 (2021-09-20) 
+https://github.com/choishingwan/PRSice
+(C) 2016-2020 Shing Wan (Sam) Choi and Paul F. O'Reilly
+GNU General Public License v3
+If you use PRSice in any published work, please cite:
+Choi SW, O'Reilly PF.
+PRSice-2: Polygenic Risk Score Software for Biobank-Scale Data.
+GigaScience 8, no. 7 (July 1, 2019)
+2024-08-30 16:12:33
+/home/yujia/Software/PRSice/PRSice_linux \
+    --a1 A1 \
+    --a2 A2 \
+    --bar-levels 1e-08,5e-08,7e-08,9e-08,1e-07,5e-07,7e-07,9e-07,1e-06,5e-06,7e-06,9e-06,1e-05,5e-05,0.0001,0.0005,0.001,0.005,0.01,0.05,0.1,0.5,1 \
+    --base /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/02_base_data/LDL/QC/LDL.QC.gz \
+    --beta  \
+    --binary-target F \
+    --bp BP \
+    --chr CHR \
+    --clump-kb 250kb \
+    --clump-p 1.000000 \
+    --clump-r2 0.100000 \
+    --cov /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/LDL/CAD/ukbb.covariate.prs.LDL.set1 \
+    --cov-factor Genotype_Batch,Gender \
+    --extract /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/06_PRS_calculation/external_analysis_for_paper_revision/PRSice2/LDL/CAD/selected_snps_1e-08.csv \
+    --fastscore  \
+    --num-auto 22 \
+    --out LDL_prs \
+    --pheno /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/LDL/CAD/ukbb.phenotype.LDL.mgdL \
+    --print-snp  \
+    --pvalue P \
+    --score con-std \
+    --seed 2389825711 \
+    --snp SNP \
+    --stat BETA \
+    --target /mnt/md0/public_data/UKBB_data/genotype/GWAS_ukbb_maf0.001_info0.8/bed/allchrs/ukb_allchrs \
+    --thread 35
+
+Initializing Genotype file: 
+/mnt/md0/public_data/UKBB_data/genotype/GWAS_ukbb_maf0.001_info0.8/bed/allchrs/ukb_allchrs 
+(bed) 
+
+Start processing LDL.QC 
+================================================== 
+
+Only one column detected, will assume only SNP ID is 
+provided 
+
+Base file: 
+/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/02_base_data/LDL/QC/LDL.QC.gz 
+GZ file detected. Header of file is: 
+CHR	BP	SNP	A1	A2	N	SE	P	BETA	MAF	EAF 
+
+Reading 100.00%
+2038531 variant(s) observed in base file, with: 
+2036838 variant(s) excluded based on user input 
+1693 total variant(s) included from base file 
+
+Loading Genotype info from target 
+================================================== 
+
+443630 people (204889 male(s), 238674 female(s)) observed 
+443630 founder(s) included 
+
+2287728 variant(s) not found in previous data 
+1 variant(s) with mismatch information 
+49 variant(s) included 
+
+Phenotype file: 
+/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/LDL/CAD/ukbb.phenotype.LDL.mgdL 
+Column Name of Sample ID: FID+IID 
+Note: If the phenotype file does not contain a header, the 
+column name will be displayed as the Sample ID which is 
+expected. 
+
+There are a total of 1 phenotype to process 
+
+Start performing clumping 
+
+Clumping Progress: 2.04%Clumping Progress: 4.08%Clumping Progress: 6.12%Clumping Progress: 8.16%Clumping Progress: 10.20%Clumping Progress: 12.24%Clumping Progress: 14.29%Clumping Progress: 16.33%Clumping Progress: 18.37%Clumping Progress: 20.41%Clumping Progress: 22.45%Clumping Progress: 24.49%Clumping Progress: 26.53%Clumping Progress: 28.57%Clumping Progress: 30.61%Clumping Progress: 32.65%Clumping Progress: 34.69%Clumping Progress: 36.73%Clumping Progress: 38.78%Clumping Progress: 40.82%Clumping Progress: 42.86%Clumping Progress: 44.90%Clumping Progress: 46.94%Clumping Progress: 48.98%Clumping Progress: 51.02%Clumping Progress: 53.06%Clumping Progress: 55.10%Clumping Progress: 57.14%Clumping Progress: 59.18%Clumping Progress: 61.22%Clumping Progress: 63.27%Clumping Progress: 100.00%
+Number of variant(s) after clumping : 42 
+
+Processing the 1 th phenotype 
+
+Phenotype is a continuous phenotype 
+12646 sample(s) without phenotype 
+430984 sample(s) with valid phenotype 
+
+Processing the covariate file: 
+/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/LDL/CAD/ukbb.covariate.prs.LDL.set1 
+============================== 
+
+Include Covariates: 
+Name	Missing	Number of levels 
+Gender	0	2 
+Genotype_Batch	0	106 
+PC1	0	- 
+PC2	0	- 
+PC3	0	- 
+PC4	0	- 
+PC5	0	- 
+PC6	0	- 
+PC7	0	- 
+PC8	0	- 
+PC9	0	- 
+PC10	0	- 
+ethnic_group	0	- 
+Age	0	- 
+
+After reading the covariate file, 430984 sample(s) included 
+in the analysis 
+
+
+Start Processing
+Processing 0.00%Processing 100.00%Processing 100.00%
+There are 1 region(s) with p-value less than 1e-5. Please 
+note that these results are inflated due to the overfitting 
+inherent in finding the best-fit PRS (but it's still best 
+to find the best-fit PRS!). 
+You can use the --perm option (see manual) to calculate an 
+empirical P-value. 
+
+==================================================
+
+Running P-value cut-off 1e-07
+PRSice 2.3.5 (2021-09-20) 
+https://github.com/choishingwan/PRSice
+(C) 2016-2020 Shing Wan (Sam) Choi and Paul F. O'Reilly
+GNU General Public License v3
+If you use PRSice in any published work, please cite:
+Choi SW, O'Reilly PF.
+PRSice-2: Polygenic Risk Score Software for Biobank-Scale Data.
+GigaScience 8, no. 7 (July 1, 2019)
+2024-08-30 16:12:45
+/home/yujia/Software/PRSice/PRSice_linux \
+    --a1 A1 \
+    --a2 A2 \
+    --bar-levels 1e-08,5e-08,7e-08,9e-08,1e-07,5e-07,7e-07,9e-07,1e-06,5e-06,7e-06,9e-06,1e-05,5e-05,0.0001,0.0005,0.001,0.005,0.01,0.05,0.1,0.5,1 \
+    --base /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/02_base_data/LDL/QC/LDL.QC.gz \
+    --beta  \
+    --binary-target F \
+    --bp BP \
+    --chr CHR \
+    --clump-kb 250kb \
+    --clump-p 1.000000 \
+    --clump-r2 0.100000 \
+    --cov /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/LDL/CAD/ukbb.covariate.prs.LDL.set1 \
+    --cov-factor Genotype_Batch,Gender \
+    --extract /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/06_PRS_calculation/external_analysis_for_paper_revision/PRSice2/LDL/CAD/selected_snps_1e-07.csv \
+    --fastscore  \
+    --num-auto 22 \
+    --out LDL_prs \
+    --pheno /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/LDL/CAD/ukbb.phenotype.LDL.mgdL \
+    --print-snp  \
+    --pvalue P \
+    --score con-std \
+    --seed 2389825711 \
+    --snp SNP \
+    --stat BETA \
+    --target /mnt/md0/public_data/UKBB_data/genotype/GWAS_ukbb_maf0.001_info0.8/bed/allchrs/ukb_allchrs \
+    --thread 35
+
+Initializing Genotype file: 
+/mnt/md0/public_data/UKBB_data/genotype/GWAS_ukbb_maf0.001_info0.8/bed/allchrs/ukb_allchrs 
+(bed) 
+
+Start processing LDL.QC 
+================================================== 
+
+Only one column detected, will assume only SNP ID is 
+provided 
+
+Base file: 
+/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/02_base_data/LDL/QC/LDL.QC.gz 
+GZ file detected. Header of file is: 
+CHR	BP	SNP	A1	A2	N	SE	P	BETA	MAF	EAF 
+
+Reading 100.00%
+2038531 variant(s) observed in base file, with: 
+2036618 variant(s) excluded based on user input 
+1913 total variant(s) included from base file 
+
+Loading Genotype info from target 
+================================================== 
+
+443630 people (204889 male(s), 238674 female(s)) observed 
+443630 founder(s) included 
+
+2287719 variant(s) not found in previous data 
+1 variant(s) with mismatch information 
+58 variant(s) included 
+
+Phenotype file: 
+/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/LDL/CAD/ukbb.phenotype.LDL.mgdL 
+Column Name of Sample ID: FID+IID 
+Note: If the phenotype file does not contain a header, the 
+column name will be displayed as the Sample ID which is 
+expected. 
+
+There are a total of 1 phenotype to process 
+
+Start performing clumping 
+
+Clumping Progress: 1.72%Clumping Progress: 3.45%Clumping Progress: 5.17%Clumping Progress: 6.90%Clumping Progress: 8.62%Clumping Progress: 10.34%Clumping Progress: 12.07%Clumping Progress: 13.79%Clumping Progress: 15.52%Clumping Progress: 17.24%Clumping Progress: 18.97%Clumping Progress: 20.69%Clumping Progress: 22.41%Clumping Progress: 24.14%Clumping Progress: 25.86%Clumping Progress: 27.59%Clumping Progress: 29.31%Clumping Progress: 31.03%Clumping Progress: 32.76%Clumping Progress: 34.48%Clumping Progress: 36.21%Clumping Progress: 37.93%Clumping Progress: 39.66%Clumping Progress: 41.38%Clumping Progress: 43.10%Clumping Progress: 44.83%Clumping Progress: 46.55%Clumping Progress: 48.28%Clumping Progress: 50.00%Clumping Progress: 51.72%Clumping Progress: 53.45%Clumping Progress: 55.17%Clumping Progress: 56.90%Clumping Progress: 58.62%Clumping Progress: 60.34%Clumping Progress: 62.07%Clumping Progress: 63.79%Clumping Progress: 65.52%Clumping Progress: 100.00%
+Number of variant(s) after clumping : 48 
+
+Processing the 1 th phenotype 
+
+Phenotype is a continuous phenotype 
+12646 sample(s) without phenotype 
+430984 sample(s) with valid phenotype 
+
+Processing the covariate file: 
+/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/LDL/CAD/ukbb.covariate.prs.LDL.set1 
+============================== 
+
+Include Covariates: 
+Name	Missing	Number of levels 
+Gender	0	2 
+Genotype_Batch	0	106 
+PC1	0	- 
+PC2	0	- 
+PC3	0	- 
+PC4	0	- 
+PC5	0	- 
+PC6	0	- 
+PC7	0	- 
+PC8	0	- 
+PC9	0	- 
+PC10	0	- 
+ethnic_group	0	- 
+Age	0	- 
+
+After reading the covariate file, 430984 sample(s) included 
+in the analysis 
+
+
+Start Processing
+Processing 0.00%Processing 33.33%Processing 66.67%Processing 100.00%Processing 100.00%
+There are 1 region(s) with p-value less than 1e-5. Please 
+note that these results are inflated due to the overfitting 
+inherent in finding the best-fit PRS (but it's still best 
+to find the best-fit PRS!). 
+You can use the --perm option (see manual) to calculate an 
+empirical P-value. 
+
+==================================================
+
+Running P-value cut-off 1e-06
+PRSice 2.3.5 (2021-09-20) 
+https://github.com/choishingwan/PRSice
+(C) 2016-2020 Shing Wan (Sam) Choi and Paul F. O'Reilly
+GNU General Public License v3
+If you use PRSice in any published work, please cite:
+Choi SW, O'Reilly PF.
+PRSice-2: Polygenic Risk Score Software for Biobank-Scale Data.
+GigaScience 8, no. 7 (July 1, 2019)
+2024-08-30 16:13:01
+/home/yujia/Software/PRSice/PRSice_linux \
+    --a1 A1 \
+    --a2 A2 \
+    --bar-levels 1e-08,5e-08,7e-08,9e-08,1e-07,5e-07,7e-07,9e-07,1e-06,5e-06,7e-06,9e-06,1e-05,5e-05,0.0001,0.0005,0.001,0.005,0.01,0.05,0.1,0.5,1 \
+    --base /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/02_base_data/LDL/QC/LDL.QC.gz \
+    --beta  \
+    --binary-target F \
+    --bp BP \
+    --chr CHR \
+    --clump-kb 250kb \
+    --clump-p 1.000000 \
+    --clump-r2 0.100000 \
+    --cov /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/LDL/CAD/ukbb.covariate.prs.LDL.set1 \
+    --cov-factor Genotype_Batch,Gender \
+    --extract /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/06_PRS_calculation/external_analysis_for_paper_revision/PRSice2/LDL/CAD/selected_snps_1e-06.csv \
+    --fastscore  \
+    --num-auto 22 \
+    --out LDL_prs \
+    --pheno /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/LDL/CAD/ukbb.phenotype.LDL.mgdL \
+    --print-snp  \
+    --pvalue P \
+    --score con-std \
+    --seed 2389825711 \
+    --snp SNP \
+    --stat BETA \
+    --target /mnt/md0/public_data/UKBB_data/genotype/GWAS_ukbb_maf0.001_info0.8/bed/allchrs/ukb_allchrs \
+    --thread 35
+
+Initializing Genotype file: 
+/mnt/md0/public_data/UKBB_data/genotype/GWAS_ukbb_maf0.001_info0.8/bed/allchrs/ukb_allchrs 
+(bed) 
+
+Start processing LDL.QC 
+================================================== 
+
+Only one column detected, will assume only SNP ID is 
+provided 
+
+Base file: 
+/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/02_base_data/LDL/QC/LDL.QC.gz 
+GZ file detected. Header of file is: 
+CHR	BP	SNP	A1	A2	N	SE	P	BETA	MAF	EAF 
+
+Reading 100.00%
+2038531 variant(s) observed in base file, with: 
+2036274 variant(s) excluded based on user input 
+2257 total variant(s) included from base file 
+
+Loading Genotype info from target 
+================================================== 
+
+443630 people (204889 male(s), 238674 female(s)) observed 
+443630 founder(s) included 
+
+2287705 variant(s) not found in previous data 
+1 variant(s) with mismatch information 
+72 variant(s) included 
+
+Phenotype file: 
+/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/LDL/CAD/ukbb.phenotype.LDL.mgdL 
+Column Name of Sample ID: FID+IID 
+Note: If the phenotype file does not contain a header, the 
+column name will be displayed as the Sample ID which is 
+expected. 
+
+There are a total of 1 phenotype to process 
+
+Start performing clumping 
+
+Clumping Progress: 1.39%Clumping Progress: 2.78%Clumping Progress: 4.17%Clumping Progress: 5.56%Clumping Progress: 6.94%Clumping Progress: 8.33%Clumping Progress: 9.72%Clumping Progress: 11.11%Clumping Progress: 12.50%Clumping Progress: 13.89%Clumping Progress: 15.28%Clumping Progress: 16.67%Clumping Progress: 18.06%Clumping Progress: 19.44%Clumping Progress: 20.83%Clumping Progress: 22.22%Clumping Progress: 23.61%Clumping Progress: 25.00%Clumping Progress: 26.39%Clumping Progress: 27.78%Clumping Progress: 29.17%Clumping Progress: 30.56%Clumping Progress: 31.94%Clumping Progress: 33.33%Clumping Progress: 34.72%Clumping Progress: 36.11%Clumping Progress: 37.50%Clumping Progress: 38.89%Clumping Progress: 40.28%Clumping Progress: 41.67%Clumping Progress: 43.06%Clumping Progress: 44.44%Clumping Progress: 45.83%Clumping Progress: 47.22%Clumping Progress: 48.61%Clumping Progress: 50.00%Clumping Progress: 51.39%Clumping Progress: 52.78%Clumping Progress: 54.17%Clumping Progress: 55.56%Clumping Progress: 56.94%Clumping Progress: 58.33%Clumping Progress: 59.72%Clumping Progress: 61.11%Clumping Progress: 62.50%Clumping Progress: 63.89%Clumping Progress: 100.00%
+Number of variant(s) after clumping : 61 
+
+Processing the 1 th phenotype 
+
+Phenotype is a continuous phenotype 
+12646 sample(s) without phenotype 
+430984 sample(s) with valid phenotype 
+
+Processing the covariate file: 
+/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/LDL/CAD/ukbb.covariate.prs.LDL.set1 
+============================== 
+
+Include Covariates: 
+Name	Missing	Number of levels 
+Gender	0	2 
+Genotype_Batch	0	106 
+PC1	0	- 
+PC2	0	- 
+PC3	0	- 
+PC4	0	- 
+PC5	0	- 
+PC6	0	- 
+PC7	0	- 
+PC8	0	- 
+PC9	0	- 
+PC10	0	- 
+ethnic_group	0	- 
+Age	0	- 
+
+After reading the covariate file, 430984 sample(s) included 
+in the analysis 
+
+
+Start Processing
+Processing 0.00%Processing 20.00%Processing 40.00%Processing 60.00%Processing 80.00%Processing 100.00%Processing 100.00%
+There are 1 region(s) with p-value less than 1e-5. Please 
+note that these results are inflated due to the overfitting 
+inherent in finding the best-fit PRS (but it's still best 
+to find the best-fit PRS!). 
+You can use the --perm option (see manual) to calculate an 
+empirical P-value. 
+
+==================================================
+
+Running P-value cut-off 1e-05
+PRSice 2.3.5 (2021-09-20) 
+https://github.com/choishingwan/PRSice
+(C) 2016-2020 Shing Wan (Sam) Choi and Paul F. O'Reilly
+GNU General Public License v3
+If you use PRSice in any published work, please cite:
+Choi SW, O'Reilly PF.
+PRSice-2: Polygenic Risk Score Software for Biobank-Scale Data.
+GigaScience 8, no. 7 (July 1, 2019)
+2024-08-30 16:13:21
+/home/yujia/Software/PRSice/PRSice_linux \
+    --a1 A1 \
+    --a2 A2 \
+    --bar-levels 1e-08,5e-08,7e-08,9e-08,1e-07,5e-07,7e-07,9e-07,1e-06,5e-06,7e-06,9e-06,1e-05,5e-05,0.0001,0.0005,0.001,0.005,0.01,0.05,0.1,0.5,1 \
+    --base /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/02_base_data/LDL/QC/LDL.QC.gz \
+    --beta  \
+    --binary-target F \
+    --bp BP \
+    --chr CHR \
+    --clump-kb 250kb \
+    --clump-p 1.000000 \
+    --clump-r2 0.100000 \
+    --cov /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/LDL/CAD/ukbb.covariate.prs.LDL.set1 \
+    --cov-factor Genotype_Batch,Gender \
+    --extract /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/06_PRS_calculation/external_analysis_for_paper_revision/PRSice2/LDL/CAD/selected_snps_1e-05.csv \
+    --fastscore  \
+    --num-auto 22 \
+    --out LDL_prs \
+    --pheno /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/LDL/CAD/ukbb.phenotype.LDL.mgdL \
+    --print-snp  \
+    --pvalue P \
+    --score con-std \
+    --seed 2389825711 \
+    --snp SNP \
+    --stat BETA \
+    --target /mnt/md0/public_data/UKBB_data/genotype/GWAS_ukbb_maf0.001_info0.8/bed/allchrs/ukb_allchrs \
+    --thread 35
+
+Initializing Genotype file: 
+/mnt/md0/public_data/UKBB_data/genotype/GWAS_ukbb_maf0.001_info0.8/bed/allchrs/ukb_allchrs 
+(bed) 
+
+Start processing LDL.QC 
+================================================== 
+
+Only one column detected, will assume only SNP ID is 
+provided 
+
+Base file: 
+/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/02_base_data/LDL/QC/LDL.QC.gz 
+GZ file detected. Header of file is: 
+CHR	BP	SNP	A1	A2	N	SE	P	BETA	MAF	EAF 
+
+Reading 100.00%
+2038531 variant(s) observed in base file, with: 
+2035613 variant(s) excluded based on user input 
+2918 total variant(s) included from base file 
+
+Loading Genotype info from target 
+================================================== 
+
+443630 people (204889 male(s), 238674 female(s)) observed 
+443630 founder(s) included 
+
+2287686 variant(s) not found in previous data 
+4 variant(s) with mismatch information 
+88 variant(s) included 
+
+Phenotype file: 
+/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/LDL/CAD/ukbb.phenotype.LDL.mgdL 
+Column Name of Sample ID: FID+IID 
+Note: If the phenotype file does not contain a header, the 
+column name will be displayed as the Sample ID which is 
+expected. 
+
+There are a total of 1 phenotype to process 
+
+Start performing clumping 
+
+Clumping Progress: 1.14%Clumping Progress: 2.27%Clumping Progress: 3.41%Clumping Progress: 4.55%Clumping Progress: 5.68%Clumping Progress: 6.82%Clumping Progress: 7.95%Clumping Progress: 9.09%Clumping Progress: 10.23%Clumping Progress: 11.36%Clumping Progress: 12.50%Clumping Progress: 13.64%Clumping Progress: 14.77%Clumping Progress: 15.91%Clumping Progress: 17.05%Clumping Progress: 18.18%Clumping Progress: 19.32%Clumping Progress: 20.45%Clumping Progress: 21.59%Clumping Progress: 22.73%Clumping Progress: 23.86%Clumping Progress: 25.00%Clumping Progress: 26.14%Clumping Progress: 27.27%Clumping Progress: 28.41%Clumping Progress: 29.55%Clumping Progress: 30.68%Clumping Progress: 31.82%Clumping Progress: 32.95%Clumping Progress: 34.09%Clumping Progress: 35.23%Clumping Progress: 36.36%Clumping Progress: 37.50%Clumping Progress: 38.64%Clumping Progress: 39.77%Clumping Progress: 40.91%Clumping Progress: 42.05%Clumping Progress: 43.18%Clumping Progress: 44.32%Clumping Progress: 45.45%Clumping Progress: 46.59%Clumping Progress: 47.73%Clumping Progress: 48.86%Clumping Progress: 50.00%Clumping Progress: 51.14%Clumping Progress: 52.27%Clumping Progress: 53.41%Clumping Progress: 54.55%Clumping Progress: 55.68%Clumping Progress: 56.82%Clumping Progress: 57.95%Clumping Progress: 59.09%Clumping Progress: 60.23%Clumping Progress: 61.36%Clumping Progress: 62.50%Clumping Progress: 63.64%Clumping Progress: 64.77%Clumping Progress: 65.91%Clumping Progress: 67.05%Clumping Progress: 100.00%
+Number of variant(s) after clumping : 74 
+
+Processing the 1 th phenotype 
+
+Phenotype is a continuous phenotype 
+12646 sample(s) without phenotype 
+430984 sample(s) with valid phenotype 
+
+Processing the covariate file: 
+/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/LDL/CAD/ukbb.covariate.prs.LDL.set1 
+============================== 
+
+Include Covariates: 
+Name	Missing	Number of levels 
+Gender	0	2 
+Genotype_Batch	0	106 
+PC1	0	- 
+PC2	0	- 
+PC3	0	- 
+PC4	0	- 
+PC5	0	- 
+PC6	0	- 
+PC7	0	- 
+PC8	0	- 
+PC9	0	- 
+PC10	0	- 
+ethnic_group	0	- 
+Age	0	- 
+
+After reading the covariate file, 430984 sample(s) included 
+in the analysis 
+
+
+Start Processing
+Processing 0.00%Processing 12.50%Processing 25.00%Processing 37.50%Processing 50.00%Processing 62.50%Processing 75.00%Processing 87.50%Processing 100.00%Processing 100.00%
+There are 1 region(s) with p-value less than 1e-5. Please 
+note that these results are inflated due to the overfitting 
+inherent in finding the best-fit PRS (but it's still best 
+to find the best-fit PRS!). 
+You can use the --perm option (see manual) to calculate an 
+empirical P-value. 
+
+==================================================
+
+Currently running LDL on CAD.
+Running P-value cut-off 1e-08
+PRSice 2.3.5 (2021-09-20) 
+https://github.com/choishingwan/PRSice
+(C) 2016-2020 Shing Wan (Sam) Choi and Paul F. O'Reilly
+GNU General Public License v3
+If you use PRSice in any published work, please cite:
+Choi SW, O'Reilly PF.
+PRSice-2: Polygenic Risk Score Software for Biobank-Scale Data.
+GigaScience 8, no. 7 (July 1, 2019)
+2024-08-30 16:13:47
+/home/yujia/Software/PRSice/PRSice_linux \
+    --a1 A1 \
+    --a2 A2 \
+    --bar-levels 1e-08,5e-08,7e-08,9e-08,1e-07,5e-07,7e-07,9e-07,1e-06,5e-06,7e-06,9e-06,1e-05,5e-05,0.0001,0.0005,0.001,0.005,0.01,0.05,0.1,0.5,1 \
+    --base /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/02_base_data/LDL/QC/LDL.QC.gz \
+    --beta  \
+    --binary-target F \
+    --bp BP \
+    --chr CHR \
+    --clump-kb 250kb \
+    --clump-p 1.000000 \
+    --clump-r2 0.100000 \
+    --cov /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/LDL/CAD/ukbb.covariate.prs.LDL.set3 \
+    --cov-factor Genotype_Batch,Gender,Non_smoker,Previous_smoker,Current_smoker,Non_alcohol_drinker,Previous_alcohol_drinker,Current_alcohol_drinker,Cholesterol_lowering_medication,Blood_pressure_medication,Insulin,htn,t2dm,heart_failure,hemorrhage_stroke,ischemic_stroke \
+    --extract /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/06_PRS_calculation/external_analysis_for_paper_revision/PRSice2/LDL/CAD/selected_snps_1e-08.csv \
+    --fastscore  \
+    --num-auto 22 \
+    --out LDL_prs \
+    --pheno /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/LDL/CAD/ukbb.phenotype.LDL.mgdL \
+    --print-snp  \
+    --pvalue P \
+    --score con-std \
+    --seed 2389825711 \
+    --snp SNP \
+    --stat BETA \
+    --target /mnt/md0/public_data/UKBB_data/genotype/GWAS_ukbb_maf0.001_info0.8/bed/allchrs/ukb_allchrs \
+    --thread 35
+
+Initializing Genotype file: 
+/mnt/md0/public_data/UKBB_data/genotype/GWAS_ukbb_maf0.001_info0.8/bed/allchrs/ukb_allchrs 
+(bed) 
+
+Start processing LDL.QC 
+================================================== 
+
+Only one column detected, will assume only SNP ID is 
+provided 
+
+Base file: 
+/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/02_base_data/LDL/QC/LDL.QC.gz 
+GZ file detected. Header of file is: 
+CHR	BP	SNP	A1	A2	N	SE	P	BETA	MAF	EAF 
+
+Reading 100.00%
+2038531 variant(s) observed in base file, with: 
+2036838 variant(s) excluded based on user input 
+1693 total variant(s) included from base file 
+
+Loading Genotype info from target 
+================================================== 
+
+443630 people (204889 male(s), 238674 female(s)) observed 
+443630 founder(s) included 
+
+2287728 variant(s) not found in previous data 
+1 variant(s) with mismatch information 
+49 variant(s) included 
+
+Phenotype file: 
+/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/LDL/CAD/ukbb.phenotype.LDL.mgdL 
+Column Name of Sample ID: FID+IID 
+Note: If the phenotype file does not contain a header, the 
+column name will be displayed as the Sample ID which is 
+expected. 
+
+There are a total of 1 phenotype to process 
+
+Start performing clumping 
+
+Clumping Progress: 2.04%Clumping Progress: 4.08%Clumping Progress: 6.12%Clumping Progress: 8.16%Clumping Progress: 10.20%Clumping Progress: 12.24%Clumping Progress: 14.29%Clumping Progress: 16.33%Clumping Progress: 18.37%Clumping Progress: 20.41%Clumping Progress: 22.45%Clumping Progress: 24.49%Clumping Progress: 26.53%Clumping Progress: 28.57%Clumping Progress: 30.61%Clumping Progress: 32.65%Clumping Progress: 34.69%Clumping Progress: 36.73%Clumping Progress: 38.78%Clumping Progress: 40.82%Clumping Progress: 42.86%Clumping Progress: 44.90%Clumping Progress: 46.94%Clumping Progress: 48.98%Clumping Progress: 51.02%Clumping Progress: 53.06%Clumping Progress: 55.10%Clumping Progress: 57.14%Clumping Progress: 59.18%Clumping Progress: 61.22%Clumping Progress: 63.27%Clumping Progress: 65.31%Clumping Progress: 100.00%
+Number of variant(s) after clumping : 42 
+
+Processing the 1 th phenotype 
+
+Phenotype is a continuous phenotype 
+12646 sample(s) without phenotype 
+430984 sample(s) with valid phenotype 
+
+Processing the covariate file: 
+/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/LDL/CAD/ukbb.covariate.prs.LDL.set3 
+============================== 
+
+Include Covariates: 
+Name	Missing	Number of levels 
+Gender	0	2 
+Genotype_Batch	0	106 
+4079-0.0	0	- 
+4080-0.0	0	- 
+189-0.0	0	- 
+Non_smoker	0	2 
+Previous_smoker	0	2 
+Current_smoker	0	2 
+Non_alcohol_drinker	0	2 
+Previous_alcohol_drinker	0	2 
+Current_alcohol_drinker	0	2 
+Cholesterol_lowering_medication	0	2 
+Blood_pressure_medication	0	2 
+Insulin	0	2 
+21001-0.0	0	- 
+23099-0.0	0	- 
+21002-0.0	0	- 
+PC1	0	- 
+PC2	0	- 
+PC3	0	- 
+PC4	0	- 
+PC5	0	- 
+PC6	0	- 
+PC7	0	- 
+PC8	0	- 
+PC9	0	- 
+PC10	0	- 
+30630-0.0	0	- 
+30650-0.0	0	- 
+30660-0.0	0	- 
+30670-0.0	0	- 
+30700-0.0	0	- 
+30710-0.0	0	- 
+30720-0.0	0	- 
+30680-0.0	0	- 
+30730-0.0	0	- 
+30740-0.0	0	- 
+30750-0.0	0	- 
+30760-0.0	0	- 
+30770-0.0	0	- 
+30810-0.0	0	- 
+30830-0.0	0	- 
+30840-0.0	0	- 
+30860-0.0	0	- 
+30850-0.0	0	- 
+30870-0.0	0	- 
+30880-0.0	0	- 
+30890-0.0	0	- 
+ethnic_group	0	- 
+htn	0	2 
+t2dm	0	2 
+heart_failure	0	2 
+hemorrhage_stroke	0	2 
+ischemic_stroke	0	2 
+Age	0	- 
+[1;33mWarning: More than 13.965716% of your samples were removed! 
+         You should check if your covariate file is correct [0m
+
+After reading the covariate file, 370794 sample(s) included 
+in the analysis 
+
+
+Start Processing
+Processing 0.00%Processing 100.00%Processing 100.00%
+There are 1 region(s) with p-value less than 1e-5. Please 
+note that these results are inflated due to the overfitting 
+inherent in finding the best-fit PRS (but it's still best 
+to find the best-fit PRS!). 
+You can use the --perm option (see manual) to calculate an 
+empirical P-value. 
+
+==================================================
+
+Running P-value cut-off 1e-07
+PRSice 2.3.5 (2021-09-20) 
+https://github.com/choishingwan/PRSice
+(C) 2016-2020 Shing Wan (Sam) Choi and Paul F. O'Reilly
+GNU General Public License v3
+If you use PRSice in any published work, please cite:
+Choi SW, O'Reilly PF.
+PRSice-2: Polygenic Risk Score Software for Biobank-Scale Data.
+GigaScience 8, no. 7 (July 1, 2019)
+2024-08-30 16:14:07
+/home/yujia/Software/PRSice/PRSice_linux \
+    --a1 A1 \
+    --a2 A2 \
+    --bar-levels 1e-08,5e-08,7e-08,9e-08,1e-07,5e-07,7e-07,9e-07,1e-06,5e-06,7e-06,9e-06,1e-05,5e-05,0.0001,0.0005,0.001,0.005,0.01,0.05,0.1,0.5,1 \
+    --base /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/02_base_data/LDL/QC/LDL.QC.gz \
+    --beta  \
+    --binary-target F \
+    --bp BP \
+    --chr CHR \
+    --clump-kb 250kb \
+    --clump-p 1.000000 \
+    --clump-r2 0.100000 \
+    --cov /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/LDL/CAD/ukbb.covariate.prs.LDL.set3 \
+    --cov-factor Genotype_Batch,Gender,Non_smoker,Previous_smoker,Current_smoker,Non_alcohol_drinker,Previous_alcohol_drinker,Current_alcohol_drinker,Cholesterol_lowering_medication,Blood_pressure_medication,Insulin,htn,t2dm,heart_failure,hemorrhage_stroke,ischemic_stroke \
+    --extract /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/06_PRS_calculation/external_analysis_for_paper_revision/PRSice2/LDL/CAD/selected_snps_1e-07.csv \
+    --fastscore  \
+    --num-auto 22 \
+    --out LDL_prs \
+    --pheno /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/LDL/CAD/ukbb.phenotype.LDL.mgdL \
+    --print-snp  \
+    --pvalue P \
+    --score con-std \
+    --seed 2389825711 \
+    --snp SNP \
+    --stat BETA \
+    --target /mnt/md0/public_data/UKBB_data/genotype/GWAS_ukbb_maf0.001_info0.8/bed/allchrs/ukb_allchrs \
+    --thread 35
+
+Initializing Genotype file: 
+/mnt/md0/public_data/UKBB_data/genotype/GWAS_ukbb_maf0.001_info0.8/bed/allchrs/ukb_allchrs 
+(bed) 
+
+Start processing LDL.QC 
+================================================== 
+
+Only one column detected, will assume only SNP ID is 
+provided 
+
+Base file: 
+/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/02_base_data/LDL/QC/LDL.QC.gz 
+GZ file detected. Header of file is: 
+CHR	BP	SNP	A1	A2	N	SE	P	BETA	MAF	EAF 
+
+Reading 100.00%
+2038531 variant(s) observed in base file, with: 
+2036618 variant(s) excluded based on user input 
+1913 total variant(s) included from base file 
+
+Loading Genotype info from target 
+================================================== 
+
+443630 people (204889 male(s), 238674 female(s)) observed 
+443630 founder(s) included 
+
+2287719 variant(s) not found in previous data 
+1 variant(s) with mismatch information 
+58 variant(s) included 
+
+Phenotype file: 
+/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/LDL/CAD/ukbb.phenotype.LDL.mgdL 
+Column Name of Sample ID: FID+IID 
+Note: If the phenotype file does not contain a header, the 
+column name will be displayed as the Sample ID which is 
+expected. 
+
+There are a total of 1 phenotype to process 
+
+Start performing clumping 
+
+Clumping Progress: 1.72%Clumping Progress: 3.45%Clumping Progress: 5.17%Clumping Progress: 6.90%Clumping Progress: 8.62%Clumping Progress: 10.34%Clumping Progress: 12.07%Clumping Progress: 13.79%Clumping Progress: 15.52%Clumping Progress: 17.24%Clumping Progress: 18.97%Clumping Progress: 20.69%Clumping Progress: 22.41%Clumping Progress: 24.14%Clumping Progress: 25.86%Clumping Progress: 27.59%Clumping Progress: 29.31%Clumping Progress: 31.03%Clumping Progress: 32.76%Clumping Progress: 34.48%Clumping Progress: 36.21%Clumping Progress: 37.93%Clumping Progress: 39.66%Clumping Progress: 41.38%Clumping Progress: 43.10%Clumping Progress: 44.83%Clumping Progress: 46.55%Clumping Progress: 48.28%Clumping Progress: 50.00%Clumping Progress: 51.72%Clumping Progress: 53.45%Clumping Progress: 55.17%Clumping Progress: 56.90%Clumping Progress: 58.62%Clumping Progress: 60.34%Clumping Progress: 62.07%Clumping Progress: 63.79%Clumping Progress: 65.52%Clumping Progress: 100.00%
+Number of variant(s) after clumping : 48 
+
+Processing the 1 th phenotype 
+
+Phenotype is a continuous phenotype 
+12646 sample(s) without phenotype 
+430984 sample(s) with valid phenotype 
+
+Processing the covariate file: 
+/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/LDL/CAD/ukbb.covariate.prs.LDL.set3 
+============================== 
+
+Include Covariates: 
+Name	Missing	Number of levels 
+Gender	0	2 
+Genotype_Batch	0	106 
+4079-0.0	0	- 
+4080-0.0	0	- 
+189-0.0	0	- 
+Non_smoker	0	2 
+Previous_smoker	0	2 
+Current_smoker	0	2 
+Non_alcohol_drinker	0	2 
+Previous_alcohol_drinker	0	2 
+Current_alcohol_drinker	0	2 
+Cholesterol_lowering_medication	0	2 
+Blood_pressure_medication	0	2 
+Insulin	0	2 
+21001-0.0	0	- 
+23099-0.0	0	- 
+21002-0.0	0	- 
+PC1	0	- 
+PC2	0	- 
+PC3	0	- 
+PC4	0	- 
+PC5	0	- 
+PC6	0	- 
+PC7	0	- 
+PC8	0	- 
+PC9	0	- 
+PC10	0	- 
+30630-0.0	0	- 
+30650-0.0	0	- 
+30660-0.0	0	- 
+30670-0.0	0	- 
+30700-0.0	0	- 
+30710-0.0	0	- 
+30720-0.0	0	- 
+30680-0.0	0	- 
+30730-0.0	0	- 
+30740-0.0	0	- 
+30750-0.0	0	- 
+30760-0.0	0	- 
+30770-0.0	0	- 
+30810-0.0	0	- 
+30830-0.0	0	- 
+30840-0.0	0	- 
+30860-0.0	0	- 
+30850-0.0	0	- 
+30870-0.0	0	- 
+30880-0.0	0	- 
+30890-0.0	0	- 
+ethnic_group	0	- 
+htn	0	2 
+t2dm	0	2 
+heart_failure	0	2 
+hemorrhage_stroke	0	2 
+ischemic_stroke	0	2 
+Age	0	- 
+[1;33mWarning: More than 13.965716% of your samples were removed! 
+         You should check if your covariate file is correct [0m
+
+After reading the covariate file, 370794 sample(s) included 
+in the analysis 
+
+
+Start Processing
+Processing 0.00%Processing 33.33%Processing 66.67%Processing 100.00%Processing 100.00%
+There are 1 region(s) with p-value less than 1e-5. Please 
+note that these results are inflated due to the overfitting 
+inherent in finding the best-fit PRS (but it's still best 
+to find the best-fit PRS!). 
+You can use the --perm option (see manual) to calculate an 
+empirical P-value. 
+
+==================================================
+
+Running P-value cut-off 1e-06
+PRSice 2.3.5 (2021-09-20) 
+https://github.com/choishingwan/PRSice
+(C) 2016-2020 Shing Wan (Sam) Choi and Paul F. O'Reilly
+GNU General Public License v3
+If you use PRSice in any published work, please cite:
+Choi SW, O'Reilly PF.
+PRSice-2: Polygenic Risk Score Software for Biobank-Scale Data.
+GigaScience 8, no. 7 (July 1, 2019)
+2024-08-30 16:14:32
+/home/yujia/Software/PRSice/PRSice_linux \
+    --a1 A1 \
+    --a2 A2 \
+    --bar-levels 1e-08,5e-08,7e-08,9e-08,1e-07,5e-07,7e-07,9e-07,1e-06,5e-06,7e-06,9e-06,1e-05,5e-05,0.0001,0.0005,0.001,0.005,0.01,0.05,0.1,0.5,1 \
+    --base /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/02_base_data/LDL/QC/LDL.QC.gz \
+    --beta  \
+    --binary-target F \
+    --bp BP \
+    --chr CHR \
+    --clump-kb 250kb \
+    --clump-p 1.000000 \
+    --clump-r2 0.100000 \
+    --cov /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/LDL/CAD/ukbb.covariate.prs.LDL.set3 \
+    --cov-factor Genotype_Batch,Gender,Non_smoker,Previous_smoker,Current_smoker,Non_alcohol_drinker,Previous_alcohol_drinker,Current_alcohol_drinker,Cholesterol_lowering_medication,Blood_pressure_medication,Insulin,htn,t2dm,heart_failure,hemorrhage_stroke,ischemic_stroke \
+    --extract /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/06_PRS_calculation/external_analysis_for_paper_revision/PRSice2/LDL/CAD/selected_snps_1e-06.csv \
+    --fastscore  \
+    --num-auto 22 \
+    --out LDL_prs \
+    --pheno /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/LDL/CAD/ukbb.phenotype.LDL.mgdL \
+    --print-snp  \
+    --pvalue P \
+    --score con-std \
+    --seed 2389825711 \
+    --snp SNP \
+    --stat BETA \
+    --target /mnt/md0/public_data/UKBB_data/genotype/GWAS_ukbb_maf0.001_info0.8/bed/allchrs/ukb_allchrs \
+    --thread 35
+
+Initializing Genotype file: 
+/mnt/md0/public_data/UKBB_data/genotype/GWAS_ukbb_maf0.001_info0.8/bed/allchrs/ukb_allchrs 
+(bed) 
+
+Start processing LDL.QC 
+================================================== 
+
+Only one column detected, will assume only SNP ID is 
+provided 
+
+Base file: 
+/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/02_base_data/LDL/QC/LDL.QC.gz 
+GZ file detected. Header of file is: 
+CHR	BP	SNP	A1	A2	N	SE	P	BETA	MAF	EAF 
+
+Reading 100.00%
+2038531 variant(s) observed in base file, with: 
+2036274 variant(s) excluded based on user input 
+2257 total variant(s) included from base file 
+
+Loading Genotype info from target 
+================================================== 
+
+443630 people (204889 male(s), 238674 female(s)) observed 
+443630 founder(s) included 
+
+2287705 variant(s) not found in previous data 
+1 variant(s) with mismatch information 
+72 variant(s) included 
+
+Phenotype file: 
+/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/LDL/CAD/ukbb.phenotype.LDL.mgdL 
+Column Name of Sample ID: FID+IID 
+Note: If the phenotype file does not contain a header, the 
+column name will be displayed as the Sample ID which is 
+expected. 
+
+There are a total of 1 phenotype to process 
+
+Start performing clumping 
+
+Clumping Progress: 1.39%Clumping Progress: 2.78%Clumping Progress: 4.17%Clumping Progress: 5.56%Clumping Progress: 6.94%Clumping Progress: 8.33%Clumping Progress: 9.72%Clumping Progress: 11.11%Clumping Progress: 12.50%Clumping Progress: 13.89%Clumping Progress: 15.28%Clumping Progress: 16.67%Clumping Progress: 18.06%Clumping Progress: 19.44%Clumping Progress: 20.83%Clumping Progress: 22.22%Clumping Progress: 23.61%Clumping Progress: 25.00%Clumping Progress: 26.39%Clumping Progress: 27.78%Clumping Progress: 29.17%Clumping Progress: 30.56%Clumping Progress: 31.94%Clumping Progress: 33.33%Clumping Progress: 34.72%Clumping Progress: 36.11%Clumping Progress: 37.50%Clumping Progress: 38.89%Clumping Progress: 40.28%Clumping Progress: 41.67%Clumping Progress: 43.06%Clumping Progress: 44.44%Clumping Progress: 45.83%Clumping Progress: 47.22%Clumping Progress: 48.61%Clumping Progress: 50.00%Clumping Progress: 51.39%Clumping Progress: 52.78%Clumping Progress: 54.17%Clumping Progress: 55.56%Clumping Progress: 56.94%Clumping Progress: 58.33%Clumping Progress: 59.72%Clumping Progress: 61.11%Clumping Progress: 62.50%Clumping Progress: 63.89%Clumping Progress: 65.28%Clumping Progress: 100.00%
+Number of variant(s) after clumping : 61 
+
+Processing the 1 th phenotype 
+
+Phenotype is a continuous phenotype 
+12646 sample(s) without phenotype 
+430984 sample(s) with valid phenotype 
+
+Processing the covariate file: 
+/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/LDL/CAD/ukbb.covariate.prs.LDL.set3 
+============================== 
+
+Include Covariates: 
+Name	Missing	Number of levels 
+Gender	0	2 
+Genotype_Batch	0	106 
+4079-0.0	0	- 
+4080-0.0	0	- 
+189-0.0	0	- 
+Non_smoker	0	2 
+Previous_smoker	0	2 
+Current_smoker	0	2 
+Non_alcohol_drinker	0	2 
+Previous_alcohol_drinker	0	2 
+Current_alcohol_drinker	0	2 
+Cholesterol_lowering_medication	0	2 
+Blood_pressure_medication	0	2 
+Insulin	0	2 
+21001-0.0	0	- 
+23099-0.0	0	- 
+21002-0.0	0	- 
+PC1	0	- 
+PC2	0	- 
+PC3	0	- 
+PC4	0	- 
+PC5	0	- 
+PC6	0	- 
+PC7	0	- 
+PC8	0	- 
+PC9	0	- 
+PC10	0	- 
+30630-0.0	0	- 
+30650-0.0	0	- 
+30660-0.0	0	- 
+30670-0.0	0	- 
+30700-0.0	0	- 
+30710-0.0	0	- 
+30720-0.0	0	- 
+30680-0.0	0	- 
+30730-0.0	0	- 
+30740-0.0	0	- 
+30750-0.0	0	- 
+30760-0.0	0	- 
+30770-0.0	0	- 
+30810-0.0	0	- 
+30830-0.0	0	- 
+30840-0.0	0	- 
+30860-0.0	0	- 
+30850-0.0	0	- 
+30870-0.0	0	- 
+30880-0.0	0	- 
+30890-0.0	0	- 
+ethnic_group	0	- 
+htn	0	2 
+t2dm	0	2 
+heart_failure	0	2 
+hemorrhage_stroke	0	2 
+ischemic_stroke	0	2 
+Age	0	- 
+[1;33mWarning: More than 13.965716% of your samples were removed! 
+         You should check if your covariate file is correct [0m
+
+After reading the covariate file, 370794 sample(s) included 
+in the analysis 
+
+
+Start Processing
+Processing 0.00%Processing 20.00%Processing 40.00%Processing 60.00%Processing 80.00%Processing 100.00%Processing 100.00%
+There are 1 region(s) with p-value less than 1e-5. Please 
+note that these results are inflated due to the overfitting 
+inherent in finding the best-fit PRS (but it's still best 
+to find the best-fit PRS!). 
+You can use the --perm option (see manual) to calculate an 
+empirical P-value. 
+
+==================================================
+
+Running P-value cut-off 1e-05
+PRSice 2.3.5 (2021-09-20) 
+https://github.com/choishingwan/PRSice
+(C) 2016-2020 Shing Wan (Sam) Choi and Paul F. O'Reilly
+GNU General Public License v3
+If you use PRSice in any published work, please cite:
+Choi SW, O'Reilly PF.
+PRSice-2: Polygenic Risk Score Software for Biobank-Scale Data.
+GigaScience 8, no. 7 (July 1, 2019)
+2024-08-30 16:15:04
+/home/yujia/Software/PRSice/PRSice_linux \
+    --a1 A1 \
+    --a2 A2 \
+    --bar-levels 1e-08,5e-08,7e-08,9e-08,1e-07,5e-07,7e-07,9e-07,1e-06,5e-06,7e-06,9e-06,1e-05,5e-05,0.0001,0.0005,0.001,0.005,0.01,0.05,0.1,0.5,1 \
+    --base /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/02_base_data/LDL/QC/LDL.QC.gz \
+    --beta  \
+    --binary-target F \
+    --bp BP \
+    --chr CHR \
+    --clump-kb 250kb \
+    --clump-p 1.000000 \
+    --clump-r2 0.100000 \
+    --cov /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/LDL/CAD/ukbb.covariate.prs.LDL.set3 \
+    --cov-factor Genotype_Batch,Gender,Non_smoker,Previous_smoker,Current_smoker,Non_alcohol_drinker,Previous_alcohol_drinker,Current_alcohol_drinker,Cholesterol_lowering_medication,Blood_pressure_medication,Insulin,htn,t2dm,heart_failure,hemorrhage_stroke,ischemic_stroke \
+    --extract /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/06_PRS_calculation/external_analysis_for_paper_revision/PRSice2/LDL/CAD/selected_snps_1e-05.csv \
+    --fastscore  \
+    --num-auto 22 \
+    --out LDL_prs \
+    --pheno /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/LDL/CAD/ukbb.phenotype.LDL.mgdL \
+    --print-snp  \
+    --pvalue P \
+    --score con-std \
+    --seed 2389825711 \
+    --snp SNP \
+    --stat BETA \
+    --target /mnt/md0/public_data/UKBB_data/genotype/GWAS_ukbb_maf0.001_info0.8/bed/allchrs/ukb_allchrs \
+    --thread 35
+
+Initializing Genotype file: 
+/mnt/md0/public_data/UKBB_data/genotype/GWAS_ukbb_maf0.001_info0.8/bed/allchrs/ukb_allchrs 
+(bed) 
+
+Start processing LDL.QC 
+================================================== 
+
+Only one column detected, will assume only SNP ID is 
+provided 
+
+Base file: 
+/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/02_base_data/LDL/QC/LDL.QC.gz 
+GZ file detected. Header of file is: 
+CHR	BP	SNP	A1	A2	N	SE	P	BETA	MAF	EAF 
+
+Reading 100.00%
+2038531 variant(s) observed in base file, with: 
+2035613 variant(s) excluded based on user input 
+2918 total variant(s) included from base file 
+
+Loading Genotype info from target 
+================================================== 
+
+443630 people (204889 male(s), 238674 female(s)) observed 
+443630 founder(s) included 
+
+2287686 variant(s) not found in previous data 
+4 variant(s) with mismatch information 
+88 variant(s) included 
+
+Phenotype file: 
+/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/LDL/CAD/ukbb.phenotype.LDL.mgdL 
+Column Name of Sample ID: FID+IID 
+Note: If the phenotype file does not contain a header, the 
+column name will be displayed as the Sample ID which is 
+expected. 
+
+There are a total of 1 phenotype to process 
+
+Start performing clumping 
+
+Clumping Progress: 1.14%Clumping Progress: 2.27%Clumping Progress: 3.41%Clumping Progress: 4.55%Clumping Progress: 5.68%Clumping Progress: 6.82%Clumping Progress: 7.95%Clumping Progress: 9.09%Clumping Progress: 10.23%Clumping Progress: 11.36%Clumping Progress: 12.50%Clumping Progress: 13.64%Clumping Progress: 14.77%Clumping Progress: 15.91%Clumping Progress: 17.05%Clumping Progress: 18.18%Clumping Progress: 19.32%Clumping Progress: 20.45%Clumping Progress: 21.59%Clumping Progress: 22.73%Clumping Progress: 23.86%Clumping Progress: 25.00%Clumping Progress: 26.14%Clumping Progress: 27.27%Clumping Progress: 28.41%Clumping Progress: 29.55%Clumping Progress: 30.68%Clumping Progress: 31.82%Clumping Progress: 32.95%Clumping Progress: 34.09%Clumping Progress: 35.23%Clumping Progress: 36.36%Clumping Progress: 37.50%Clumping Progress: 38.64%Clumping Progress: 39.77%Clumping Progress: 40.91%Clumping Progress: 42.05%Clumping Progress: 43.18%Clumping Progress: 44.32%Clumping Progress: 45.45%Clumping Progress: 46.59%Clumping Progress: 47.73%Clumping Progress: 48.86%Clumping Progress: 50.00%Clumping Progress: 51.14%Clumping Progress: 52.27%Clumping Progress: 53.41%Clumping Progress: 54.55%Clumping Progress: 55.68%Clumping Progress: 56.82%Clumping Progress: 57.95%Clumping Progress: 59.09%Clumping Progress: 60.23%Clumping Progress: 61.36%Clumping Progress: 62.50%Clumping Progress: 63.64%Clumping Progress: 64.77%Clumping Progress: 65.91%Clumping Progress: 67.05%Clumping Progress: 100.00%
+Number of variant(s) after clumping : 74 
+
+Processing the 1 th phenotype 
+
+Phenotype is a continuous phenotype 
+12646 sample(s) without phenotype 
+430984 sample(s) with valid phenotype 
+
+Processing the covariate file: 
+/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/LDL/CAD/ukbb.covariate.prs.LDL.set3 
+============================== 
+
+Include Covariates: 
+Name	Missing	Number of levels 
+Gender	0	2 
+Genotype_Batch	0	106 
+4079-0.0	0	- 
+4080-0.0	0	- 
+189-0.0	0	- 
+Non_smoker	0	2 
+Previous_smoker	0	2 
+Current_smoker	0	2 
+Non_alcohol_drinker	0	2 
+Previous_alcohol_drinker	0	2 
+Current_alcohol_drinker	0	2 
+Cholesterol_lowering_medication	0	2 
+Blood_pressure_medication	0	2 
+Insulin	0	2 
+21001-0.0	0	- 
+23099-0.0	0	- 
+21002-0.0	0	- 
+PC1	0	- 
+PC2	0	- 
+PC3	0	- 
+PC4	0	- 
+PC5	0	- 
+PC6	0	- 
+PC7	0	- 
+PC8	0	- 
+PC9	0	- 
+PC10	0	- 
+30630-0.0	0	- 
+30650-0.0	0	- 
+30660-0.0	0	- 
+30670-0.0	0	- 
+30700-0.0	0	- 
+30710-0.0	0	- 
+30720-0.0	0	- 
+30680-0.0	0	- 
+30730-0.0	0	- 
+30740-0.0	0	- 
+30750-0.0	0	- 
+30760-0.0	0	- 
+30770-0.0	0	- 
+30810-0.0	0	- 
+30830-0.0	0	- 
+30840-0.0	0	- 
+30860-0.0	0	- 
+30850-0.0	0	- 
+30870-0.0	0	- 
+30880-0.0	0	- 
+30890-0.0	0	- 
+ethnic_group	0	- 
+htn	0	2 
+t2dm	0	2 
+heart_failure	0	2 
+hemorrhage_stroke	0	2 
+ischemic_stroke	0	2 
+Age	0	- 
+[1;33mWarning: More than 13.965716% of your samples were removed! 
+         You should check if your covariate file is correct [0m
+
+After reading the covariate file, 370794 sample(s) included 
+in the analysis 
+
+
+Start Processing
+Processing 0.00%Processing 12.50%Processing 25.00%Processing 37.50%Processing 50.00%Processing 62.50%Processing 75.00%Processing 87.50%Processing 100.00%Processing 100.00%
+There are 1 region(s) with p-value less than 1e-5. Please 
+note that these results are inflated due to the overfitting 
+inherent in finding the best-fit PRS (but it's still best 
+to find the best-fit PRS!). 
+You can use the --perm option (see manual) to calculate an 
+empirical P-value. 
+
+==================================================
+
+Currently running TC on CAD.
+Running P-value cut-off 1e-08
+PRSice 2.3.5 (2021-09-20) 
+https://github.com/choishingwan/PRSice
+(C) 2016-2020 Shing Wan (Sam) Choi and Paul F. O'Reilly
+GNU General Public License v3
+If you use PRSice in any published work, please cite:
+Choi SW, O'Reilly PF.
+PRSice-2: Polygenic Risk Score Software for Biobank-Scale Data.
+GigaScience 8, no. 7 (July 1, 2019)
+2024-08-30 16:15:45
+/home/yujia/Software/PRSice/PRSice_linux \
+    --a1 A1 \
+    --a2 A2 \
+    --bar-levels 1e-08,5e-08,7e-08,9e-08,1e-07,5e-07,7e-07,9e-07,1e-06,5e-06,7e-06,9e-06,1e-05,5e-05,0.0001,0.0005,0.001,0.005,0.01,0.05,0.1,0.5,1 \
+    --base /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/02_base_data/TC/QC/TC.QC.gz \
+    --beta  \
+    --binary-target F \
+    --bp BP \
+    --chr CHR \
+    --clump-kb 250kb \
+    --clump-p 1.000000 \
+    --clump-r2 0.100000 \
+    --cov /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/TC/CAD/ukbb.covariate.prs.TC.set1 \
+    --cov-factor Genotype_Batch,Gender \
+    --extract /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/06_PRS_calculation/external_analysis_for_paper_revision/PRSice2/TC/CAD/selected_snps_1e-08.csv \
+    --fastscore  \
+    --num-auto 22 \
+    --out TC_prs \
+    --pheno /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/TC/CAD/ukbb.phenotype.TC.mgdL \
+    --print-snp  \
+    --pvalue P \
+    --score con-std \
+    --seed 2389825711 \
+    --snp SNP \
+    --stat BETA \
+    --target /mnt/md0/public_data/UKBB_data/genotype/GWAS_ukbb_maf0.001_info0.8/bed/allchrs/ukb_allchrs \
+    --thread 35
+
+Initializing Genotype file: 
+/mnt/md0/public_data/UKBB_data/genotype/GWAS_ukbb_maf0.001_info0.8/bed/allchrs/ukb_allchrs 
+(bed) 
+
+Start processing TC.QC 
+================================================== 
+
+Only one column detected, will assume only SNP ID is 
+provided 
+
+Base file: 
+/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/02_base_data/TC/QC/TC.QC.gz 
+GZ file detected. Header of file is: 
+CHR	BP	SNP	A1	A2	N	SE	P	BETA	MAF	EAF 
+
+Reading 100.00%
+2044526 variant(s) observed in base file, with: 
+2042558 variant(s) excluded based on user input 
+1968 total variant(s) included from base file 
+
+Loading Genotype info from target 
+================================================== 
+
+443630 people (204889 male(s), 238674 female(s)) observed 
+443630 founder(s) included 
+
+2287726 variant(s) not found in previous data 
+52 variant(s) included 
+
+Phenotype file: 
+/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/TC/CAD/ukbb.phenotype.TC.mgdL 
+Column Name of Sample ID: FID+IID 
+Note: If the phenotype file does not contain a header, the 
+column name will be displayed as the Sample ID which is 
+expected. 
+
+There are a total of 1 phenotype to process 
+
+Start performing clumping 
+
+Clumping Progress: 1.92%Clumping Progress: 3.85%Clumping Progress: 5.77%Clumping Progress: 7.69%Clumping Progress: 9.62%Clumping Progress: 11.54%Clumping Progress: 13.46%Clumping Progress: 15.38%Clumping Progress: 17.31%Clumping Progress: 19.23%Clumping Progress: 21.15%Clumping Progress: 23.08%Clumping Progress: 25.00%Clumping Progress: 26.92%Clumping Progress: 28.85%Clumping Progress: 30.77%Clumping Progress: 32.69%Clumping Progress: 34.62%Clumping Progress: 36.54%Clumping Progress: 38.46%Clumping Progress: 40.38%Clumping Progress: 42.31%Clumping Progress: 44.23%Clumping Progress: 46.15%Clumping Progress: 48.08%Clumping Progress: 50.00%Clumping Progress: 51.92%Clumping Progress: 53.85%Clumping Progress: 55.77%Clumping Progress: 57.69%Clumping Progress: 59.62%Clumping Progress: 61.54%Clumping Progress: 63.46%Clumping Progress: 65.38%Clumping Progress: 67.31%Clumping Progress: 69.23%Clumping Progress: 100.00%
+Number of variant(s) after clumping : 44 
+
+Processing the 1 th phenotype 
+
+Phenotype is a continuous phenotype 
+12646 sample(s) without phenotype 
+430984 sample(s) with valid phenotype 
+
+Processing the covariate file: 
+/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/TC/CAD/ukbb.covariate.prs.TC.set1 
+============================== 
+
+Include Covariates: 
+Name	Missing	Number of levels 
+Gender	0	2 
+Genotype_Batch	0	106 
+PC1	0	- 
+PC2	0	- 
+PC3	0	- 
+PC4	0	- 
+PC5	0	- 
+PC6	0	- 
+PC7	0	- 
+PC8	0	- 
+PC9	0	- 
+PC10	0	- 
+ethnic_group	0	- 
+Age	0	- 
+
+After reading the covariate file, 430984 sample(s) included 
+in the analysis 
+
+
+Start Processing
+Processing 0.00%Processing 100.00%Processing 100.00%
+There are 1 region(s) with p-value less than 1e-5. Please 
+note that these results are inflated due to the overfitting 
+inherent in finding the best-fit PRS (but it's still best 
+to find the best-fit PRS!). 
+You can use the --perm option (see manual) to calculate an 
+empirical P-value. 
+
+==================================================
+
+Running P-value cut-off 1e-07
+PRSice 2.3.5 (2021-09-20) 
+https://github.com/choishingwan/PRSice
+(C) 2016-2020 Shing Wan (Sam) Choi and Paul F. O'Reilly
+GNU General Public License v3
+If you use PRSice in any published work, please cite:
+Choi SW, O'Reilly PF.
+PRSice-2: Polygenic Risk Score Software for Biobank-Scale Data.
+GigaScience 8, no. 7 (July 1, 2019)
+2024-08-30 16:15:57
+/home/yujia/Software/PRSice/PRSice_linux \
+    --a1 A1 \
+    --a2 A2 \
+    --bar-levels 1e-08,5e-08,7e-08,9e-08,1e-07,5e-07,7e-07,9e-07,1e-06,5e-06,7e-06,9e-06,1e-05,5e-05,0.0001,0.0005,0.001,0.005,0.01,0.05,0.1,0.5,1 \
+    --base /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/02_base_data/TC/QC/TC.QC.gz \
+    --beta  \
+    --binary-target F \
+    --bp BP \
+    --chr CHR \
+    --clump-kb 250kb \
+    --clump-p 1.000000 \
+    --clump-r2 0.100000 \
+    --cov /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/TC/CAD/ukbb.covariate.prs.TC.set1 \
+    --cov-factor Genotype_Batch,Gender \
+    --extract /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/06_PRS_calculation/external_analysis_for_paper_revision/PRSice2/TC/CAD/selected_snps_1e-07.csv \
+    --fastscore  \
+    --num-auto 22 \
+    --out TC_prs \
+    --pheno /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/TC/CAD/ukbb.phenotype.TC.mgdL \
+    --print-snp  \
+    --pvalue P \
+    --score con-std \
+    --seed 2389825711 \
+    --snp SNP \
+    --stat BETA \
+    --target /mnt/md0/public_data/UKBB_data/genotype/GWAS_ukbb_maf0.001_info0.8/bed/allchrs/ukb_allchrs \
+    --thread 35
+
+Initializing Genotype file: 
+/mnt/md0/public_data/UKBB_data/genotype/GWAS_ukbb_maf0.001_info0.8/bed/allchrs/ukb_allchrs 
+(bed) 
+
+Start processing TC.QC 
+================================================== 
+
+Only one column detected, will assume only SNP ID is 
+provided 
+
+Base file: 
+/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/02_base_data/TC/QC/TC.QC.gz 
+GZ file detected. Header of file is: 
+CHR	BP	SNP	A1	A2	N	SE	P	BETA	MAF	EAF 
+
+Reading 100.00%
+2044526 variant(s) observed in base file, with: 
+2042124 variant(s) excluded based on user input 
+2402 total variant(s) included from base file 
+
+Loading Genotype info from target 
+================================================== 
+
+443630 people (204889 male(s), 238674 female(s)) observed 
+443630 founder(s) included 
+
+2287711 variant(s) not found in previous data 
+67 variant(s) included 
+
+Phenotype file: 
+/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/TC/CAD/ukbb.phenotype.TC.mgdL 
+Column Name of Sample ID: FID+IID 
+Note: If the phenotype file does not contain a header, the 
+column name will be displayed as the Sample ID which is 
+expected. 
+
+There are a total of 1 phenotype to process 
+
+Start performing clumping 
+
+Clumping Progress: 1.49%Clumping Progress: 2.99%Clumping Progress: 4.48%Clumping Progress: 5.97%Clumping Progress: 7.46%Clumping Progress: 8.96%Clumping Progress: 10.45%Clumping Progress: 11.94%Clumping Progress: 13.43%Clumping Progress: 14.93%Clumping Progress: 16.42%Clumping Progress: 17.91%Clumping Progress: 19.40%Clumping Progress: 20.90%Clumping Progress: 22.39%Clumping Progress: 23.88%Clumping Progress: 25.37%Clumping Progress: 26.87%Clumping Progress: 28.36%Clumping Progress: 29.85%Clumping Progress: 31.34%Clumping Progress: 32.84%Clumping Progress: 34.33%Clumping Progress: 35.82%Clumping Progress: 37.31%Clumping Progress: 38.81%Clumping Progress: 40.30%Clumping Progress: 41.79%Clumping Progress: 43.28%Clumping Progress: 44.78%Clumping Progress: 46.27%Clumping Progress: 47.76%Clumping Progress: 49.25%Clumping Progress: 50.75%Clumping Progress: 52.24%Clumping Progress: 53.73%Clumping Progress: 55.22%Clumping Progress: 56.72%Clumping Progress: 58.21%Clumping Progress: 59.70%Clumping Progress: 61.19%Clumping Progress: 62.69%Clumping Progress: 64.18%Clumping Progress: 65.67%Clumping Progress: 100.00%
+Number of variant(s) after clumping : 57 
+
+Processing the 1 th phenotype 
+
+Phenotype is a continuous phenotype 
+12646 sample(s) without phenotype 
+430984 sample(s) with valid phenotype 
+
+Processing the covariate file: 
+/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/TC/CAD/ukbb.covariate.prs.TC.set1 
+============================== 
+
+Include Covariates: 
+Name	Missing	Number of levels 
+Gender	0	2 
+Genotype_Batch	0	106 
+PC1	0	- 
+PC2	0	- 
+PC3	0	- 
+PC4	0	- 
+PC5	0	- 
+PC6	0	- 
+PC7	0	- 
+PC8	0	- 
+PC9	0	- 
+PC10	0	- 
+ethnic_group	0	- 
+Age	0	- 
+
+After reading the covariate file, 430984 sample(s) included 
+in the analysis 
+
+
+Start Processing
+Processing 0.00%Processing 20.00%Processing 40.00%Processing 60.00%Processing 80.00%Processing 100.00%Processing 100.00%
+There are 1 region(s) with p-value less than 1e-5. Please 
+note that these results are inflated due to the overfitting 
+inherent in finding the best-fit PRS (but it's still best 
+to find the best-fit PRS!). 
+You can use the --perm option (see manual) to calculate an 
+empirical P-value. 
+
+==================================================
+
+Running P-value cut-off 1e-06
+PRSice 2.3.5 (2021-09-20) 
+https://github.com/choishingwan/PRSice
+(C) 2016-2020 Shing Wan (Sam) Choi and Paul F. O'Reilly
+GNU General Public License v3
+If you use PRSice in any published work, please cite:
+Choi SW, O'Reilly PF.
+PRSice-2: Polygenic Risk Score Software for Biobank-Scale Data.
+GigaScience 8, no. 7 (July 1, 2019)
+2024-08-30 16:16:17
+/home/yujia/Software/PRSice/PRSice_linux \
+    --a1 A1 \
+    --a2 A2 \
+    --bar-levels 1e-08,5e-08,7e-08,9e-08,1e-07,5e-07,7e-07,9e-07,1e-06,5e-06,7e-06,9e-06,1e-05,5e-05,0.0001,0.0005,0.001,0.005,0.01,0.05,0.1,0.5,1 \
+    --base /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/02_base_data/TC/QC/TC.QC.gz \
+    --beta  \
+    --binary-target F \
+    --bp BP \
+    --chr CHR \
+    --clump-kb 250kb \
+    --clump-p 1.000000 \
+    --clump-r2 0.100000 \
+    --cov /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/TC/CAD/ukbb.covariate.prs.TC.set1 \
+    --cov-factor Genotype_Batch,Gender \
+    --extract /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/06_PRS_calculation/external_analysis_for_paper_revision/PRSice2/TC/CAD/selected_snps_1e-06.csv \
+    --fastscore  \
+    --num-auto 22 \
+    --out TC_prs \
+    --pheno /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/TC/CAD/ukbb.phenotype.TC.mgdL \
+    --print-snp  \
+    --pvalue P \
+    --score con-std \
+    --seed 2389825711 \
+    --snp SNP \
+    --stat BETA \
+    --target /mnt/md0/public_data/UKBB_data/genotype/GWAS_ukbb_maf0.001_info0.8/bed/allchrs/ukb_allchrs \
+    --thread 35
+
+Initializing Genotype file: 
+/mnt/md0/public_data/UKBB_data/genotype/GWAS_ukbb_maf0.001_info0.8/bed/allchrs/ukb_allchrs 
+(bed) 
+
+Start processing TC.QC 
+================================================== 
+
+Only one column detected, will assume only SNP ID is 
+provided 
+
+Base file: 
+/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/02_base_data/TC/QC/TC.QC.gz 
+GZ file detected. Header of file is: 
+CHR	BP	SNP	A1	A2	N	SE	P	BETA	MAF	EAF 
+
+Reading 100.00%
+2044526 variant(s) observed in base file, with: 
+2041507 variant(s) excluded based on user input 
+3019 total variant(s) included from base file 
+
+Loading Genotype info from target 
+================================================== 
+
+443630 people (204889 male(s), 238674 female(s)) observed 
+443630 founder(s) included 
+
+2287697 variant(s) not found in previous data 
+2 variant(s) with mismatch information 
+79 variant(s) included 
+
+Phenotype file: 
+/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/TC/CAD/ukbb.phenotype.TC.mgdL 
+Column Name of Sample ID: FID+IID 
+Note: If the phenotype file does not contain a header, the 
+column name will be displayed as the Sample ID which is 
+expected. 
+
+There are a total of 1 phenotype to process 
+
+Start performing clumping 
+
+Clumping Progress: 1.27%Clumping Progress: 2.53%Clumping Progress: 3.80%Clumping Progress: 5.06%Clumping Progress: 6.33%Clumping Progress: 7.59%Clumping Progress: 8.86%Clumping Progress: 10.13%Clumping Progress: 11.39%Clumping Progress: 12.66%Clumping Progress: 13.92%Clumping Progress: 15.19%Clumping Progress: 16.46%Clumping Progress: 17.72%Clumping Progress: 18.99%Clumping Progress: 20.25%Clumping Progress: 21.52%Clumping Progress: 22.78%Clumping Progress: 24.05%Clumping Progress: 25.32%Clumping Progress: 26.58%Clumping Progress: 27.85%Clumping Progress: 29.11%Clumping Progress: 30.38%Clumping Progress: 31.65%Clumping Progress: 32.91%Clumping Progress: 34.18%Clumping Progress: 35.44%Clumping Progress: 36.71%Clumping Progress: 37.97%Clumping Progress: 39.24%Clumping Progress: 40.51%Clumping Progress: 41.77%Clumping Progress: 43.04%Clumping Progress: 44.30%Clumping Progress: 45.57%Clumping Progress: 46.84%Clumping Progress: 48.10%Clumping Progress: 49.37%Clumping Progress: 50.63%Clumping Progress: 51.90%Clumping Progress: 53.16%Clumping Progress: 54.43%Clumping Progress: 55.70%Clumping Progress: 56.96%Clumping Progress: 58.23%Clumping Progress: 59.49%Clumping Progress: 60.76%Clumping Progress: 62.03%Clumping Progress: 63.29%Clumping Progress: 64.56%Clumping Progress: 65.82%Clumping Progress: 67.09%Clumping Progress: 100.00%
+Number of variant(s) after clumping : 67 
+
+Processing the 1 th phenotype 
+
+Phenotype is a continuous phenotype 
+12646 sample(s) without phenotype 
+430984 sample(s) with valid phenotype 
+
+Processing the covariate file: 
+/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/TC/CAD/ukbb.covariate.prs.TC.set1 
+============================== 
+
+Include Covariates: 
+Name	Missing	Number of levels 
+Gender	0	2 
+Genotype_Batch	0	106 
+PC1	0	- 
+PC2	0	- 
+PC3	0	- 
+PC4	0	- 
+PC5	0	- 
+PC6	0	- 
+PC7	0	- 
+PC8	0	- 
+PC9	0	- 
+PC10	0	- 
+ethnic_group	0	- 
+Age	0	- 
+
+After reading the covariate file, 430984 sample(s) included 
+in the analysis 
+
+
+Start Processing
+Processing 0.00%Processing 12.50%Processing 25.00%Processing 37.50%Processing 50.00%Processing 62.50%Processing 75.00%Processing 87.50%Processing 100.00%Processing 100.00%
+There are 1 region(s) with p-value less than 1e-5. Please 
+note that these results are inflated due to the overfitting 
+inherent in finding the best-fit PRS (but it's still best 
+to find the best-fit PRS!). 
+You can use the --perm option (see manual) to calculate an 
+empirical P-value. 
+
+==================================================
+
+Running P-value cut-off 1e-05
+PRSice 2.3.5 (2021-09-20) 
+https://github.com/choishingwan/PRSice
+(C) 2016-2020 Shing Wan (Sam) Choi and Paul F. O'Reilly
+GNU General Public License v3
+If you use PRSice in any published work, please cite:
+Choi SW, O'Reilly PF.
+PRSice-2: Polygenic Risk Score Software for Biobank-Scale Data.
+GigaScience 8, no. 7 (July 1, 2019)
+2024-08-30 16:16:44
+/home/yujia/Software/PRSice/PRSice_linux \
+    --a1 A1 \
+    --a2 A2 \
+    --bar-levels 1e-08,5e-08,7e-08,9e-08,1e-07,5e-07,7e-07,9e-07,1e-06,5e-06,7e-06,9e-06,1e-05,5e-05,0.0001,0.0005,0.001,0.005,0.01,0.05,0.1,0.5,1 \
+    --base /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/02_base_data/TC/QC/TC.QC.gz \
+    --beta  \
+    --binary-target F \
+    --bp BP \
+    --chr CHR \
+    --clump-kb 250kb \
+    --clump-p 1.000000 \
+    --clump-r2 0.100000 \
+    --cov /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/TC/CAD/ukbb.covariate.prs.TC.set1 \
+    --cov-factor Genotype_Batch,Gender \
+    --extract /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/06_PRS_calculation/external_analysis_for_paper_revision/PRSice2/TC/CAD/selected_snps_1e-05.csv \
+    --fastscore  \
+    --num-auto 22 \
+    --out TC_prs \
+    --pheno /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/TC/CAD/ukbb.phenotype.TC.mgdL \
+    --print-snp  \
+    --pvalue P \
+    --score con-std \
+    --seed 2389825711 \
+    --snp SNP \
+    --stat BETA \
+    --target /mnt/md0/public_data/UKBB_data/genotype/GWAS_ukbb_maf0.001_info0.8/bed/allchrs/ukb_allchrs \
+    --thread 35
+
+Initializing Genotype file: 
+/mnt/md0/public_data/UKBB_data/genotype/GWAS_ukbb_maf0.001_info0.8/bed/allchrs/ukb_allchrs 
+(bed) 
+
+Start processing TC.QC 
+================================================== 
+
+Only one column detected, will assume only SNP ID is 
+provided 
+
+Base file: 
+/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/02_base_data/TC/QC/TC.QC.gz 
+GZ file detected. Header of file is: 
+CHR	BP	SNP	A1	A2	N	SE	P	BETA	MAF	EAF 
+
+Reading 100.00%
+2044526 variant(s) observed in base file, with: 
+2040617 variant(s) excluded based on user input 
+3909 total variant(s) included from base file 
+
+Loading Genotype info from target 
+================================================== 
+
+443630 people (204889 male(s), 238674 female(s)) observed 
+443630 founder(s) included 
+
+2287679 variant(s) not found in previous data 
+3 variant(s) with mismatch information 
+96 variant(s) included 
+
+Phenotype file: 
+/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/TC/CAD/ukbb.phenotype.TC.mgdL 
+Column Name of Sample ID: FID+IID 
+Note: If the phenotype file does not contain a header, the 
+column name will be displayed as the Sample ID which is 
+expected. 
+
+There are a total of 1 phenotype to process 
+
+Start performing clumping 
+
+Clumping Progress: 1.04%Clumping Progress: 2.08%Clumping Progress: 3.12%Clumping Progress: 4.17%Clumping Progress: 5.21%Clumping Progress: 6.25%Clumping Progress: 7.29%Clumping Progress: 8.33%Clumping Progress: 9.38%Clumping Progress: 10.42%Clumping Progress: 11.46%Clumping Progress: 12.50%Clumping Progress: 13.54%Clumping Progress: 14.58%Clumping Progress: 15.62%Clumping Progress: 16.67%Clumping Progress: 17.71%Clumping Progress: 18.75%Clumping Progress: 19.79%Clumping Progress: 20.83%Clumping Progress: 21.88%Clumping Progress: 22.92%Clumping Progress: 23.96%Clumping Progress: 25.00%Clumping Progress: 26.04%Clumping Progress: 27.08%Clumping Progress: 28.12%Clumping Progress: 29.17%Clumping Progress: 30.21%Clumping Progress: 31.25%Clumping Progress: 32.29%Clumping Progress: 33.33%Clumping Progress: 34.38%Clumping Progress: 35.42%Clumping Progress: 36.46%Clumping Progress: 37.50%Clumping Progress: 38.54%Clumping Progress: 39.58%Clumping Progress: 40.62%Clumping Progress: 41.67%Clumping Progress: 42.71%Clumping Progress: 43.75%Clumping Progress: 44.79%Clumping Progress: 45.83%Clumping Progress: 46.88%Clumping Progress: 47.92%Clumping Progress: 48.96%Clumping Progress: 50.00%Clumping Progress: 51.04%Clumping Progress: 52.08%Clumping Progress: 53.12%Clumping Progress: 54.17%Clumping Progress: 55.21%Clumping Progress: 56.25%Clumping Progress: 57.29%Clumping Progress: 58.33%Clumping Progress: 59.38%Clumping Progress: 60.42%Clumping Progress: 61.46%Clumping Progress: 62.50%Clumping Progress: 63.54%Clumping Progress: 64.58%Clumping Progress: 65.62%Clumping Progress: 66.67%Clumping Progress: 67.71%Clumping Progress: 68.75%Clumping Progress: 69.79%Clumping Progress: 70.83%Clumping Progress: 71.88%Clumping Progress: 100.00%
+Number of variant(s) after clumping : 84 
+
+Processing the 1 th phenotype 
+
+Phenotype is a continuous phenotype 
+12646 sample(s) without phenotype 
+430984 sample(s) with valid phenotype 
+
+Processing the covariate file: 
+/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/TC/CAD/ukbb.covariate.prs.TC.set1 
+============================== 
+
+Include Covariates: 
+Name	Missing	Number of levels 
+Gender	0	2 
+Genotype_Batch	0	106 
+PC1	0	- 
+PC2	0	- 
+PC3	0	- 
+PC4	0	- 
+PC5	0	- 
+PC6	0	- 
+PC7	0	- 
+PC8	0	- 
+PC9	0	- 
+PC10	0	- 
+ethnic_group	0	- 
+Age	0	- 
+
+After reading the covariate file, 430984 sample(s) included 
+in the analysis 
+
+
+Start Processing
+Processing 0.00%Processing 8.33%Processing 16.67%Processing 25.00%Processing 33.33%Processing 41.67%Processing 50.00%Processing 58.33%Processing 66.67%Processing 75.00%Processing 83.33%Processing 91.67%Processing 100.00%Processing 100.00%
+There are 1 region(s) with p-value less than 1e-5. Please 
+note that these results are inflated due to the overfitting 
+inherent in finding the best-fit PRS (but it's still best 
+to find the best-fit PRS!). 
+You can use the --perm option (see manual) to calculate an 
+empirical P-value. 
+
+==================================================
+
+Currently running TC on CAD.
+Running P-value cut-off 1e-08
+PRSice 2.3.5 (2021-09-20) 
+https://github.com/choishingwan/PRSice
+(C) 2016-2020 Shing Wan (Sam) Choi and Paul F. O'Reilly
+GNU General Public License v3
+If you use PRSice in any published work, please cite:
+Choi SW, O'Reilly PF.
+PRSice-2: Polygenic Risk Score Software for Biobank-Scale Data.
+GigaScience 8, no. 7 (July 1, 2019)
+2024-08-30 16:17:19
+/home/yujia/Software/PRSice/PRSice_linux \
+    --a1 A1 \
+    --a2 A2 \
+    --bar-levels 1e-08,5e-08,7e-08,9e-08,1e-07,5e-07,7e-07,9e-07,1e-06,5e-06,7e-06,9e-06,1e-05,5e-05,0.0001,0.0005,0.001,0.005,0.01,0.05,0.1,0.5,1 \
+    --base /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/02_base_data/TC/QC/TC.QC.gz \
+    --beta  \
+    --binary-target F \
+    --bp BP \
+    --chr CHR \
+    --clump-kb 250kb \
+    --clump-p 1.000000 \
+    --clump-r2 0.100000 \
+    --cov /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/TC/CAD/ukbb.covariate.prs.TC.set3 \
+    --cov-factor Genotype_Batch,Gender,Non_smoker,Previous_smoker,Current_smoker,Non_alcohol_drinker,Previous_alcohol_drinker,Current_alcohol_drinker,Cholesterol_lowering_medication,Blood_pressure_medication,Insulin,htn,t2dm,heart_failure,hemorrhage_stroke,ischemic_stroke \
+    --extract /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/06_PRS_calculation/external_analysis_for_paper_revision/PRSice2/TC/CAD/selected_snps_1e-08.csv \
+    --fastscore  \
+    --num-auto 22 \
+    --out TC_prs \
+    --pheno /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/TC/CAD/ukbb.phenotype.TC.mgdL \
+    --print-snp  \
+    --pvalue P \
+    --score con-std \
+    --seed 2389825711 \
+    --snp SNP \
+    --stat BETA \
+    --target /mnt/md0/public_data/UKBB_data/genotype/GWAS_ukbb_maf0.001_info0.8/bed/allchrs/ukb_allchrs \
+    --thread 35
+
+Initializing Genotype file: 
+/mnt/md0/public_data/UKBB_data/genotype/GWAS_ukbb_maf0.001_info0.8/bed/allchrs/ukb_allchrs 
+(bed) 
+
+Start processing TC.QC 
+================================================== 
+
+Only one column detected, will assume only SNP ID is 
+provided 
+
+Base file: 
+/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/02_base_data/TC/QC/TC.QC.gz 
+GZ file detected. Header of file is: 
+CHR	BP	SNP	A1	A2	N	SE	P	BETA	MAF	EAF 
+
+Reading 100.00%
+2044526 variant(s) observed in base file, with: 
+2042558 variant(s) excluded based on user input 
+1968 total variant(s) included from base file 
+
+Loading Genotype info from target 
+================================================== 
+
+443630 people (204889 male(s), 238674 female(s)) observed 
+443630 founder(s) included 
+
+2287726 variant(s) not found in previous data 
+52 variant(s) included 
+
+Phenotype file: 
+/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/TC/CAD/ukbb.phenotype.TC.mgdL 
+Column Name of Sample ID: FID+IID 
+Note: If the phenotype file does not contain a header, the 
+column name will be displayed as the Sample ID which is 
+expected. 
+
+There are a total of 1 phenotype to process 
+
+Start performing clumping 
+
+Clumping Progress: 1.92%Clumping Progress: 3.85%Clumping Progress: 5.77%Clumping Progress: 7.69%Clumping Progress: 9.62%Clumping Progress: 11.54%Clumping Progress: 13.46%Clumping Progress: 15.38%Clumping Progress: 17.31%Clumping Progress: 19.23%Clumping Progress: 21.15%Clumping Progress: 23.08%Clumping Progress: 25.00%Clumping Progress: 26.92%Clumping Progress: 28.85%Clumping Progress: 30.77%Clumping Progress: 32.69%Clumping Progress: 34.62%Clumping Progress: 36.54%Clumping Progress: 38.46%Clumping Progress: 40.38%Clumping Progress: 42.31%Clumping Progress: 44.23%Clumping Progress: 46.15%Clumping Progress: 48.08%Clumping Progress: 50.00%Clumping Progress: 51.92%Clumping Progress: 53.85%Clumping Progress: 55.77%Clumping Progress: 57.69%Clumping Progress: 59.62%Clumping Progress: 61.54%Clumping Progress: 63.46%Clumping Progress: 65.38%Clumping Progress: 67.31%Clumping Progress: 100.00%
+Number of variant(s) after clumping : 44 
+
+Processing the 1 th phenotype 
+
+Phenotype is a continuous phenotype 
+12646 sample(s) without phenotype 
+430984 sample(s) with valid phenotype 
+
+Processing the covariate file: 
+/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/TC/CAD/ukbb.covariate.prs.TC.set3 
+============================== 
+
+Include Covariates: 
+Name	Missing	Number of levels 
+Gender	0	2 
+Genotype_Batch	0	106 
+4079-0.0	0	- 
+4080-0.0	0	- 
+189-0.0	0	- 
+Non_smoker	0	2 
+Previous_smoker	0	2 
+Current_smoker	0	2 
+Non_alcohol_drinker	0	2 
+Previous_alcohol_drinker	0	2 
+Current_alcohol_drinker	0	2 
+Cholesterol_lowering_medication	0	2 
+Blood_pressure_medication	0	2 
+Insulin	0	2 
+21001-0.0	0	- 
+23099-0.0	0	- 
+21002-0.0	0	- 
+PC1	0	- 
+PC2	0	- 
+PC3	0	- 
+PC4	0	- 
+PC5	0	- 
+PC6	0	- 
+PC7	0	- 
+PC8	0	- 
+PC9	0	- 
+PC10	0	- 
+30650-0.0	0	- 
+30660-0.0	0	- 
+30670-0.0	0	- 
+30700-0.0	0	- 
+30710-0.0	0	- 
+30720-0.0	0	- 
+30680-0.0	0	- 
+30730-0.0	0	- 
+30740-0.0	0	- 
+30750-0.0	0	- 
+30770-0.0	0	- 
+30810-0.0	0	- 
+30830-0.0	0	- 
+30840-0.0	0	- 
+30860-0.0	0	- 
+30850-0.0	0	- 
+30870-0.0	0	- 
+30880-0.0	0	- 
+30890-0.0	0	- 
+ethnic_group	0	- 
+htn	0	2 
+t2dm	0	2 
+heart_failure	0	2 
+hemorrhage_stroke	0	2 
+ischemic_stroke	0	2 
+Age	0	- 
+[1;33mWarning: More than 13.965716% of your samples were removed! 
+         You should check if your covariate file is correct [0m
+
+After reading the covariate file, 370794 sample(s) included 
+in the analysis 
+
+
+Start Processing
+Processing 0.00%Processing 100.00%Processing 100.00%
+There are 1 region(s) with p-value less than 1e-5. Please 
+note that these results are inflated due to the overfitting 
+inherent in finding the best-fit PRS (but it's still best 
+to find the best-fit PRS!). 
+You can use the --perm option (see manual) to calculate an 
+empirical P-value. 
+
+==================================================
+
+Running P-value cut-off 1e-07
+PRSice 2.3.5 (2021-09-20) 
+https://github.com/choishingwan/PRSice
+(C) 2016-2020 Shing Wan (Sam) Choi and Paul F. O'Reilly
+GNU General Public License v3
+If you use PRSice in any published work, please cite:
+Choi SW, O'Reilly PF.
+PRSice-2: Polygenic Risk Score Software for Biobank-Scale Data.
+GigaScience 8, no. 7 (July 1, 2019)
+2024-08-30 16:17:38
+/home/yujia/Software/PRSice/PRSice_linux \
+    --a1 A1 \
+    --a2 A2 \
+    --bar-levels 1e-08,5e-08,7e-08,9e-08,1e-07,5e-07,7e-07,9e-07,1e-06,5e-06,7e-06,9e-06,1e-05,5e-05,0.0001,0.0005,0.001,0.005,0.01,0.05,0.1,0.5,1 \
+    --base /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/02_base_data/TC/QC/TC.QC.gz \
+    --beta  \
+    --binary-target F \
+    --bp BP \
+    --chr CHR \
+    --clump-kb 250kb \
+    --clump-p 1.000000 \
+    --clump-r2 0.100000 \
+    --cov /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/TC/CAD/ukbb.covariate.prs.TC.set3 \
+    --cov-factor Genotype_Batch,Gender,Non_smoker,Previous_smoker,Current_smoker,Non_alcohol_drinker,Previous_alcohol_drinker,Current_alcohol_drinker,Cholesterol_lowering_medication,Blood_pressure_medication,Insulin,htn,t2dm,heart_failure,hemorrhage_stroke,ischemic_stroke \
+    --extract /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/06_PRS_calculation/external_analysis_for_paper_revision/PRSice2/TC/CAD/selected_snps_1e-07.csv \
+    --fastscore  \
+    --num-auto 22 \
+    --out TC_prs \
+    --pheno /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/TC/CAD/ukbb.phenotype.TC.mgdL \
+    --print-snp  \
+    --pvalue P \
+    --score con-std \
+    --seed 2389825711 \
+    --snp SNP \
+    --stat BETA \
+    --target /mnt/md0/public_data/UKBB_data/genotype/GWAS_ukbb_maf0.001_info0.8/bed/allchrs/ukb_allchrs \
+    --thread 35
+
+Initializing Genotype file: 
+/mnt/md0/public_data/UKBB_data/genotype/GWAS_ukbb_maf0.001_info0.8/bed/allchrs/ukb_allchrs 
+(bed) 
+
+Start processing TC.QC 
+================================================== 
+
+Only one column detected, will assume only SNP ID is 
+provided 
+
+Base file: 
+/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/02_base_data/TC/QC/TC.QC.gz 
+GZ file detected. Header of file is: 
+CHR	BP	SNP	A1	A2	N	SE	P	BETA	MAF	EAF 
+
+Reading 100.00%
+2044526 variant(s) observed in base file, with: 
+2042124 variant(s) excluded based on user input 
+2402 total variant(s) included from base file 
+
+Loading Genotype info from target 
+================================================== 
+
+443630 people (204889 male(s), 238674 female(s)) observed 
+443630 founder(s) included 
+
+2287711 variant(s) not found in previous data 
+67 variant(s) included 
+
+Phenotype file: 
+/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/TC/CAD/ukbb.phenotype.TC.mgdL 
+Column Name of Sample ID: FID+IID 
+Note: If the phenotype file does not contain a header, the 
+column name will be displayed as the Sample ID which is 
+expected. 
+
+There are a total of 1 phenotype to process 
+
+Start performing clumping 
+
+Clumping Progress: 1.49%Clumping Progress: 2.99%Clumping Progress: 4.48%Clumping Progress: 5.97%Clumping Progress: 7.46%Clumping Progress: 8.96%Clumping Progress: 10.45%Clumping Progress: 11.94%Clumping Progress: 13.43%Clumping Progress: 14.93%Clumping Progress: 16.42%Clumping Progress: 17.91%Clumping Progress: 19.40%Clumping Progress: 20.90%Clumping Progress: 22.39%Clumping Progress: 23.88%Clumping Progress: 25.37%Clumping Progress: 26.87%Clumping Progress: 28.36%Clumping Progress: 29.85%Clumping Progress: 31.34%Clumping Progress: 32.84%Clumping Progress: 34.33%Clumping Progress: 35.82%Clumping Progress: 37.31%Clumping Progress: 38.81%Clumping Progress: 40.30%Clumping Progress: 41.79%Clumping Progress: 43.28%Clumping Progress: 44.78%Clumping Progress: 46.27%Clumping Progress: 47.76%Clumping Progress: 49.25%Clumping Progress: 50.75%Clumping Progress: 52.24%Clumping Progress: 53.73%Clumping Progress: 55.22%Clumping Progress: 56.72%Clumping Progress: 58.21%Clumping Progress: 59.70%Clumping Progress: 61.19%Clumping Progress: 62.69%Clumping Progress: 64.18%Clumping Progress: 65.67%Clumping Progress: 100.00%
+Number of variant(s) after clumping : 57 
+
+Processing the 1 th phenotype 
+
+Phenotype is a continuous phenotype 
+12646 sample(s) without phenotype 
+430984 sample(s) with valid phenotype 
+
+Processing the covariate file: 
+/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/TC/CAD/ukbb.covariate.prs.TC.set3 
+============================== 
+
+Include Covariates: 
+Name	Missing	Number of levels 
+Gender	0	2 
+Genotype_Batch	0	106 
+4079-0.0	0	- 
+4080-0.0	0	- 
+189-0.0	0	- 
+Non_smoker	0	2 
+Previous_smoker	0	2 
+Current_smoker	0	2 
+Non_alcohol_drinker	0	2 
+Previous_alcohol_drinker	0	2 
+Current_alcohol_drinker	0	2 
+Cholesterol_lowering_medication	0	2 
+Blood_pressure_medication	0	2 
+Insulin	0	2 
+21001-0.0	0	- 
+23099-0.0	0	- 
+21002-0.0	0	- 
+PC1	0	- 
+PC2	0	- 
+PC3	0	- 
+PC4	0	- 
+PC5	0	- 
+PC6	0	- 
+PC7	0	- 
+PC8	0	- 
+PC9	0	- 
+PC10	0	- 
+30650-0.0	0	- 
+30660-0.0	0	- 
+30670-0.0	0	- 
+30700-0.0	0	- 
+30710-0.0	0	- 
+30720-0.0	0	- 
+30680-0.0	0	- 
+30730-0.0	0	- 
+30740-0.0	0	- 
+30750-0.0	0	- 
+30770-0.0	0	- 
+30810-0.0	0	- 
+30830-0.0	0	- 
+30840-0.0	0	- 
+30860-0.0	0	- 
+30850-0.0	0	- 
+30870-0.0	0	- 
+30880-0.0	0	- 
+30890-0.0	0	- 
+ethnic_group	0	- 
+htn	0	2 
+t2dm	0	2 
+heart_failure	0	2 
+hemorrhage_stroke	0	2 
+ischemic_stroke	0	2 
+Age	0	- 
+[1;33mWarning: More than 13.965716% of your samples were removed! 
+         You should check if your covariate file is correct [0m
+
+After reading the covariate file, 370794 sample(s) included 
+in the analysis 
+
+
+Start Processing
+Processing 0.00%Processing 20.00%Processing 40.00%Processing 60.00%Processing 80.00%Processing 100.00%Processing 100.00%
+There are 1 region(s) with p-value less than 1e-5. Please 
+note that these results are inflated due to the overfitting 
+inherent in finding the best-fit PRS (but it's still best 
+to find the best-fit PRS!). 
+You can use the --perm option (see manual) to calculate an 
+empirical P-value. 
+
+==================================================
+
+Running P-value cut-off 1e-06
+PRSice 2.3.5 (2021-09-20) 
+https://github.com/choishingwan/PRSice
+(C) 2016-2020 Shing Wan (Sam) Choi and Paul F. O'Reilly
+GNU General Public License v3
+If you use PRSice in any published work, please cite:
+Choi SW, O'Reilly PF.
+PRSice-2: Polygenic Risk Score Software for Biobank-Scale Data.
+GigaScience 8, no. 7 (July 1, 2019)
+2024-08-30 16:18:09
+/home/yujia/Software/PRSice/PRSice_linux \
+    --a1 A1 \
+    --a2 A2 \
+    --bar-levels 1e-08,5e-08,7e-08,9e-08,1e-07,5e-07,7e-07,9e-07,1e-06,5e-06,7e-06,9e-06,1e-05,5e-05,0.0001,0.0005,0.001,0.005,0.01,0.05,0.1,0.5,1 \
+    --base /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/02_base_data/TC/QC/TC.QC.gz \
+    --beta  \
+    --binary-target F \
+    --bp BP \
+    --chr CHR \
+    --clump-kb 250kb \
+    --clump-p 1.000000 \
+    --clump-r2 0.100000 \
+    --cov /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/TC/CAD/ukbb.covariate.prs.TC.set3 \
+    --cov-factor Genotype_Batch,Gender,Non_smoker,Previous_smoker,Current_smoker,Non_alcohol_drinker,Previous_alcohol_drinker,Current_alcohol_drinker,Cholesterol_lowering_medication,Blood_pressure_medication,Insulin,htn,t2dm,heart_failure,hemorrhage_stroke,ischemic_stroke \
+    --extract /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/06_PRS_calculation/external_analysis_for_paper_revision/PRSice2/TC/CAD/selected_snps_1e-06.csv \
+    --fastscore  \
+    --num-auto 22 \
+    --out TC_prs \
+    --pheno /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/TC/CAD/ukbb.phenotype.TC.mgdL \
+    --print-snp  \
+    --pvalue P \
+    --score con-std \
+    --seed 2389825711 \
+    --snp SNP \
+    --stat BETA \
+    --target /mnt/md0/public_data/UKBB_data/genotype/GWAS_ukbb_maf0.001_info0.8/bed/allchrs/ukb_allchrs \
+    --thread 35
+
+Initializing Genotype file: 
+/mnt/md0/public_data/UKBB_data/genotype/GWAS_ukbb_maf0.001_info0.8/bed/allchrs/ukb_allchrs 
+(bed) 
+
+Start processing TC.QC 
+================================================== 
+
+Only one column detected, will assume only SNP ID is 
+provided 
+
+Base file: 
+/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/02_base_data/TC/QC/TC.QC.gz 
+GZ file detected. Header of file is: 
+CHR	BP	SNP	A1	A2	N	SE	P	BETA	MAF	EAF 
+
+Reading 100.00%
+2044526 variant(s) observed in base file, with: 
+2041507 variant(s) excluded based on user input 
+3019 total variant(s) included from base file 
+
+Loading Genotype info from target 
+================================================== 
+
+443630 people (204889 male(s), 238674 female(s)) observed 
+443630 founder(s) included 
+
+2287697 variant(s) not found in previous data 
+2 variant(s) with mismatch information 
+79 variant(s) included 
+
+Phenotype file: 
+/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/TC/CAD/ukbb.phenotype.TC.mgdL 
+Column Name of Sample ID: FID+IID 
+Note: If the phenotype file does not contain a header, the 
+column name will be displayed as the Sample ID which is 
+expected. 
+
+There are a total of 1 phenotype to process 
+
+Start performing clumping 
+
+Clumping Progress: 1.27%Clumping Progress: 2.53%Clumping Progress: 3.80%Clumping Progress: 5.06%Clumping Progress: 6.33%Clumping Progress: 7.59%Clumping Progress: 8.86%Clumping Progress: 10.13%Clumping Progress: 11.39%Clumping Progress: 12.66%Clumping Progress: 13.92%Clumping Progress: 15.19%Clumping Progress: 16.46%Clumping Progress: 17.72%Clumping Progress: 18.99%Clumping Progress: 20.25%Clumping Progress: 21.52%Clumping Progress: 22.78%Clumping Progress: 24.05%Clumping Progress: 25.32%Clumping Progress: 26.58%Clumping Progress: 27.85%Clumping Progress: 29.11%Clumping Progress: 30.38%Clumping Progress: 31.65%Clumping Progress: 32.91%Clumping Progress: 34.18%Clumping Progress: 35.44%Clumping Progress: 36.71%Clumping Progress: 37.97%Clumping Progress: 39.24%Clumping Progress: 40.51%Clumping Progress: 41.77%Clumping Progress: 43.04%Clumping Progress: 44.30%Clumping Progress: 45.57%Clumping Progress: 46.84%Clumping Progress: 48.10%Clumping Progress: 49.37%Clumping Progress: 50.63%Clumping Progress: 51.90%Clumping Progress: 53.16%Clumping Progress: 54.43%Clumping Progress: 55.70%Clumping Progress: 56.96%Clumping Progress: 58.23%Clumping Progress: 59.49%Clumping Progress: 60.76%Clumping Progress: 62.03%Clumping Progress: 63.29%Clumping Progress: 64.56%Clumping Progress: 65.82%Clumping Progress: 67.09%Clumping Progress: 100.00%
+Number of variant(s) after clumping : 67 
+
+Processing the 1 th phenotype 
+
+Phenotype is a continuous phenotype 
+12646 sample(s) without phenotype 
+430984 sample(s) with valid phenotype 
+
+Processing the covariate file: 
+/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/TC/CAD/ukbb.covariate.prs.TC.set3 
+============================== 
+
+Include Covariates: 
+Name	Missing	Number of levels 
+Gender	0	2 
+Genotype_Batch	0	106 
+4079-0.0	0	- 
+4080-0.0	0	- 
+189-0.0	0	- 
+Non_smoker	0	2 
+Previous_smoker	0	2 
+Current_smoker	0	2 
+Non_alcohol_drinker	0	2 
+Previous_alcohol_drinker	0	2 
+Current_alcohol_drinker	0	2 
+Cholesterol_lowering_medication	0	2 
+Blood_pressure_medication	0	2 
+Insulin	0	2 
+21001-0.0	0	- 
+23099-0.0	0	- 
+21002-0.0	0	- 
+PC1	0	- 
+PC2	0	- 
+PC3	0	- 
+PC4	0	- 
+PC5	0	- 
+PC6	0	- 
+PC7	0	- 
+PC8	0	- 
+PC9	0	- 
+PC10	0	- 
+30650-0.0	0	- 
+30660-0.0	0	- 
+30670-0.0	0	- 
+30700-0.0	0	- 
+30710-0.0	0	- 
+30720-0.0	0	- 
+30680-0.0	0	- 
+30730-0.0	0	- 
+30740-0.0	0	- 
+30750-0.0	0	- 
+30770-0.0	0	- 
+30810-0.0	0	- 
+30830-0.0	0	- 
+30840-0.0	0	- 
+30860-0.0	0	- 
+30850-0.0	0	- 
+30870-0.0	0	- 
+30880-0.0	0	- 
+30890-0.0	0	- 
+ethnic_group	0	- 
+htn	0	2 
+t2dm	0	2 
+heart_failure	0	2 
+hemorrhage_stroke	0	2 
+ischemic_stroke	0	2 
+Age	0	- 
+[1;33mWarning: More than 13.965716% of your samples were removed! 
+         You should check if your covariate file is correct [0m
+
+After reading the covariate file, 370794 sample(s) included 
+in the analysis 
+
+
+Start Processing
+Processing 0.00%Processing 12.50%Processing 25.00%Processing 37.50%Processing 50.00%Processing 62.50%Processing 75.00%Processing 87.50%Processing 100.00%Processing 100.00%
+There are 1 region(s) with p-value less than 1e-5. Please 
+note that these results are inflated due to the overfitting 
+inherent in finding the best-fit PRS (but it's still best 
+to find the best-fit PRS!). 
+You can use the --perm option (see manual) to calculate an 
+empirical P-value. 
+
+==================================================
+
+Running P-value cut-off 1e-05
+PRSice 2.3.5 (2021-09-20) 
+https://github.com/choishingwan/PRSice
+(C) 2016-2020 Shing Wan (Sam) Choi and Paul F. O'Reilly
+GNU General Public License v3
+If you use PRSice in any published work, please cite:
+Choi SW, O'Reilly PF.
+PRSice-2: Polygenic Risk Score Software for Biobank-Scale Data.
+GigaScience 8, no. 7 (July 1, 2019)
+2024-08-30 16:18:49
+/home/yujia/Software/PRSice/PRSice_linux \
+    --a1 A1 \
+    --a2 A2 \
+    --bar-levels 1e-08,5e-08,7e-08,9e-08,1e-07,5e-07,7e-07,9e-07,1e-06,5e-06,7e-06,9e-06,1e-05,5e-05,0.0001,0.0005,0.001,0.005,0.01,0.05,0.1,0.5,1 \
+    --base /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/02_base_data/TC/QC/TC.QC.gz \
+    --beta  \
+    --binary-target F \
+    --bp BP \
+    --chr CHR \
+    --clump-kb 250kb \
+    --clump-p 1.000000 \
+    --clump-r2 0.100000 \
+    --cov /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/TC/CAD/ukbb.covariate.prs.TC.set3 \
+    --cov-factor Genotype_Batch,Gender,Non_smoker,Previous_smoker,Current_smoker,Non_alcohol_drinker,Previous_alcohol_drinker,Current_alcohol_drinker,Cholesterol_lowering_medication,Blood_pressure_medication,Insulin,htn,t2dm,heart_failure,hemorrhage_stroke,ischemic_stroke \
+    --extract /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/06_PRS_calculation/external_analysis_for_paper_revision/PRSice2/TC/CAD/selected_snps_1e-05.csv \
+    --fastscore  \
+    --num-auto 22 \
+    --out TC_prs \
+    --pheno /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/TC/CAD/ukbb.phenotype.TC.mgdL \
+    --print-snp  \
+    --pvalue P \
+    --score con-std \
+    --seed 2389825711 \
+    --snp SNP \
+    --stat BETA \
+    --target /mnt/md0/public_data/UKBB_data/genotype/GWAS_ukbb_maf0.001_info0.8/bed/allchrs/ukb_allchrs \
+    --thread 35
+
+Initializing Genotype file: 
+/mnt/md0/public_data/UKBB_data/genotype/GWAS_ukbb_maf0.001_info0.8/bed/allchrs/ukb_allchrs 
+(bed) 
+
+Start processing TC.QC 
+================================================== 
+
+Only one column detected, will assume only SNP ID is 
+provided 
+
+Base file: 
+/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/02_base_data/TC/QC/TC.QC.gz 
+GZ file detected. Header of file is: 
+CHR	BP	SNP	A1	A2	N	SE	P	BETA	MAF	EAF 
+
+Reading 100.00%
+2044526 variant(s) observed in base file, with: 
+2040617 variant(s) excluded based on user input 
+3909 total variant(s) included from base file 
+
+Loading Genotype info from target 
+================================================== 
+
+443630 people (204889 male(s), 238674 female(s)) observed 
+443630 founder(s) included 
+
+2287679 variant(s) not found in previous data 
+3 variant(s) with mismatch information 
+96 variant(s) included 
+
+Phenotype file: 
+/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/TC/CAD/ukbb.phenotype.TC.mgdL 
+Column Name of Sample ID: FID+IID 
+Note: If the phenotype file does not contain a header, the 
+column name will be displayed as the Sample ID which is 
+expected. 
+
+There are a total of 1 phenotype to process 
+
+Start performing clumping 
+
+Clumping Progress: 1.04%Clumping Progress: 2.08%Clumping Progress: 3.12%Clumping Progress: 4.17%Clumping Progress: 5.21%Clumping Progress: 6.25%Clumping Progress: 7.29%Clumping Progress: 8.33%Clumping Progress: 9.38%Clumping Progress: 10.42%Clumping Progress: 11.46%Clumping Progress: 12.50%Clumping Progress: 13.54%Clumping Progress: 14.58%Clumping Progress: 15.62%Clumping Progress: 16.67%Clumping Progress: 17.71%Clumping Progress: 18.75%Clumping Progress: 19.79%Clumping Progress: 20.83%Clumping Progress: 21.88%Clumping Progress: 22.92%Clumping Progress: 23.96%Clumping Progress: 25.00%Clumping Progress: 26.04%Clumping Progress: 27.08%Clumping Progress: 28.12%Clumping Progress: 29.17%Clumping Progress: 30.21%Clumping Progress: 31.25%Clumping Progress: 32.29%Clumping Progress: 33.33%Clumping Progress: 34.38%Clumping Progress: 35.42%Clumping Progress: 36.46%Clumping Progress: 37.50%Clumping Progress: 38.54%Clumping Progress: 39.58%Clumping Progress: 40.62%Clumping Progress: 41.67%Clumping Progress: 42.71%Clumping Progress: 43.75%Clumping Progress: 44.79%Clumping Progress: 45.83%Clumping Progress: 46.88%Clumping Progress: 47.92%Clumping Progress: 48.96%Clumping Progress: 50.00%Clumping Progress: 51.04%Clumping Progress: 52.08%Clumping Progress: 53.12%Clumping Progress: 54.17%Clumping Progress: 55.21%Clumping Progress: 56.25%Clumping Progress: 57.29%Clumping Progress: 58.33%Clumping Progress: 59.38%Clumping Progress: 60.42%Clumping Progress: 61.46%Clumping Progress: 62.50%Clumping Progress: 63.54%Clumping Progress: 64.58%Clumping Progress: 65.62%Clumping Progress: 66.67%Clumping Progress: 67.71%Clumping Progress: 68.75%Clumping Progress: 69.79%Clumping Progress: 70.83%Clumping Progress: 71.88%Clumping Progress: 72.92%Clumping Progress: 100.00%
+Number of variant(s) after clumping : 84 
+
+Processing the 1 th phenotype 
+
+Phenotype is a continuous phenotype 
+12646 sample(s) without phenotype 
+430984 sample(s) with valid phenotype 
+
+Processing the covariate file: 
+/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/TC/CAD/ukbb.covariate.prs.TC.set3 
+============================== 
+
+Include Covariates: 
+Name	Missing	Number of levels 
+Gender	0	2 
+Genotype_Batch	0	106 
+4079-0.0	0	- 
+4080-0.0	0	- 
+189-0.0	0	- 
+Non_smoker	0	2 
+Previous_smoker	0	2 
+Current_smoker	0	2 
+Non_alcohol_drinker	0	2 
+Previous_alcohol_drinker	0	2 
+Current_alcohol_drinker	0	2 
+Cholesterol_lowering_medication	0	2 
+Blood_pressure_medication	0	2 
+Insulin	0	2 
+21001-0.0	0	- 
+23099-0.0	0	- 
+21002-0.0	0	- 
+PC1	0	- 
+PC2	0	- 
+PC3	0	- 
+PC4	0	- 
+PC5	0	- 
+PC6	0	- 
+PC7	0	- 
+PC8	0	- 
+PC9	0	- 
+PC10	0	- 
+30650-0.0	0	- 
+30660-0.0	0	- 
+30670-0.0	0	- 
+30700-0.0	0	- 
+30710-0.0	0	- 
+30720-0.0	0	- 
+30680-0.0	0	- 
+30730-0.0	0	- 
+30740-0.0	0	- 
+30750-0.0	0	- 
+30770-0.0	0	- 
+30810-0.0	0	- 
+30830-0.0	0	- 
+30840-0.0	0	- 
+30860-0.0	0	- 
+30850-0.0	0	- 
+30870-0.0	0	- 
+30880-0.0	0	- 
+30890-0.0	0	- 
+ethnic_group	0	- 
+htn	0	2 
+t2dm	0	2 
+heart_failure	0	2 
+hemorrhage_stroke	0	2 
+ischemic_stroke	0	2 
+Age	0	- 
+[1;33mWarning: More than 13.965716% of your samples were removed! 
+         You should check if your covariate file is correct [0m
+
+After reading the covariate file, 370794 sample(s) included 
+in the analysis 
+
+
+Start Processing
+Processing 0.00%Processing 8.33%Processing 16.67%Processing 25.00%Processing 33.33%Processing 41.67%Processing 50.00%Processing 58.33%Processing 66.67%Processing 75.00%Processing 83.33%Processing 91.67%Processing 100.00%Processing 100.00%
+There are 1 region(s) with p-value less than 1e-5. Please 
+note that these results are inflated due to the overfitting 
+inherent in finding the best-fit PRS (but it's still best 
+to find the best-fit PRS!). 
+You can use the --perm option (see manual) to calculate an 
+empirical P-value. 
+
+==================================================
+
+Currently running TG on CAD.
+Running P-value cut-off 1e-08
+PRSice 2.3.5 (2021-09-20) 
+https://github.com/choishingwan/PRSice
+(C) 2016-2020 Shing Wan (Sam) Choi and Paul F. O'Reilly
+GNU General Public License v3
+If you use PRSice in any published work, please cite:
+Choi SW, O'Reilly PF.
+PRSice-2: Polygenic Risk Score Software for Biobank-Scale Data.
+GigaScience 8, no. 7 (July 1, 2019)
+2024-08-30 16:19:41
+/home/yujia/Software/PRSice/PRSice_linux \
+    --a1 A1 \
+    --a2 A2 \
+    --bar-levels 1e-08,5e-08,7e-08,9e-08,1e-07,5e-07,7e-07,9e-07,1e-06,5e-06,7e-06,9e-06,1e-05,5e-05,0.0001,0.0005,0.001,0.005,0.01,0.05,0.1,0.5,1 \
+    --base /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/02_base_data/TG/QC/TG.QC.gz \
+    --beta  \
+    --binary-target F \
+    --bp BP \
+    --chr CHR \
+    --clump-kb 250kb \
+    --clump-p 1.000000 \
+    --clump-r2 0.100000 \
+    --cov /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/TG/CAD/ukbb.covariate.prs.TG.set1 \
+    --cov-factor Genotype_Batch,Gender \
+    --extract /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/06_PRS_calculation/external_analysis_for_paper_revision/PRSice2/TG/CAD/selected_snps_1e-08.csv \
+    --fastscore  \
+    --num-auto 22 \
+    --out TG_prs \
+    --pheno /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/TG/CAD/ukbb.phenotype.TG.mgdL \
+    --print-snp  \
+    --pvalue P \
+    --score con-std \
+    --seed 2389825711 \
+    --snp SNP \
+    --stat BETA \
+    --target /mnt/md0/public_data/UKBB_data/genotype/GWAS_ukbb_maf0.001_info0.8/bed/allchrs/ukb_allchrs \
+    --thread 35
+
+Initializing Genotype file: 
+/mnt/md0/public_data/UKBB_data/genotype/GWAS_ukbb_maf0.001_info0.8/bed/allchrs/ukb_allchrs 
+(bed) 
+
+Start processing TG.QC 
+================================================== 
+
+Only one column detected, will assume only SNP ID is 
+provided 
+
+Base file: 
+/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/02_base_data/TG/QC/TG.QC.gz 
+GZ file detected. Header of file is: 
+CHR	BP	SNP	A1	A2	N	SE	P	BETA	MAF	EAF 
+
+Reading 100.00%
+2039432 variant(s) observed in base file, with: 
+2037730 variant(s) excluded based on user input 
+1702 total variant(s) included from base file 
+
+Loading Genotype info from target 
+================================================== 
+
+443630 people (204889 male(s), 238674 female(s)) observed 
+443630 founder(s) included 
+
+2287735 variant(s) not found in previous data 
+2 variant(s) with mismatch information 
+41 variant(s) included 
+
+Phenotype file: 
+/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/TG/CAD/ukbb.phenotype.TG.mgdL 
+Column Name of Sample ID: FID+IID 
+Note: If the phenotype file does not contain a header, the 
+column name will be displayed as the Sample ID which is 
+expected. 
+
+There are a total of 1 phenotype to process 
+
+Start performing clumping 
+
+Clumping Progress: 2.44%Clumping Progress: 4.88%Clumping Progress: 7.32%Clumping Progress: 9.76%Clumping Progress: 12.20%Clumping Progress: 14.63%Clumping Progress: 17.07%Clumping Progress: 19.51%Clumping Progress: 21.95%Clumping Progress: 24.39%Clumping Progress: 26.83%Clumping Progress: 29.27%Clumping Progress: 31.71%Clumping Progress: 34.15%Clumping Progress: 36.59%Clumping Progress: 39.02%Clumping Progress: 41.46%Clumping Progress: 43.90%Clumping Progress: 46.34%Clumping Progress: 48.78%Clumping Progress: 51.22%Clumping Progress: 53.66%Clumping Progress: 100.00%
+Number of variant(s) after clumping : 31 
+
+Processing the 1 th phenotype 
+
+Phenotype is a continuous phenotype 
+12646 sample(s) without phenotype 
+430984 sample(s) with valid phenotype 
+
+Processing the covariate file: 
+/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/TG/CAD/ukbb.covariate.prs.TG.set1 
+============================== 
+
+Include Covariates: 
+Name	Missing	Number of levels 
+Gender	0	2 
+Genotype_Batch	0	106 
+PC1	0	- 
+PC2	0	- 
+PC3	0	- 
+PC4	0	- 
+PC5	0	- 
+PC6	0	- 
+PC7	0	- 
+PC8	0	- 
+PC9	0	- 
+PC10	0	- 
+ethnic_group	0	- 
+Age	0	- 
+
+After reading the covariate file, 430984 sample(s) included 
+in the analysis 
+
+
+Start Processing
+Processing 0.00%Processing 100.00%Processing 100.00%
+There are 1 region(s) with p-value less than 1e-5. Please 
+note that these results are inflated due to the overfitting 
+inherent in finding the best-fit PRS (but it's still best 
+to find the best-fit PRS!). 
+You can use the --perm option (see manual) to calculate an 
+empirical P-value. 
+
+==================================================
+
+Running P-value cut-off 1e-07
+PRSice 2.3.5 (2021-09-20) 
+https://github.com/choishingwan/PRSice
+(C) 2016-2020 Shing Wan (Sam) Choi and Paul F. O'Reilly
+GNU General Public License v3
+If you use PRSice in any published work, please cite:
+Choi SW, O'Reilly PF.
+PRSice-2: Polygenic Risk Score Software for Biobank-Scale Data.
+GigaScience 8, no. 7 (July 1, 2019)
+2024-08-30 16:19:52
+/home/yujia/Software/PRSice/PRSice_linux \
+    --a1 A1 \
+    --a2 A2 \
+    --bar-levels 1e-08,5e-08,7e-08,9e-08,1e-07,5e-07,7e-07,9e-07,1e-06,5e-06,7e-06,9e-06,1e-05,5e-05,0.0001,0.0005,0.001,0.005,0.01,0.05,0.1,0.5,1 \
+    --base /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/02_base_data/TG/QC/TG.QC.gz \
+    --beta  \
+    --binary-target F \
+    --bp BP \
+    --chr CHR \
+    --clump-kb 250kb \
+    --clump-p 1.000000 \
+    --clump-r2 0.100000 \
+    --cov /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/TG/CAD/ukbb.covariate.prs.TG.set1 \
+    --cov-factor Genotype_Batch,Gender \
+    --extract /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/06_PRS_calculation/external_analysis_for_paper_revision/PRSice2/TG/CAD/selected_snps_1e-07.csv \
+    --fastscore  \
+    --num-auto 22 \
+    --out TG_prs \
+    --pheno /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/TG/CAD/ukbb.phenotype.TG.mgdL \
+    --print-snp  \
+    --pvalue P \
+    --score con-std \
+    --seed 2389825711 \
+    --snp SNP \
+    --stat BETA \
+    --target /mnt/md0/public_data/UKBB_data/genotype/GWAS_ukbb_maf0.001_info0.8/bed/allchrs/ukb_allchrs \
+    --thread 35
+
+Initializing Genotype file: 
+/mnt/md0/public_data/UKBB_data/genotype/GWAS_ukbb_maf0.001_info0.8/bed/allchrs/ukb_allchrs 
+(bed) 
+
+Start processing TG.QC 
+================================================== 
+
+Only one column detected, will assume only SNP ID is 
+provided 
+
+Base file: 
+/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/02_base_data/TG/QC/TG.QC.gz 
+GZ file detected. Header of file is: 
+CHR	BP	SNP	A1	A2	N	SE	P	BETA	MAF	EAF 
+
+Reading 100.00%
+2039432 variant(s) observed in base file, with: 
+2037484 variant(s) excluded based on user input 
+1948 total variant(s) included from base file 
+
+Loading Genotype info from target 
+================================================== 
+
+443630 people (204889 male(s), 238674 female(s)) observed 
+443630 founder(s) included 
+
+2287732 variant(s) not found in previous data 
+2 variant(s) with mismatch information 
+44 variant(s) included 
+
+Phenotype file: 
+/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/TG/CAD/ukbb.phenotype.TG.mgdL 
+Column Name of Sample ID: FID+IID 
+Note: If the phenotype file does not contain a header, the 
+column name will be displayed as the Sample ID which is 
+expected. 
+
+There are a total of 1 phenotype to process 
+
+Start performing clumping 
+
+Clumping Progress: 2.27%Clumping Progress: 4.55%Clumping Progress: 6.82%Clumping Progress: 9.09%Clumping Progress: 11.36%Clumping Progress: 13.64%Clumping Progress: 15.91%Clumping Progress: 18.18%Clumping Progress: 20.45%Clumping Progress: 22.73%Clumping Progress: 25.00%Clumping Progress: 27.27%Clumping Progress: 29.55%Clumping Progress: 31.82%Clumping Progress: 34.09%Clumping Progress: 36.36%Clumping Progress: 38.64%Clumping Progress: 40.91%Clumping Progress: 43.18%Clumping Progress: 45.45%Clumping Progress: 47.73%Clumping Progress: 50.00%Clumping Progress: 52.27%Clumping Progress: 54.55%Clumping Progress: 56.82%Clumping Progress: 100.00%
+Number of variant(s) after clumping : 34 
+
+Processing the 1 th phenotype 
+
+Phenotype is a continuous phenotype 
+12646 sample(s) without phenotype 
+430984 sample(s) with valid phenotype 
+
+Processing the covariate file: 
+/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/TG/CAD/ukbb.covariate.prs.TG.set1 
+============================== 
+
+Include Covariates: 
+Name	Missing	Number of levels 
+Gender	0	2 
+Genotype_Batch	0	106 
+PC1	0	- 
+PC2	0	- 
+PC3	0	- 
+PC4	0	- 
+PC5	0	- 
+PC6	0	- 
+PC7	0	- 
+PC8	0	- 
+PC9	0	- 
+PC10	0	- 
+ethnic_group	0	- 
+Age	0	- 
+
+After reading the covariate file, 430984 sample(s) included 
+in the analysis 
+
+
+Start Processing
+Processing 0.00%Processing 33.33%Processing 66.67%Processing 100.00%Processing 100.00%
+There are 1 region(s) with p-value less than 1e-5. Please 
+note that these results are inflated due to the overfitting 
+inherent in finding the best-fit PRS (but it's still best 
+to find the best-fit PRS!). 
+You can use the --perm option (see manual) to calculate an 
+empirical P-value. 
+
+==================================================
+
+Running P-value cut-off 1e-06
+PRSice 2.3.5 (2021-09-20) 
+https://github.com/choishingwan/PRSice
+(C) 2016-2020 Shing Wan (Sam) Choi and Paul F. O'Reilly
+GNU General Public License v3
+If you use PRSice in any published work, please cite:
+Choi SW, O'Reilly PF.
+PRSice-2: Polygenic Risk Score Software for Biobank-Scale Data.
+GigaScience 8, no. 7 (July 1, 2019)
+2024-08-30 16:20:08
+/home/yujia/Software/PRSice/PRSice_linux \
+    --a1 A1 \
+    --a2 A2 \
+    --bar-levels 1e-08,5e-08,7e-08,9e-08,1e-07,5e-07,7e-07,9e-07,1e-06,5e-06,7e-06,9e-06,1e-05,5e-05,0.0001,0.0005,0.001,0.005,0.01,0.05,0.1,0.5,1 \
+    --base /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/02_base_data/TG/QC/TG.QC.gz \
+    --beta  \
+    --binary-target F \
+    --bp BP \
+    --chr CHR \
+    --clump-kb 250kb \
+    --clump-p 1.000000 \
+    --clump-r2 0.100000 \
+    --cov /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/TG/CAD/ukbb.covariate.prs.TG.set1 \
+    --cov-factor Genotype_Batch,Gender \
+    --extract /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/06_PRS_calculation/external_analysis_for_paper_revision/PRSice2/TG/CAD/selected_snps_1e-06.csv \
+    --fastscore  \
+    --num-auto 22 \
+    --out TG_prs \
+    --pheno /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/TG/CAD/ukbb.phenotype.TG.mgdL \
+    --print-snp  \
+    --pvalue P \
+    --score con-std \
+    --seed 2389825711 \
+    --snp SNP \
+    --stat BETA \
+    --target /mnt/md0/public_data/UKBB_data/genotype/GWAS_ukbb_maf0.001_info0.8/bed/allchrs/ukb_allchrs \
+    --thread 35
+
+Initializing Genotype file: 
+/mnt/md0/public_data/UKBB_data/genotype/GWAS_ukbb_maf0.001_info0.8/bed/allchrs/ukb_allchrs 
+(bed) 
+
+Start processing TG.QC 
+================================================== 
+
+Only one column detected, will assume only SNP ID is 
+provided 
+
+Base file: 
+/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/02_base_data/TG/QC/TG.QC.gz 
+GZ file detected. Header of file is: 
+CHR	BP	SNP	A1	A2	N	SE	P	BETA	MAF	EAF 
+
+Reading 100.00%
+2039432 variant(s) observed in base file, with: 
+2037078 variant(s) excluded based on user input 
+2354 total variant(s) included from base file 
+
+Loading Genotype info from target 
+================================================== 
+
+443630 people (204889 male(s), 238674 female(s)) observed 
+443630 founder(s) included 
+
+2287725 variant(s) not found in previous data 
+3 variant(s) with mismatch information 
+50 variant(s) included 
+
+Phenotype file: 
+/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/TG/CAD/ukbb.phenotype.TG.mgdL 
+Column Name of Sample ID: FID+IID 
+Note: If the phenotype file does not contain a header, the 
+column name will be displayed as the Sample ID which is 
+expected. 
+
+There are a total of 1 phenotype to process 
+
+Start performing clumping 
+
+Clumping Progress: 2.00%Clumping Progress: 4.00%Clumping Progress: 6.00%Clumping Progress: 8.00%Clumping Progress: 10.00%Clumping Progress: 12.00%Clumping Progress: 14.00%Clumping Progress: 16.00%Clumping Progress: 18.00%Clumping Progress: 20.00%Clumping Progress: 22.00%Clumping Progress: 24.00%Clumping Progress: 26.00%Clumping Progress: 28.00%Clumping Progress: 30.00%Clumping Progress: 32.00%Clumping Progress: 34.00%Clumping Progress: 36.00%Clumping Progress: 38.00%Clumping Progress: 40.00%Clumping Progress: 42.00%Clumping Progress: 44.00%Clumping Progress: 46.00%Clumping Progress: 48.00%Clumping Progress: 50.00%Clumping Progress: 52.00%Clumping Progress: 54.00%Clumping Progress: 56.00%Clumping Progress: 100.00%
+Number of variant(s) after clumping : 39 
+
+Processing the 1 th phenotype 
+
+Phenotype is a continuous phenotype 
+12646 sample(s) without phenotype 
+430984 sample(s) with valid phenotype 
+
+Processing the covariate file: 
+/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/TG/CAD/ukbb.covariate.prs.TG.set1 
+============================== 
+
+Include Covariates: 
+Name	Missing	Number of levels 
+Gender	0	2 
+Genotype_Batch	0	106 
+PC1	0	- 
+PC2	0	- 
+PC3	0	- 
+PC4	0	- 
+PC5	0	- 
+PC6	0	- 
+PC7	0	- 
+PC8	0	- 
+PC9	0	- 
+PC10	0	- 
+ethnic_group	0	- 
+Age	0	- 
+
+After reading the covariate file, 430984 sample(s) included 
+in the analysis 
+
+
+Start Processing
+Processing 0.00%Processing 20.00%Processing 40.00%Processing 60.00%Processing 80.00%Processing 100.00%Processing 100.00%
+There are 1 region(s) with p-value less than 1e-5. Please 
+note that these results are inflated due to the overfitting 
+inherent in finding the best-fit PRS (but it's still best 
+to find the best-fit PRS!). 
+You can use the --perm option (see manual) to calculate an 
+empirical P-value. 
+
+==================================================
+
+Running P-value cut-off 1e-05
+PRSice 2.3.5 (2021-09-20) 
+https://github.com/choishingwan/PRSice
+(C) 2016-2020 Shing Wan (Sam) Choi and Paul F. O'Reilly
+GNU General Public License v3
+If you use PRSice in any published work, please cite:
+Choi SW, O'Reilly PF.
+PRSice-2: Polygenic Risk Score Software for Biobank-Scale Data.
+GigaScience 8, no. 7 (July 1, 2019)
+2024-08-30 16:20:29
+/home/yujia/Software/PRSice/PRSice_linux \
+    --a1 A1 \
+    --a2 A2 \
+    --bar-levels 1e-08,5e-08,7e-08,9e-08,1e-07,5e-07,7e-07,9e-07,1e-06,5e-06,7e-06,9e-06,1e-05,5e-05,0.0001,0.0005,0.001,0.005,0.01,0.05,0.1,0.5,1 \
+    --base /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/02_base_data/TG/QC/TG.QC.gz \
+    --beta  \
+    --binary-target F \
+    --bp BP \
+    --chr CHR \
+    --clump-kb 250kb \
+    --clump-p 1.000000 \
+    --clump-r2 0.100000 \
+    --cov /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/TG/CAD/ukbb.covariate.prs.TG.set1 \
+    --cov-factor Genotype_Batch,Gender \
+    --extract /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/06_PRS_calculation/external_analysis_for_paper_revision/PRSice2/TG/CAD/selected_snps_1e-05.csv \
+    --fastscore  \
+    --num-auto 22 \
+    --out TG_prs \
+    --pheno /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/TG/CAD/ukbb.phenotype.TG.mgdL \
+    --print-snp  \
+    --pvalue P \
+    --score con-std \
+    --seed 2389825711 \
+    --snp SNP \
+    --stat BETA \
+    --target /mnt/md0/public_data/UKBB_data/genotype/GWAS_ukbb_maf0.001_info0.8/bed/allchrs/ukb_allchrs \
+    --thread 35
+
+Initializing Genotype file: 
+/mnt/md0/public_data/UKBB_data/genotype/GWAS_ukbb_maf0.001_info0.8/bed/allchrs/ukb_allchrs 
+(bed) 
+
+Start processing TG.QC 
+================================================== 
+
+Only one column detected, will assume only SNP ID is 
+provided 
+
+Base file: 
+/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/02_base_data/TG/QC/TG.QC.gz 
+GZ file detected. Header of file is: 
+CHR	BP	SNP	A1	A2	N	SE	P	BETA	MAF	EAF 
+
+Reading 100.00%
+2039432 variant(s) observed in base file, with: 
+2036383 variant(s) excluded based on user input 
+3049 total variant(s) included from base file 
+
+Loading Genotype info from target 
+================================================== 
+
+443630 people (204889 male(s), 238674 female(s)) observed 
+443630 founder(s) included 
+
+2287694 variant(s) not found in previous data 
+4 variant(s) with mismatch information 
+80 variant(s) included 
+
+Phenotype file: 
+/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/TG/CAD/ukbb.phenotype.TG.mgdL 
+Column Name of Sample ID: FID+IID 
+Note: If the phenotype file does not contain a header, the 
+column name will be displayed as the Sample ID which is 
+expected. 
+
+There are a total of 1 phenotype to process 
+
+Start performing clumping 
+
+Clumping Progress: 1.25%Clumping Progress: 2.50%Clumping Progress: 3.75%Clumping Progress: 5.00%Clumping Progress: 6.25%Clumping Progress: 7.50%Clumping Progress: 8.75%Clumping Progress: 10.00%Clumping Progress: 11.25%Clumping Progress: 12.50%Clumping Progress: 13.75%Clumping Progress: 15.00%Clumping Progress: 16.25%Clumping Progress: 17.50%Clumping Progress: 18.75%Clumping Progress: 20.00%Clumping Progress: 21.25%Clumping Progress: 22.50%Clumping Progress: 23.75%Clumping Progress: 25.00%Clumping Progress: 26.25%Clumping Progress: 27.50%Clumping Progress: 28.75%Clumping Progress: 30.00%Clumping Progress: 31.25%Clumping Progress: 32.50%Clumping Progress: 33.75%Clumping Progress: 35.00%Clumping Progress: 36.25%Clumping Progress: 37.50%Clumping Progress: 38.75%Clumping Progress: 40.00%Clumping Progress: 41.25%Clumping Progress: 42.50%Clumping Progress: 43.75%Clumping Progress: 45.00%Clumping Progress: 46.25%Clumping Progress: 47.50%Clumping Progress: 48.75%Clumping Progress: 50.00%Clumping Progress: 51.25%Clumping Progress: 52.50%Clumping Progress: 53.75%Clumping Progress: 55.00%Clumping Progress: 56.25%Clumping Progress: 57.50%Clumping Progress: 58.75%Clumping Progress: 60.00%Clumping Progress: 61.25%Clumping Progress: 62.50%Clumping Progress: 63.75%Clumping Progress: 65.00%Clumping Progress: 66.25%Clumping Progress: 100.00%
+Number of variant(s) after clumping : 66 
+
+Processing the 1 th phenotype 
+
+Phenotype is a continuous phenotype 
+12646 sample(s) without phenotype 
+430984 sample(s) with valid phenotype 
+
+Processing the covariate file: 
+/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/TG/CAD/ukbb.covariate.prs.TG.set1 
+============================== 
+
+Include Covariates: 
+Name	Missing	Number of levels 
+Gender	0	2 
+Genotype_Batch	0	106 
+PC1	0	- 
+PC2	0	- 
+PC3	0	- 
+PC4	0	- 
+PC5	0	- 
+PC6	0	- 
+PC7	0	- 
+PC8	0	- 
+PC9	0	- 
+PC10	0	- 
+ethnic_group	0	- 
+Age	0	- 
+
+After reading the covariate file, 430984 sample(s) included 
+in the analysis 
+
+
+Start Processing
+Processing 0.00%Processing 11.11%Processing 22.22%Processing 33.33%Processing 44.44%Processing 55.56%Processing 66.67%Processing 77.78%Processing 88.89%Processing 100.00%Processing 100.00%
+There are 1 region(s) with p-value less than 1e-5. Please 
+note that these results are inflated due to the overfitting 
+inherent in finding the best-fit PRS (but it's still best 
+to find the best-fit PRS!). 
+You can use the --perm option (see manual) to calculate an 
+empirical P-value. 
+
+==================================================
+
+Currently running TG on CAD.
+Running P-value cut-off 1e-08
+PRSice 2.3.5 (2021-09-20) 
+https://github.com/choishingwan/PRSice
+(C) 2016-2020 Shing Wan (Sam) Choi and Paul F. O'Reilly
+GNU General Public License v3
+If you use PRSice in any published work, please cite:
+Choi SW, O'Reilly PF.
+PRSice-2: Polygenic Risk Score Software for Biobank-Scale Data.
+GigaScience 8, no. 7 (July 1, 2019)
+2024-08-30 16:20:57
+/home/yujia/Software/PRSice/PRSice_linux \
+    --a1 A1 \
+    --a2 A2 \
+    --bar-levels 1e-08,5e-08,7e-08,9e-08,1e-07,5e-07,7e-07,9e-07,1e-06,5e-06,7e-06,9e-06,1e-05,5e-05,0.0001,0.0005,0.001,0.005,0.01,0.05,0.1,0.5,1 \
+    --base /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/02_base_data/TG/QC/TG.QC.gz \
+    --beta  \
+    --binary-target F \
+    --bp BP \
+    --chr CHR \
+    --clump-kb 250kb \
+    --clump-p 1.000000 \
+    --clump-r2 0.100000 \
+    --cov /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/TG/CAD/ukbb.covariate.prs.TG.set3 \
+    --cov-factor Genotype_Batch,Gender,Non_smoker,Previous_smoker,Current_smoker,Non_alcohol_drinker,Previous_alcohol_drinker,Current_alcohol_drinker,Cholesterol_lowering_medication,Blood_pressure_medication,Insulin,htn,t2dm,heart_failure,hemorrhage_stroke,ischemic_stroke \
+    --extract /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/06_PRS_calculation/external_analysis_for_paper_revision/PRSice2/TG/CAD/selected_snps_1e-08.csv \
+    --fastscore  \
+    --num-auto 22 \
+    --out TG_prs \
+    --pheno /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/TG/CAD/ukbb.phenotype.TG.mgdL \
+    --print-snp  \
+    --pvalue P \
+    --score con-std \
+    --seed 2389825711 \
+    --snp SNP \
+    --stat BETA \
+    --target /mnt/md0/public_data/UKBB_data/genotype/GWAS_ukbb_maf0.001_info0.8/bed/allchrs/ukb_allchrs \
+    --thread 35
+
+Initializing Genotype file: 
+/mnt/md0/public_data/UKBB_data/genotype/GWAS_ukbb_maf0.001_info0.8/bed/allchrs/ukb_allchrs 
+(bed) 
+
+Start processing TG.QC 
+================================================== 
+
+Only one column detected, will assume only SNP ID is 
+provided 
+
+Base file: 
+/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/02_base_data/TG/QC/TG.QC.gz 
+GZ file detected. Header of file is: 
+CHR	BP	SNP	A1	A2	N	SE	P	BETA	MAF	EAF 
+
+Reading 100.00%
+2039432 variant(s) observed in base file, with: 
+2037730 variant(s) excluded based on user input 
+1702 total variant(s) included from base file 
+
+Loading Genotype info from target 
+================================================== 
+
+443630 people (204889 male(s), 238674 female(s)) observed 
+443630 founder(s) included 
+
+2287735 variant(s) not found in previous data 
+2 variant(s) with mismatch information 
+41 variant(s) included 
+
+Phenotype file: 
+/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/TG/CAD/ukbb.phenotype.TG.mgdL 
+Column Name of Sample ID: FID+IID 
+Note: If the phenotype file does not contain a header, the 
+column name will be displayed as the Sample ID which is 
+expected. 
+
+There are a total of 1 phenotype to process 
+
+Start performing clumping 
+
+Clumping Progress: 2.44%Clumping Progress: 4.88%Clumping Progress: 7.32%Clumping Progress: 9.76%Clumping Progress: 12.20%Clumping Progress: 14.63%Clumping Progress: 17.07%Clumping Progress: 19.51%Clumping Progress: 21.95%Clumping Progress: 24.39%Clumping Progress: 26.83%Clumping Progress: 29.27%Clumping Progress: 31.71%Clumping Progress: 34.15%Clumping Progress: 36.59%Clumping Progress: 39.02%Clumping Progress: 41.46%Clumping Progress: 43.90%Clumping Progress: 46.34%Clumping Progress: 48.78%Clumping Progress: 51.22%Clumping Progress: 53.66%Clumping Progress: 56.10%Clumping Progress: 100.00%
+Number of variant(s) after clumping : 31 
+
+Processing the 1 th phenotype 
+
+Phenotype is a continuous phenotype 
+12646 sample(s) without phenotype 
+430984 sample(s) with valid phenotype 
+
+Processing the covariate file: 
+/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/TG/CAD/ukbb.covariate.prs.TG.set3 
+============================== 
+
+Include Covariates: 
+Name	Missing	Number of levels 
+Gender	0	2 
+Genotype_Batch	0	106 
+4079-0.0	0	- 
+4080-0.0	0	- 
+189-0.0	0	- 
+Non_smoker	0	2 
+Previous_smoker	0	2 
+Current_smoker	0	2 
+Non_alcohol_drinker	0	2 
+Previous_alcohol_drinker	0	2 
+Current_alcohol_drinker	0	2 
+Cholesterol_lowering_medication	0	2 
+Blood_pressure_medication	0	2 
+Insulin	0	2 
+21001-0.0	0	- 
+23099-0.0	0	- 
+21002-0.0	0	- 
+PC1	0	- 
+PC2	0	- 
+PC3	0	- 
+PC4	0	- 
+PC5	0	- 
+PC6	0	- 
+PC7	0	- 
+PC8	0	- 
+PC9	0	- 
+PC10	0	- 
+30630-0.0	0	- 
+30640-0.0	0	- 
+30650-0.0	0	- 
+30660-0.0	0	- 
+30670-0.0	0	- 
+30690-0.0	0	- 
+30700-0.0	0	- 
+30710-0.0	0	- 
+30720-0.0	0	- 
+30680-0.0	0	- 
+30730-0.0	0	- 
+30740-0.0	0	- 
+30750-0.0	0	- 
+30760-0.0	0	- 
+30770-0.0	0	- 
+30780-0.0	0	- 
+30790-0.0	0	- 
+30810-0.0	0	- 
+30830-0.0	0	- 
+30840-0.0	0	- 
+30860-0.0	0	- 
+30850-0.0	0	- 
+30880-0.0	0	- 
+30890-0.0	0	- 
+ethnic_group	0	- 
+htn	0	2 
+t2dm	0	2 
+heart_failure	0	2 
+hemorrhage_stroke	0	2 
+ischemic_stroke	0	2 
+Age	0	- 
+[1;33mWarning: More than 13.965716% of your samples were removed! 
+         You should check if your covariate file is correct [0m
+
+After reading the covariate file, 370794 sample(s) included 
+in the analysis 
+
+
+Start Processing
+Processing 0.00%Processing 100.00%Processing 100.00%
+There are 1 region(s) with p-value less than 1e-5. Please 
+note that these results are inflated due to the overfitting 
+inherent in finding the best-fit PRS (but it's still best 
+to find the best-fit PRS!). 
+You can use the --perm option (see manual) to calculate an 
+empirical P-value. 
+
+==================================================
+
+Running P-value cut-off 1e-07
+PRSice 2.3.5 (2021-09-20) 
+https://github.com/choishingwan/PRSice
+(C) 2016-2020 Shing Wan (Sam) Choi and Paul F. O'Reilly
+GNU General Public License v3
+If you use PRSice in any published work, please cite:
+Choi SW, O'Reilly PF.
+PRSice-2: Polygenic Risk Score Software for Biobank-Scale Data.
+GigaScience 8, no. 7 (July 1, 2019)
+2024-08-30 16:21:18
+/home/yujia/Software/PRSice/PRSice_linux \
+    --a1 A1 \
+    --a2 A2 \
+    --bar-levels 1e-08,5e-08,7e-08,9e-08,1e-07,5e-07,7e-07,9e-07,1e-06,5e-06,7e-06,9e-06,1e-05,5e-05,0.0001,0.0005,0.001,0.005,0.01,0.05,0.1,0.5,1 \
+    --base /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/02_base_data/TG/QC/TG.QC.gz \
+    --beta  \
+    --binary-target F \
+    --bp BP \
+    --chr CHR \
+    --clump-kb 250kb \
+    --clump-p 1.000000 \
+    --clump-r2 0.100000 \
+    --cov /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/TG/CAD/ukbb.covariate.prs.TG.set3 \
+    --cov-factor Genotype_Batch,Gender,Non_smoker,Previous_smoker,Current_smoker,Non_alcohol_drinker,Previous_alcohol_drinker,Current_alcohol_drinker,Cholesterol_lowering_medication,Blood_pressure_medication,Insulin,htn,t2dm,heart_failure,hemorrhage_stroke,ischemic_stroke \
+    --extract /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/06_PRS_calculation/external_analysis_for_paper_revision/PRSice2/TG/CAD/selected_snps_1e-07.csv \
+    --fastscore  \
+    --num-auto 22 \
+    --out TG_prs \
+    --pheno /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/TG/CAD/ukbb.phenotype.TG.mgdL \
+    --print-snp  \
+    --pvalue P \
+    --score con-std \
+    --seed 2389825711 \
+    --snp SNP \
+    --stat BETA \
+    --target /mnt/md0/public_data/UKBB_data/genotype/GWAS_ukbb_maf0.001_info0.8/bed/allchrs/ukb_allchrs \
+    --thread 35
+
+Initializing Genotype file: 
+/mnt/md0/public_data/UKBB_data/genotype/GWAS_ukbb_maf0.001_info0.8/bed/allchrs/ukb_allchrs 
+(bed) 
+
+Start processing TG.QC 
+================================================== 
+
+Only one column detected, will assume only SNP ID is 
+provided 
+
+Base file: 
+/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/02_base_data/TG/QC/TG.QC.gz 
+GZ file detected. Header of file is: 
+CHR	BP	SNP	A1	A2	N	SE	P	BETA	MAF	EAF 
+
+Reading 100.00%
+2039432 variant(s) observed in base file, with: 
+2037484 variant(s) excluded based on user input 
+1948 total variant(s) included from base file 
+
+Loading Genotype info from target 
+================================================== 
+
+443630 people (204889 male(s), 238674 female(s)) observed 
+443630 founder(s) included 
+
+2287732 variant(s) not found in previous data 
+2 variant(s) with mismatch information 
+44 variant(s) included 
+
+Phenotype file: 
+/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/TG/CAD/ukbb.phenotype.TG.mgdL 
+Column Name of Sample ID: FID+IID 
+Note: If the phenotype file does not contain a header, the 
+column name will be displayed as the Sample ID which is 
+expected. 
+
+There are a total of 1 phenotype to process 
+
+Start performing clumping 
+
+Clumping Progress: 2.27%Clumping Progress: 4.55%Clumping Progress: 6.82%Clumping Progress: 9.09%Clumping Progress: 11.36%Clumping Progress: 13.64%Clumping Progress: 15.91%Clumping Progress: 18.18%Clumping Progress: 20.45%Clumping Progress: 22.73%Clumping Progress: 25.00%Clumping Progress: 27.27%Clumping Progress: 29.55%Clumping Progress: 31.82%Clumping Progress: 34.09%Clumping Progress: 36.36%Clumping Progress: 38.64%Clumping Progress: 40.91%Clumping Progress: 43.18%Clumping Progress: 45.45%Clumping Progress: 47.73%Clumping Progress: 50.00%Clumping Progress: 52.27%Clumping Progress: 54.55%Clumping Progress: 56.82%Clumping Progress: 100.00%
+Number of variant(s) after clumping : 34 
+
+Processing the 1 th phenotype 
+
+Phenotype is a continuous phenotype 
+12646 sample(s) without phenotype 
+430984 sample(s) with valid phenotype 
+
+Processing the covariate file: 
+/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/TG/CAD/ukbb.covariate.prs.TG.set3 
+============================== 
+
+Include Covariates: 
+Name	Missing	Number of levels 
+Gender	0	2 
+Genotype_Batch	0	106 
+4079-0.0	0	- 
+4080-0.0	0	- 
+189-0.0	0	- 
+Non_smoker	0	2 
+Previous_smoker	0	2 
+Current_smoker	0	2 
+Non_alcohol_drinker	0	2 
+Previous_alcohol_drinker	0	2 
+Current_alcohol_drinker	0	2 
+Cholesterol_lowering_medication	0	2 
+Blood_pressure_medication	0	2 
+Insulin	0	2 
+21001-0.0	0	- 
+23099-0.0	0	- 
+21002-0.0	0	- 
+PC1	0	- 
+PC2	0	- 
+PC3	0	- 
+PC4	0	- 
+PC5	0	- 
+PC6	0	- 
+PC7	0	- 
+PC8	0	- 
+PC9	0	- 
+PC10	0	- 
+30630-0.0	0	- 
+30640-0.0	0	- 
+30650-0.0	0	- 
+30660-0.0	0	- 
+30670-0.0	0	- 
+30690-0.0	0	- 
+30700-0.0	0	- 
+30710-0.0	0	- 
+30720-0.0	0	- 
+30680-0.0	0	- 
+30730-0.0	0	- 
+30740-0.0	0	- 
+30750-0.0	0	- 
+30760-0.0	0	- 
+30770-0.0	0	- 
+30780-0.0	0	- 
+30790-0.0	0	- 
+30810-0.0	0	- 
+30830-0.0	0	- 
+30840-0.0	0	- 
+30860-0.0	0	- 
+30850-0.0	0	- 
+30880-0.0	0	- 
+30890-0.0	0	- 
+ethnic_group	0	- 
+htn	0	2 
+t2dm	0	2 
+heart_failure	0	2 
+hemorrhage_stroke	0	2 
+ischemic_stroke	0	2 
+Age	0	- 
+[1;33mWarning: More than 13.965716% of your samples were removed! 
+         You should check if your covariate file is correct [0m
+
+After reading the covariate file, 370794 sample(s) included 
+in the analysis 
+
+
+Start Processing
+Processing 0.00%Processing 33.33%Processing 66.67%Processing 100.00%Processing 100.00%
+There are 1 region(s) with p-value less than 1e-5. Please 
+note that these results are inflated due to the overfitting 
+inherent in finding the best-fit PRS (but it's still best 
+to find the best-fit PRS!). 
+You can use the --perm option (see manual) to calculate an 
+empirical P-value. 
+
+==================================================
+
+Running P-value cut-off 1e-06
+PRSice 2.3.5 (2021-09-20) 
+https://github.com/choishingwan/PRSice
+(C) 2016-2020 Shing Wan (Sam) Choi and Paul F. O'Reilly
+GNU General Public License v3
+If you use PRSice in any published work, please cite:
+Choi SW, O'Reilly PF.
+PRSice-2: Polygenic Risk Score Software for Biobank-Scale Data.
+GigaScience 8, no. 7 (July 1, 2019)
+2024-08-30 16:21:44
+/home/yujia/Software/PRSice/PRSice_linux \
+    --a1 A1 \
+    --a2 A2 \
+    --bar-levels 1e-08,5e-08,7e-08,9e-08,1e-07,5e-07,7e-07,9e-07,1e-06,5e-06,7e-06,9e-06,1e-05,5e-05,0.0001,0.0005,0.001,0.005,0.01,0.05,0.1,0.5,1 \
+    --base /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/02_base_data/TG/QC/TG.QC.gz \
+    --beta  \
+    --binary-target F \
+    --bp BP \
+    --chr CHR \
+    --clump-kb 250kb \
+    --clump-p 1.000000 \
+    --clump-r2 0.100000 \
+    --cov /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/TG/CAD/ukbb.covariate.prs.TG.set3 \
+    --cov-factor Genotype_Batch,Gender,Non_smoker,Previous_smoker,Current_smoker,Non_alcohol_drinker,Previous_alcohol_drinker,Current_alcohol_drinker,Cholesterol_lowering_medication,Blood_pressure_medication,Insulin,htn,t2dm,heart_failure,hemorrhage_stroke,ischemic_stroke \
+    --extract /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/06_PRS_calculation/external_analysis_for_paper_revision/PRSice2/TG/CAD/selected_snps_1e-06.csv \
+    --fastscore  \
+    --num-auto 22 \
+    --out TG_prs \
+    --pheno /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/TG/CAD/ukbb.phenotype.TG.mgdL \
+    --print-snp  \
+    --pvalue P \
+    --score con-std \
+    --seed 2389825711 \
+    --snp SNP \
+    --stat BETA \
+    --target /mnt/md0/public_data/UKBB_data/genotype/GWAS_ukbb_maf0.001_info0.8/bed/allchrs/ukb_allchrs \
+    --thread 35
+
+Initializing Genotype file: 
+/mnt/md0/public_data/UKBB_data/genotype/GWAS_ukbb_maf0.001_info0.8/bed/allchrs/ukb_allchrs 
+(bed) 
+
+Start processing TG.QC 
+================================================== 
+
+Only one column detected, will assume only SNP ID is 
+provided 
+
+Base file: 
+/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/02_base_data/TG/QC/TG.QC.gz 
+GZ file detected. Header of file is: 
+CHR	BP	SNP	A1	A2	N	SE	P	BETA	MAF	EAF 
+
+Reading 100.00%
+2039432 variant(s) observed in base file, with: 
+2037078 variant(s) excluded based on user input 
+2354 total variant(s) included from base file 
+
+Loading Genotype info from target 
+================================================== 
+
+443630 people (204889 male(s), 238674 female(s)) observed 
+443630 founder(s) included 
+
+2287725 variant(s) not found in previous data 
+3 variant(s) with mismatch information 
+50 variant(s) included 
+
+Phenotype file: 
+/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/TG/CAD/ukbb.phenotype.TG.mgdL 
+Column Name of Sample ID: FID+IID 
+Note: If the phenotype file does not contain a header, the 
+column name will be displayed as the Sample ID which is 
+expected. 
+
+There are a total of 1 phenotype to process 
+
+Start performing clumping 
+
+Clumping Progress: 2.00%Clumping Progress: 4.00%Clumping Progress: 6.00%Clumping Progress: 8.00%Clumping Progress: 10.00%Clumping Progress: 12.00%Clumping Progress: 14.00%Clumping Progress: 16.00%Clumping Progress: 18.00%Clumping Progress: 20.00%Clumping Progress: 22.00%Clumping Progress: 24.00%Clumping Progress: 26.00%Clumping Progress: 28.00%Clumping Progress: 30.00%Clumping Progress: 32.00%Clumping Progress: 34.00%Clumping Progress: 36.00%Clumping Progress: 38.00%Clumping Progress: 40.00%Clumping Progress: 42.00%Clumping Progress: 44.00%Clumping Progress: 46.00%Clumping Progress: 48.00%Clumping Progress: 50.00%Clumping Progress: 52.00%Clumping Progress: 54.00%Clumping Progress: 56.00%Clumping Progress: 100.00%
+Number of variant(s) after clumping : 39 
+
+Processing the 1 th phenotype 
+
+Phenotype is a continuous phenotype 
+12646 sample(s) without phenotype 
+430984 sample(s) with valid phenotype 
+
+Processing the covariate file: 
+/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/TG/CAD/ukbb.covariate.prs.TG.set3 
+============================== 
+
+Include Covariates: 
+Name	Missing	Number of levels 
+Gender	0	2 
+Genotype_Batch	0	106 
+4079-0.0	0	- 
+4080-0.0	0	- 
+189-0.0	0	- 
+Non_smoker	0	2 
+Previous_smoker	0	2 
+Current_smoker	0	2 
+Non_alcohol_drinker	0	2 
+Previous_alcohol_drinker	0	2 
+Current_alcohol_drinker	0	2 
+Cholesterol_lowering_medication	0	2 
+Blood_pressure_medication	0	2 
+Insulin	0	2 
+21001-0.0	0	- 
+23099-0.0	0	- 
+21002-0.0	0	- 
+PC1	0	- 
+PC2	0	- 
+PC3	0	- 
+PC4	0	- 
+PC5	0	- 
+PC6	0	- 
+PC7	0	- 
+PC8	0	- 
+PC9	0	- 
+PC10	0	- 
+30630-0.0	0	- 
+30640-0.0	0	- 
+30650-0.0	0	- 
+30660-0.0	0	- 
+30670-0.0	0	- 
+30690-0.0	0	- 
+30700-0.0	0	- 
+30710-0.0	0	- 
+30720-0.0	0	- 
+30680-0.0	0	- 
+30730-0.0	0	- 
+30740-0.0	0	- 
+30750-0.0	0	- 
+30760-0.0	0	- 
+30770-0.0	0	- 
+30780-0.0	0	- 
+30790-0.0	0	- 
+30810-0.0	0	- 
+30830-0.0	0	- 
+30840-0.0	0	- 
+30860-0.0	0	- 
+30850-0.0	0	- 
+30880-0.0	0	- 
+30890-0.0	0	- 
+ethnic_group	0	- 
+htn	0	2 
+t2dm	0	2 
+heart_failure	0	2 
+hemorrhage_stroke	0	2 
+ischemic_stroke	0	2 
+Age	0	- 
+[1;33mWarning: More than 13.965716% of your samples were removed! 
+         You should check if your covariate file is correct [0m
+
+After reading the covariate file, 370794 sample(s) included 
+in the analysis 
+
+
+Start Processing
+Processing 0.00%Processing 20.00%Processing 40.00%Processing 60.00%Processing 80.00%Processing 100.00%Processing 100.00%
+There are 1 region(s) with p-value less than 1e-5. Please 
+note that these results are inflated due to the overfitting 
+inherent in finding the best-fit PRS (but it's still best 
+to find the best-fit PRS!). 
+You can use the --perm option (see manual) to calculate an 
+empirical P-value. 
+
+==================================================
+
+Running P-value cut-off 1e-05
+PRSice 2.3.5 (2021-09-20) 
+https://github.com/choishingwan/PRSice
+(C) 2016-2020 Shing Wan (Sam) Choi and Paul F. O'Reilly
+GNU General Public License v3
+If you use PRSice in any published work, please cite:
+Choi SW, O'Reilly PF.
+PRSice-2: Polygenic Risk Score Software for Biobank-Scale Data.
+GigaScience 8, no. 7 (July 1, 2019)
+2024-08-30 16:22:17
+/home/yujia/Software/PRSice/PRSice_linux \
+    --a1 A1 \
+    --a2 A2 \
+    --bar-levels 1e-08,5e-08,7e-08,9e-08,1e-07,5e-07,7e-07,9e-07,1e-06,5e-06,7e-06,9e-06,1e-05,5e-05,0.0001,0.0005,0.001,0.005,0.01,0.05,0.1,0.5,1 \
+    --base /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/02_base_data/TG/QC/TG.QC.gz \
+    --beta  \
+    --binary-target F \
+    --bp BP \
+    --chr CHR \
+    --clump-kb 250kb \
+    --clump-p 1.000000 \
+    --clump-r2 0.100000 \
+    --cov /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/TG/CAD/ukbb.covariate.prs.TG.set3 \
+    --cov-factor Genotype_Batch,Gender,Non_smoker,Previous_smoker,Current_smoker,Non_alcohol_drinker,Previous_alcohol_drinker,Current_alcohol_drinker,Cholesterol_lowering_medication,Blood_pressure_medication,Insulin,htn,t2dm,heart_failure,hemorrhage_stroke,ischemic_stroke \
+    --extract /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/06_PRS_calculation/external_analysis_for_paper_revision/PRSice2/TG/CAD/selected_snps_1e-05.csv \
+    --fastscore  \
+    --num-auto 22 \
+    --out TG_prs \
+    --pheno /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/TG/CAD/ukbb.phenotype.TG.mgdL \
+    --print-snp  \
+    --pvalue P \
+    --score con-std \
+    --seed 2389825711 \
+    --snp SNP \
+    --stat BETA \
+    --target /mnt/md0/public_data/UKBB_data/genotype/GWAS_ukbb_maf0.001_info0.8/bed/allchrs/ukb_allchrs \
+    --thread 35
+
+Initializing Genotype file: 
+/mnt/md0/public_data/UKBB_data/genotype/GWAS_ukbb_maf0.001_info0.8/bed/allchrs/ukb_allchrs 
+(bed) 
+
+Start processing TG.QC 
+================================================== 
+
+Only one column detected, will assume only SNP ID is 
+provided 
+
+Base file: 
+/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/02_base_data/TG/QC/TG.QC.gz 
+GZ file detected. Header of file is: 
+CHR	BP	SNP	A1	A2	N	SE	P	BETA	MAF	EAF 
+
+Reading 100.00%
+2039432 variant(s) observed in base file, with: 
+2036383 variant(s) excluded based on user input 
+3049 total variant(s) included from base file 
+
+Loading Genotype info from target 
+================================================== 
+
+443630 people (204889 male(s), 238674 female(s)) observed 
+443630 founder(s) included 
+
+2287694 variant(s) not found in previous data 
+4 variant(s) with mismatch information 
+80 variant(s) included 
+
+Phenotype file: 
+/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/TG/CAD/ukbb.phenotype.TG.mgdL 
+Column Name of Sample ID: FID+IID 
+Note: If the phenotype file does not contain a header, the 
+column name will be displayed as the Sample ID which is 
+expected. 
+
+There are a total of 1 phenotype to process 
+
+Start performing clumping 
+
+Clumping Progress: 1.25%Clumping Progress: 2.50%Clumping Progress: 3.75%Clumping Progress: 5.00%Clumping Progress: 6.25%Clumping Progress: 7.50%Clumping Progress: 8.75%Clumping Progress: 10.00%Clumping Progress: 11.25%Clumping Progress: 12.50%Clumping Progress: 13.75%Clumping Progress: 15.00%Clumping Progress: 16.25%Clumping Progress: 17.50%Clumping Progress: 18.75%Clumping Progress: 20.00%Clumping Progress: 21.25%Clumping Progress: 22.50%Clumping Progress: 23.75%Clumping Progress: 25.00%Clumping Progress: 26.25%Clumping Progress: 27.50%Clumping Progress: 28.75%Clumping Progress: 30.00%Clumping Progress: 31.25%Clumping Progress: 32.50%Clumping Progress: 33.75%Clumping Progress: 35.00%Clumping Progress: 36.25%Clumping Progress: 37.50%Clumping Progress: 38.75%Clumping Progress: 40.00%Clumping Progress: 41.25%Clumping Progress: 42.50%Clumping Progress: 43.75%Clumping Progress: 45.00%Clumping Progress: 46.25%Clumping Progress: 47.50%Clumping Progress: 48.75%Clumping Progress: 50.00%Clumping Progress: 51.25%Clumping Progress: 52.50%Clumping Progress: 53.75%Clumping Progress: 55.00%Clumping Progress: 56.25%Clumping Progress: 57.50%Clumping Progress: 58.75%Clumping Progress: 60.00%Clumping Progress: 61.25%Clumping Progress: 62.50%Clumping Progress: 63.75%Clumping Progress: 65.00%Clumping Progress: 66.25%Clumping Progress: 100.00%
+Number of variant(s) after clumping : 66 
+
+Processing the 1 th phenotype 
+
+Phenotype is a continuous phenotype 
+12646 sample(s) without phenotype 
+430984 sample(s) with valid phenotype 
+
+Processing the covariate file: 
+/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/04_pheno_covar_data/external_analysis_for_paper_revision/TG/CAD/ukbb.covariate.prs.TG.set3 
+============================== 
+
+Include Covariates: 
+Name	Missing	Number of levels 
+Gender	0	2 
+Genotype_Batch	0	106 
+4079-0.0	0	- 
+4080-0.0	0	- 
+189-0.0	0	- 
+Non_smoker	0	2 
+Previous_smoker	0	2 
+Current_smoker	0	2 
+Non_alcohol_drinker	0	2 
+Previous_alcohol_drinker	0	2 
+Current_alcohol_drinker	0	2 
+Cholesterol_lowering_medication	0	2 
+Blood_pressure_medication	0	2 
+Insulin	0	2 
+21001-0.0	0	- 
+23099-0.0	0	- 
+21002-0.0	0	- 
+PC1	0	- 
+PC2	0	- 
+PC3	0	- 
+PC4	0	- 
+PC5	0	- 
+PC6	0	- 
+PC7	0	- 
+PC8	0	- 
+PC9	0	- 
+PC10	0	- 
+30630-0.0	0	- 
+30640-0.0	0	- 
+30650-0.0	0	- 
+30660-0.0	0	- 
+30670-0.0	0	- 
+30690-0.0	0	- 
+30700-0.0	0	- 
+30710-0.0	0	- 
+30720-0.0	0	- 
+30680-0.0	0	- 
+30730-0.0	0	- 
+30740-0.0	0	- 
+30750-0.0	0	- 
+30760-0.0	0	- 
+30770-0.0	0	- 
+30780-0.0	0	- 
+30790-0.0	0	- 
+30810-0.0	0	- 
+30830-0.0	0	- 
+30840-0.0	0	- 
+30860-0.0	0	- 
+30850-0.0	0	- 
+30880-0.0	0	- 
+30890-0.0	0	- 
+ethnic_group	0	- 
+htn	0	2 
+t2dm	0	2 
+heart_failure	0	2 
+hemorrhage_stroke	0	2 
+ischemic_stroke	0	2 
+Age	0	- 
+[1;33mWarning: More than 13.965716% of your samples were removed! 
+         You should check if your covariate file is correct [0m
+
+After reading the covariate file, 370794 sample(s) included 
+in the analysis 
+
+
+Start Processing
+Processing 0.00%Processing 11.11%Processing 22.22%Processing 33.33%Processing 44.44%Processing 55.56%Processing 66.67%Processing 77.78%Processing 88.89%Processing 100.00%Processing 100.00%
+There are 1 region(s) with p-value less than 1e-5. Please 
+note that these results are inflated due to the overfitting 
+inherent in finding the best-fit PRS (but it's still best 
+to find the best-fit PRS!). 
+You can use the --perm option (see manual) to calculate an 
+empirical P-value. 
+
+==================================================
+
+Currently running HDL on CAD.
+Running P-value cut-off 1e-08
+Error: Cannot open file - /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/02_base_data/HDL/QC/HDL.QC.gz
+==================================================
+
+Running P-value cut-off 1e-07
+Error: Cannot open file - /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/02_base_data/HDL/QC/HDL.QC.gz
+==================================================
+
+Running P-value cut-off 1e-06
+Error: Cannot open file - /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/02_base_data/HDL/QC/HDL.QC.gz
+==================================================
+
+Running P-value cut-off 1e-05
+Error: Cannot open file - /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/02_base_data/HDL/QC/HDL.QC.gz
+==================================================
+
+Currently running HDL on CAD.
+Running P-value cut-off 1e-08
+Error: Cannot open file - /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/02_base_data/HDL/QC/HDL.QC.gz
+==================================================
+
+Running P-value cut-off 1e-07
+Error: Cannot open file - /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/02_base_data/HDL/QC/HDL.QC.gz
+==================================================
+
+Running P-value cut-off 1e-06
+Error: Cannot open file - /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/02_base_data/HDL/QC/HDL.QC.gz
+==================================================
+
+Running P-value cut-off 1e-05
+Error: Cannot open file - /mnt/md0/yujia/project/2023-07-20-individual_MR/dat/02_base_data/HDL/QC/HDL.QC.gz
+==================================================
+

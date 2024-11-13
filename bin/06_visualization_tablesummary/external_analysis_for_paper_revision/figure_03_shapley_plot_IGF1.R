@@ -152,7 +152,7 @@ for (t in 1:length(traits)){
                         p.shap.feature.3 / p.tau.feature.3 / p.shap.feature.8 / p.tau.feature.8 |
                         p.shap.feature.4 / p.tau.feature.4 / p.shap.feature.9 / p.tau.feature.9 |
                         p.shap.feature.5 / p.tau.feature.5 / p.shap.feature.10 / p.tau.feature.10) + 
-                        plot_annotation(tag_levels = 'A') & theme(plot.tag = element_text(size = 35))
+                        plot_annotation(tag_levels = 'a') & theme(plot.tag = element_text(size = 45))
 
             save(p.shap.feature.1, p.tau.feature.1, p.shap.feature.6, p.tau.feature.6, 
                  p.shap.feature.2, p.tau.feature.2, p.shap.feature.7, p.tau.feature.7, 
@@ -162,8 +162,8 @@ for (t in 1:length(traits)){
                  file = paste0("/mnt/md0/yujia/project/2023-07-20-individual_MR/res/03_plot/extra_analysis_for_paper_revision/figure3_variable_importance_", traits[t], "_", diseases[d], "_", traits_type[wtype], "W_boxplot.RData"))
                 
                 
-            # ggsave(paste0("/mnt/md0/yujia/project/2023-07-20-individual_MR/res/03_plot/extra_analysis_for_paper_revision/figure3_variable_importance_", traits[t], "_", diseases[d], "_", traits_type[wtype], "W_boxplot.png"), p.final, dpi=300, 
-            #             width = 70, height = 60, units = "cm", scale = 2, limitsize = FALSE)
+            ggsave(paste0("/mnt/md0/yujia/project/2023-07-20-individual_MR/res/03_plot/extra_analysis_for_paper_revision/figure3_variable_importance_", traits[t], "_", diseases[d], "_", traits_type[wtype], "W_boxplot.png"), p.final, dpi=300, 
+                        width = 70, height = 60, units = "cm", scale = 2, limitsize = FALSE)
 
 
 

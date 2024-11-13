@@ -298,7 +298,6 @@ subgroup_patients <- function(tree, X){
   for (i in row.names(X)) {
     tmp.index <- as.numeric(i)
     subgroup.index <- c(subgroup.index, find_leaf_notpruned(X[tmp.index, ], tree = tree))
-    # subgroup.index <- c(subgroup.index, find_leaf(X[tmp.index, ], tree = tree))
   }
   subgroup.index
   

@@ -24,14 +24,14 @@ for (ml in models){
     for (d in diseases){
 
       # continuous W
-      iv.tau.continuousW <- fread(paste0("/home/yujia/Project/2023-07-20-individual_MR/res/02_ITE_analysis/01_table/", traits[t], "/", d, "/01_individual_treatment_effect/ivgrf_full_continuousW_pvalue_", ml, ".csv"))
-      cf.tau.continuousW <- fread(paste0("/home/yujia/Project/2023-07-20-individual_MR/res/02_ITE_analysis/01_table/", traits[t], "/", d, "/01_individual_treatment_effect/cf_full_continuousW_pvalue_", ml, ".csv"))
-      driv.tau.continuousW <- fread(paste0("/home/yujia/Project/2023-07-20-individual_MR/res/02_ITE_analysis/01_table/", traits[t], "/", d, "/01_individual_treatment_effect/driv_full_continuousW_te_ul_", ml, ".csv"))
+      iv.tau.continuousW <- fread(paste0("/mnt/md0/yujia/project/2023-07-20-individual_MR/res/02_ITE_analysis/01_table/", traits[t], "/", d, "/01_individual_treatment_effect/ivgrf_full_continuousW_pvalue_", ml, ".csv"))
+      cf.tau.continuousW <- fread(paste0("/mnt/md0/yujia/project/2023-07-20-individual_MR/res/02_ITE_analysis/01_table/", traits[t], "/", d, "/01_individual_treatment_effect/cf_full_continuousW_pvalue_", ml, ".csv"))
+      driv.tau.continuousW <- fread(paste0("/mnt/md0/yujia/project/2023-07-20-individual_MR/res/02_ITE_analysis/01_table/", traits[t], "/", d, "/01_individual_treatment_effect/driv_full_continuousW_te_ul_", ml, ".csv"))
 
       # binary W
-      iv.tau.binaryW <- fread(paste0("/home/yujia/Project/2023-07-20-individual_MR/res/02_ITE_analysis/01_table/", traits[t], "/", d, "/01_individual_treatment_effect/ivgrf_full_binaryW_continuousZ_pvalue_", ml, ".csv"))
-      cf.tau.binaryW <- fread(paste0("/home/yujia/Project/2023-07-20-individual_MR/res/02_ITE_analysis/01_table/", traits[t], "/", d, "/01_individual_treatment_effect/cf_full_binaryW_continuousZ_pvalue_", ml, ".csv"))
-      driv.tau.binaryW <- fread(paste0("/home/yujia/Project/2023-07-20-individual_MR/res/02_ITE_analysis/01_table/", traits[t], "/", d, "/01_individual_treatment_effect/driv_full_binaryW_continuousZ_te_ul_", ml, ".csv"))
+      iv.tau.binaryW <- fread(paste0("/mnt/md0/yujia/project/2023-07-20-individual_MR/res/02_ITE_analysis/01_table/", traits[t], "/", d, "/01_individual_treatment_effect/ivgrf_full_binaryW_continuousZ_pvalue_", ml, ".csv"))
+      cf.tau.binaryW <- fread(paste0("/mnt/md0/yujia/project/2023-07-20-individual_MR/res/02_ITE_analysis/01_table/", traits[t], "/", d, "/01_individual_treatment_effect/cf_full_binaryW_continuousZ_pvalue_", ml, ".csv"))
+      driv.tau.binaryW <- fread(paste0("/mnt/md0/yujia/project/2023-07-20-individual_MR/res/02_ITE_analysis/01_table/", traits[t], "/", d, "/01_individual_treatment_effect/driv_full_binaryW_continuousZ_te_ul_", ml, ".csv"))
 
       # making plot (continuous W)
       iv.tau <- iv.tau.continuousW$tau
@@ -199,8 +199,8 @@ for (ml in models){
   p1_title <- wrap_elements(p1 + plot_annotation("Coronary Artery Disease\n Continuous Treatment", theme=theme(plot.title = element_text(hjust = 0.5), text = element_text(size = 35)))) 
   p2_title <- wrap_elements(p2 + plot_annotation("Binary Treatment", theme=theme(plot.title = element_text(hjust = 0.5), text = element_text(size = 35))))
 
-  histogram_p <- (p1_title / p2_title) + plot_layout(guides = "collect") + plot_annotation(tag_levels = 'A') & theme(plot.tag = element_text(size = 35), legend.position = "right")
-  ggsave(paste0("/home/yujia/Project/2023-07-20-individual_MR/res/03_plot/figure1_normal_pvalue_", ml, "_james_2.png"), histogram_p, dpi=300, 
+  histogram_p <- (p1_title / p2_title) + plot_layout(guides = "collect") + plot_annotation(tag_levels = 'a') & theme(plot.tag = element_text(size = 45), legend.position = "right")
+  ggsave(paste0("/mnt/md0/yujia/project/2023-07-20-individual_MR/res/03_plot/figure1_normal_pvalue_", ml, "_james.png"), histogram_p, dpi=300, 
           width = 50, height = 40, units = "cm",scale = 3, limitsize = FALSE)
   # break
 }

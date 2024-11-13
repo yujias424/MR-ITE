@@ -1,0 +1,617 @@
+Currently we run on pvalue cutoff 1e-08.
+[1] 2352   15
+API: public: http://gwas-api.mrcieu.ac.uk/
+Extracting data for 2352 SNP(s) from 1 GWAS(s)
+Finding proxies for 200 SNPs in outcome ieu-b-39
+Extracting data for 200 SNP(s) from 1 GWAS(s)
+Harmonising LDL (YObiCA) and diastolic blood pressure || id:ieu-b-39 (ieu-b-39)
+[1] 2296   12
+
+
+
+Extracting data for 2352 SNP(s) from 1 GWAS(s)
+Finding proxies for 206 SNPs in outcome ieu-b-38
+Extracting data for 206 SNP(s) from 1 GWAS(s)
+Harmonising LDL (YObiCA) and systolic blood pressure || id:ieu-b-38 (ieu-b-38)
+[1] 2290   12
+
+
+
+Finished running on pvalue cutoff 1e-08.
+
+=================================
+
+
+Currently we run on pvalue cutoff 1e-07.
+[1] 2757   15
+Extracting data for 2757 SNP(s) from 1 GWAS(s)
+Server code: 502; Server is possibly experiencing traffic, trying again...
+Retry succeeded!
+Finding proxies for 235 SNPs in outcome ieu-b-39
+Extracting data for 235 SNP(s) from 1 GWAS(s)
+Harmonising LDL (YObiCA) and diastolic blood pressure || id:ieu-b-39 (ieu-b-39)
+[1] 2683   12
+
+
+
+Extracting data for 2757 SNP(s) from 1 GWAS(s)
+Server code: 502; Server is possibly experiencing traffic, trying again...
+Retry succeeded!
+Finding proxies for 242 SNPs in outcome ieu-b-38
+Extracting data for 242 SNP(s) from 1 GWAS(s)
+Harmonising LDL (YObiCA) and systolic blood pressure || id:ieu-b-38 (ieu-b-38)
+[1] 2676   12
+
+
+
+Finished running on pvalue cutoff 1e-07.
+
+=================================
+
+
+Currently we run on pvalue cutoff 1e-06.
+[1] 3328   15
+Extracting data for 3328 SNP(s) from 1 GWAS(s)
+Server code: 502; Server is possibly experiencing traffic, trying again...
+Retry succeeded!
+Finding proxies for 287 SNPs in outcome ieu-b-39
+Extracting data for 287 SNP(s) from 1 GWAS(s)
+Harmonising LDL (YObiCA) and diastolic blood pressure || id:ieu-b-39 (ieu-b-39)
+[1] 3240   12
+
+
+
+Extracting data for 3328 SNP(s) from 1 GWAS(s)
+Finding proxies for 295 SNPs in outcome ieu-b-38
+Extracting data for 295 SNP(s) from 1 GWAS(s)
+Harmonising LDL (YObiCA) and systolic blood pressure || id:ieu-b-38 (ieu-b-38)
+[1] 3233   12
+
+
+
+Finished running on pvalue cutoff 1e-06.
+
+=================================
+
+
+Currently we run on pvalue cutoff 1e-05.
+[1] 4310   15
+Extracting data for 4310 SNP(s) from 1 GWAS(s)
+Finding proxies for 368 SNPs in outcome ieu-b-39
+Extracting data for 368 SNP(s) from 1 GWAS(s)
+Harmonising LDL (YObiCA) and diastolic blood pressure || id:ieu-b-39 (ieu-b-39)
+[1] 4197   12
+
+
+
+Extracting data for 4310 SNP(s) from 1 GWAS(s)
+Server code: 502; Server is possibly experiencing traffic, trying again...
+Server code: 502; Server is possibly experiencing traffic, trying again...
+Server code: 502; Server is possibly experiencing traffic, trying again...
+Retry succeeded!
+Finding proxies for 378 SNPs in outcome ieu-b-38
+Extracting data for 378 SNP(s) from 1 GWAS(s)
+Server code: 502; Server is possibly experiencing traffic, trying again...
+Retry succeeded!
+Harmonising LDL (YObiCA) and systolic blood pressure || id:ieu-b-38 (ieu-b-38)
+[1] 4189   12
+
+
+
+Finished running on pvalue cutoff 1e-05.
+
+=================================
+
+
+Currently running the disease DBP on p value cutoff 1e-08.
+1288
+
+==============================
+
+Currently running the disease DBP on p value cutoff 1e-07.
+1524
+
+==============================
+
+Currently running the disease DBP on p value cutoff 1e-06.
+1868
+
+==============================
+
+Currently running the disease DBP on p value cutoff 1e-05.
+2412
+
+==============================
+
+
+============================================================
+
+Currently running the disease SBP on p value cutoff 1e-08.
+1458
+
+==============================
+
+Currently running the disease SBP on p value cutoff 1e-07.
+1702
+
+==============================
+
+Currently running the disease SBP on p value cutoff 1e-06.
+2035
+
+==============================
+
+Currently running the disease SBP on p value cutoff 1e-05.
+2650
+
+==============================
+
+
+============================================================
+
+Finished the pipeline.
+[1] "==================\nFinished LDL.\n=================="
+Currently we run on pvalue cutoff 1e-08.
+[1] 2615   15
+API: public: http://gwas-api.mrcieu.ac.uk/
+Extracting data for 2615 SNP(s) from 1 GWAS(s)
+Finding proxies for 191 SNPs in outcome ieu-b-39
+Extracting data for 191 SNP(s) from 1 GWAS(s)
+Harmonising HDL (KUv45z) and diastolic blood pressure || id:ieu-b-39 (ieu-b-39)
+[1] 2567   12
+
+
+
+Extracting data for 2615 SNP(s) from 1 GWAS(s)
+Finding proxies for 192 SNPs in outcome ieu-b-38
+Extracting data for 192 SNP(s) from 1 GWAS(s)
+Harmonising HDL (KUv45z) and systolic blood pressure || id:ieu-b-38 (ieu-b-38)
+[1] 2567   12
+
+
+
+Finished running on pvalue cutoff 1e-08.
+
+=================================
+
+
+Currently we run on pvalue cutoff 1e-07.
+[1] 3160   15
+Extracting data for 3160 SNP(s) from 1 GWAS(s)
+Finding proxies for 230 SNPs in outcome ieu-b-39
+Extracting data for 230 SNP(s) from 1 GWAS(s)
+Harmonising HDL (KUv45z) and diastolic blood pressure || id:ieu-b-39 (ieu-b-39)
+[1] 3106   12
+
+
+
+Extracting data for 3160 SNP(s) from 1 GWAS(s)
+Finding proxies for 232 SNPs in outcome ieu-b-38
+Extracting data for 232 SNP(s) from 1 GWAS(s)
+Server code: 502; Server is possibly experiencing traffic, trying again...
+Retry succeeded!
+Harmonising HDL (KUv45z) and systolic blood pressure || id:ieu-b-38 (ieu-b-38)
+[1] 3105   12
+
+
+
+Finished running on pvalue cutoff 1e-07.
+
+=================================
+
+
+Currently we run on pvalue cutoff 1e-06.
+[1] 3908   15
+Extracting data for 3908 SNP(s) from 1 GWAS(s)
+Finding proxies for 295 SNPs in outcome ieu-b-39
+Extracting data for 295 SNP(s) from 1 GWAS(s)
+Server code: 502; Server is possibly experiencing traffic, trying again...
+Retry succeeded!
+Harmonising HDL (KUv45z) and diastolic blood pressure || id:ieu-b-39 (ieu-b-39)
+[1] 3841   12
+
+
+
+Extracting data for 3908 SNP(s) from 1 GWAS(s)
+Server code: 502; Server is possibly experiencing traffic, trying again...
+Server code: 502; Server is possibly experiencing traffic, trying again...
+Retry succeeded!
+Finding proxies for 299 SNPs in outcome ieu-b-38
+Extracting data for 299 SNP(s) from 1 GWAS(s)
+Harmonising HDL (KUv45z) and systolic blood pressure || id:ieu-b-38 (ieu-b-38)
+[1] 3838   12
+
+
+
+Finished running on pvalue cutoff 1e-06.
+
+=================================
+
+
+Currently we run on pvalue cutoff 1e-05.
+[1] 4909   15
+Extracting data for 4909 SNP(s) from 1 GWAS(s)
+Server code: 502; Server is possibly experiencing traffic, trying again...
+Retry succeeded!
+Finding proxies for 353 SNPs in outcome ieu-b-39
+Extracting data for 353 SNP(s) from 1 GWAS(s)
+Harmonising HDL (KUv45z) and diastolic blood pressure || id:ieu-b-39 (ieu-b-39)
+[1] 4827   12
+
+
+
+Extracting data for 4909 SNP(s) from 1 GWAS(s)
+Finding proxies for 361 SNPs in outcome ieu-b-38
+Extracting data for 361 SNP(s) from 1 GWAS(s)
+Harmonising HDL (KUv45z) and systolic blood pressure || id:ieu-b-38 (ieu-b-38)
+[1] 4820   12
+
+
+
+Finished running on pvalue cutoff 1e-05.
+
+=================================
+
+
+Currently running the disease DBP on p value cutoff 1e-08.
+1453
+
+==============================
+
+Currently running the disease DBP on p value cutoff 1e-07.
+1735
+
+==============================
+
+Currently running the disease DBP on p value cutoff 1e-06.
+2076
+
+==============================
+
+Currently running the disease DBP on p value cutoff 1e-05.
+2498
+
+==============================
+
+
+============================================================
+
+Currently running the disease SBP on p value cutoff 1e-08.
+1545
+
+==============================
+
+Currently running the disease SBP on p value cutoff 1e-07.
+1824
+
+==============================
+
+Currently running the disease SBP on p value cutoff 1e-06.
+2186
+
+==============================
+
+Currently running the disease SBP on p value cutoff 1e-05.
+2698
+
+==============================
+
+
+============================================================
+
+Finished the pipeline.
+[1] "==================\nFinished HDL.\n=================="
+Currently we run on pvalue cutoff 1e-08.
+[1] 3058   15
+API: public: http://gwas-api.mrcieu.ac.uk/
+Extracting data for 3058 SNP(s) from 1 GWAS(s)
+Finding proxies for 257 SNPs in outcome ieu-b-39
+Extracting data for 257 SNP(s) from 1 GWAS(s)
+Server code: 502; Server is possibly experiencing traffic, trying again...
+Server code: 502; Server is possibly experiencing traffic, trying again...
+Retry succeeded!
+Harmonising Total_Cholesterol (fHooGu) and diastolic blood pressure || id:ieu-b-39 (ieu-b-39)
+[1] 2988   12
+
+
+
+Extracting data for 3058 SNP(s) from 1 GWAS(s)
+Finding proxies for 265 SNPs in outcome ieu-b-38
+Extracting data for 265 SNP(s) from 1 GWAS(s)
+Server code: 502; Server is possibly experiencing traffic, trying again...
+Server code: 502; Server is possibly experiencing traffic, trying again...
+Retry succeeded!
+Harmonising Total_Cholesterol (fHooGu) and systolic blood pressure || id:ieu-b-38 (ieu-b-38)
+[1] 2985   12
+
+
+
+Finished running on pvalue cutoff 1e-08.
+
+=================================
+
+
+Currently we run on pvalue cutoff 1e-07.
+[1] 3710   15
+Extracting data for 3710 SNP(s) from 1 GWAS(s)
+Finding proxies for 302 SNPs in outcome ieu-b-39
+Extracting data for 302 SNP(s) from 1 GWAS(s)
+Harmonising Total_Cholesterol (fHooGu) and diastolic blood pressure || id:ieu-b-39 (ieu-b-39)
+[1] 3626   12
+
+
+
+Extracting data for 3710 SNP(s) from 1 GWAS(s)
+Server code: 502; Server is possibly experiencing traffic, trying again...
+Retry succeeded!
+Finding proxies for 315 SNPs in outcome ieu-b-38
+Extracting data for 315 SNP(s) from 1 GWAS(s)
+Server code: 502; Server is possibly experiencing traffic, trying again...
+Server code: 502; Server is possibly experiencing traffic, trying again...
+Retry succeeded!
+Harmonising Total_Cholesterol (fHooGu) and systolic blood pressure || id:ieu-b-38 (ieu-b-38)
+[1] 3618   12
+
+
+
+Finished running on pvalue cutoff 1e-07.
+
+=================================
+
+
+Currently we run on pvalue cutoff 1e-06.
+[1] 4622   15
+Extracting data for 4622 SNP(s) from 1 GWAS(s)
+Finding proxies for 371 SNPs in outcome ieu-b-39
+Extracting data for 371 SNP(s) from 1 GWAS(s)
+Server code: 502; Server is possibly experiencing traffic, trying again...
+Server code: 502; Server is possibly experiencing traffic, trying again...
+Server code: 502; Server is possibly experiencing traffic, trying again...
+Retry succeeded!
+Harmonising Total_Cholesterol (fHooGu) and diastolic blood pressure || id:ieu-b-39 (ieu-b-39)
+[1] 4523   12
+
+
+
+Extracting data for 4622 SNP(s) from 1 GWAS(s)
+Server code: 502; Server is possibly experiencing traffic, trying again...
+Retry succeeded!
+Finding proxies for 388 SNPs in outcome ieu-b-38
+Extracting data for 388 SNP(s) from 1 GWAS(s)
+Harmonising Total_Cholesterol (fHooGu) and systolic blood pressure || id:ieu-b-38 (ieu-b-38)
+[1] 4512   12
+
+
+
+Finished running on pvalue cutoff 1e-06.
+
+=================================
+
+
+Currently we run on pvalue cutoff 1e-05.
+[1] 5945   15
+Extracting data for 5945 SNP(s) from 1 GWAS(s)
+Finding proxies for 497 SNPs in outcome ieu-b-39
+Extracting data for 497 SNP(s) from 1 GWAS(s)
+Harmonising Total_Cholesterol (fHooGu) and diastolic blood pressure || id:ieu-b-39 (ieu-b-39)
+[1] 5803   12
+
+
+
+Extracting data for 5945 SNP(s) from 1 GWAS(s)
+Finding proxies for 527 SNPs in outcome ieu-b-38
+Extracting data for 527 SNP(s) from 1 GWAS(s)
+1 of 1 outcomes
+ [>] 1 of 2 chunks
+ [>] 2 of 2 chunks
+Harmonising Total_Cholesterol (fHooGu) and systolic blood pressure || id:ieu-b-38 (ieu-b-38)
+[1] 5784   12
+
+
+
+Finished running on pvalue cutoff 1e-05.
+
+=================================
+
+
+Currently running the disease DBP on p value cutoff 1e-08.
+1610
+
+==============================
+
+Currently running the disease DBP on p value cutoff 1e-07.
+1930
+
+==============================
+
+Currently running the disease DBP on p value cutoff 1e-06.
+2438
+
+==============================
+
+Currently running the disease DBP on p value cutoff 1e-05.
+3080
+
+==============================
+
+
+============================================================
+
+Currently running the disease SBP on p value cutoff 1e-08.
+1722
+
+==============================
+
+Currently running the disease SBP on p value cutoff 1e-07.
+2084
+
+==============================
+
+Currently running the disease SBP on p value cutoff 1e-06.
+2704
+
+==============================
+
+Currently running the disease SBP on p value cutoff 1e-05.
+3387
+
+==============================
+
+
+============================================================
+
+Finished the pipeline.
+[1] "==================\nFinished TC.\n=================="
+Currently we run on pvalue cutoff 1e-08.
+[1] 2536   15
+API: public: http://gwas-api.mrcieu.ac.uk/
+Extracting data for 2536 SNP(s) from 1 GWAS(s)
+Finding proxies for 203 SNPs in outcome ieu-b-39
+Extracting data for 203 SNP(s) from 1 GWAS(s)
+Harmonising Triglycerides (GyikDR) and diastolic blood pressure || id:ieu-b-39 (ieu-b-39)
+[1] 2475   12
+
+
+
+Extracting data for 2536 SNP(s) from 1 GWAS(s)
+Finding proxies for 215 SNPs in outcome ieu-b-38
+Extracting data for 215 SNP(s) from 1 GWAS(s)
+Harmonising Triglycerides (GyikDR) and systolic blood pressure || id:ieu-b-38 (ieu-b-38)
+[1] 2472   12
+
+
+
+Finished running on pvalue cutoff 1e-08.
+
+=================================
+
+
+Currently we run on pvalue cutoff 1e-07.
+[1] 2903   15
+Extracting data for 2903 SNP(s) from 1 GWAS(s)
+Finding proxies for 230 SNPs in outcome ieu-b-39
+Extracting data for 230 SNP(s) from 1 GWAS(s)
+Server code: 502; Server is possibly experiencing traffic, trying again...
+Retry succeeded!
+Harmonising Triglycerides (GyikDR) and diastolic blood pressure || id:ieu-b-39 (ieu-b-39)
+[1] 2836   12
+
+
+
+Extracting data for 2903 SNP(s) from 1 GWAS(s)
+Finding proxies for 244 SNPs in outcome ieu-b-38
+Extracting data for 244 SNP(s) from 1 GWAS(s)
+Server code: 502; Server is possibly experiencing traffic, trying again...
+Server code: 502; Server is possibly experiencing traffic, trying again...
+Server code: 502; Server is possibly experiencing traffic, trying again...
+Retry succeeded!
+Harmonising Triglycerides (GyikDR) and systolic blood pressure || id:ieu-b-38 (ieu-b-38)
+[1] 2831   12
+
+
+
+Finished running on pvalue cutoff 1e-07.
+
+=================================
+
+
+Currently we run on pvalue cutoff 1e-06.
+[1] 3504   15
+Extracting data for 3504 SNP(s) from 1 GWAS(s)
+Finding proxies for 267 SNPs in outcome ieu-b-39
+Extracting data for 267 SNP(s) from 1 GWAS(s)
+Harmonising Triglycerides (GyikDR) and diastolic blood pressure || id:ieu-b-39 (ieu-b-39)
+[1] 3427   12
+
+
+
+Extracting data for 3504 SNP(s) from 1 GWAS(s)
+Server code: 502; Server is possibly experiencing traffic, trying again...
+Retry succeeded!
+Finding proxies for 284 SNPs in outcome ieu-b-38
+Extracting data for 284 SNP(s) from 1 GWAS(s)
+Harmonising Triglycerides (GyikDR) and systolic blood pressure || id:ieu-b-38 (ieu-b-38)
+[1] 3421   12
+
+
+
+Finished running on pvalue cutoff 1e-06.
+
+=================================
+
+
+Currently we run on pvalue cutoff 1e-05.
+[1] 4448   15
+Extracting data for 4448 SNP(s) from 1 GWAS(s)
+Server code: 502; Server is possibly experiencing traffic, trying again...
+Retry succeeded!
+Finding proxies for 325 SNPs in outcome ieu-b-39
+Extracting data for 325 SNP(s) from 1 GWAS(s)
+Harmonising Triglycerides (GyikDR) and diastolic blood pressure || id:ieu-b-39 (ieu-b-39)
+[1] 4355   12
+
+
+
+Extracting data for 4448 SNP(s) from 1 GWAS(s)
+Server code: 502; Server is possibly experiencing traffic, trying again...
+Retry succeeded!
+Finding proxies for 348 SNPs in outcome ieu-b-38
+Extracting data for 348 SNP(s) from 1 GWAS(s)
+Harmonising Triglycerides (GyikDR) and systolic blood pressure || id:ieu-b-38 (ieu-b-38)
+[1] 4346   12
+
+
+
+Finished running on pvalue cutoff 1e-05.
+
+=================================
+
+
+Currently running the disease DBP on p value cutoff 1e-08.
+1333
+
+==============================
+
+Currently running the disease DBP on p value cutoff 1e-07.
+1477
+
+==============================
+
+Currently running the disease DBP on p value cutoff 1e-06.
+1716
+
+==============================
+
+Currently running the disease DBP on p value cutoff 1e-05.
+2137
+
+==============================
+
+
+============================================================
+
+Currently running the disease SBP on p value cutoff 1e-08.
+1128
+
+==============================
+
+Currently running the disease SBP on p value cutoff 1e-07.
+1311
+
+==============================
+
+Currently running the disease SBP on p value cutoff 1e-06.
+1588
+
+==============================
+
+Currently running the disease SBP on p value cutoff 1e-05.
+2065
+
+==============================
+
+
+============================================================
+
+Finished the pipeline.
+[1] "==================\nFinished TG.\n=================="

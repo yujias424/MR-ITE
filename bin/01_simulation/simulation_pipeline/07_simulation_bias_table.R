@@ -86,6 +86,7 @@ for (tp in top_porp){
                     ite_ivcf_all_bias_c_tail <- c(ite_ivcf_all_bias_c_tail, abs(ite_ivcf_all_bias_tail))
                     ite_ivcf_few_bias_c_tail <- c(ite_ivcf_few_bias_c_tail, abs(ite_ivcf_few_bias_tail))
 
+                    # break
                 }
 
                 print(summary(true_tau_mat$V1))

@@ -1,0 +1,70 @@
+nohup: ignoring input
+[1] 2038531      11
+[1] 927248     11
+[1] 154216     11
+154,216 variants to be matched.
+0 ambiguous SNPs have been removed.
+6,251 variants have been matched; 0 were flipped and 3,136 were reversed.
+[1] 1
+[1] 2
+[1] 3
+[1] 4
+[1] 5
+[1] 6
+[1] 7
+[1] 8
+[1] 9
+[1] 10
+[1] 11
+[1] 12
+[1] 13
+[1] 14
+[1] 15
+[1] 16
+[1] 17
+[1] 18
+[1] 19
+[1] 20
+[1] 21
+[1] 22
+[1] 0.02470433
+[1] -0.85431429 -0.26976210 -0.77469170 -0.95139133  0.08805703 -0.64789725
+Warning message:
+In dir.create("/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/06_PRS_calculation/external_analysis_for_paper_revision/LDPred2/EUR/LDL/CAD/set1",  :
+  '/mnt/md0/yujia/project/2023-07-20-individual_MR/dat/06_PRS_calculation/external_analysis_for_paper_revision/LDPred2/EUR/LDL/CAD/set1' already exists
+
+Call:
+lm(formula = reg.formula, data = reg.dat)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-129.419  -23.255   -1.584   21.363  241.708 
+
+Coefficients:
+                 Estimate Std. Error t value Pr(>|t|)    
+(Intercept)    111.026313   0.379771 292.351  < 2e-16 ***
+PRS              5.015595   0.125789  39.873  < 2e-16 ***
+Gender          -5.415246   0.101625 -53.287  < 2e-16 ***
+Genotype_Batch   0.002807   0.001651   1.699 0.089254 .  
+Age              0.435028   0.005349  81.323  < 2e-16 ***
+PC1             -0.032123   0.002020 -15.906  < 2e-16 ***
+PC2              0.006498   0.007610   0.854 0.393151    
+PC3             -0.044949   0.012379  -3.631 0.000282 ***
+PC4             -0.022856   0.005928  -3.855 0.000116 ***
+PC5             -0.039215   0.006684  -5.867 4.45e-09 ***
+PC6              0.053492   0.017940   2.982 0.002866 ** 
+PC7             -0.000854   0.011153  -0.077 0.938965    
+PC8              0.015378   0.013570   1.133 0.257103    
+PC9              0.009687   0.011263   0.860 0.389762    
+PC10            -0.040023   0.013914  -2.877 0.004021 ** 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 33.16 on 430969 degrees of freedom
+Multiple R-squared:  0.02829,	Adjusted R-squared:  0.02826 
+F-statistic: 896.2 on 14 and 430969 DF,  p-value: < 2.2e-16
+
+          auto       null
+1: 0.003584701 0.02470433
+          auto       null
+1: 0.003584701 0.02470433

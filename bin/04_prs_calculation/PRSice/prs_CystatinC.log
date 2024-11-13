@@ -1,0 +1,438 @@
+nohup: ignoring input
+Currently running CystatinC on CAD.
+Running P-value cut-off 1e-08
+PRSice 2.3.5 (2021-09-20) 
+https://github.com/choishingwan/PRSice
+(C) 2016-2020 Shing Wan (Sam) Choi and Paul F. O'Reilly
+GNU General Public License v3
+If you use PRSice in any published work, please cite:
+Choi SW, O'Reilly PF.
+PRSice-2: Polygenic Risk Score Software for Biobank-Scale Data.
+GigaScience 8, no. 7 (July 1, 2019)
+2024-08-05 14:19:41
+/home/yujia/software/PRSice-235/PRSice_linux \
+    --a1 A1 \
+    --a2 A2 \
+    --bar-levels 1e-08,5e-08,7e-08,9e-08,1e-07,5e-07,7e-07,9e-07,1e-06,5e-06,7e-06,9e-06,1e-05,5e-05,0.0001,0.0005,0.001,0.005,0.01,0.05,0.1,0.5,1 \
+    --base /home/yujia/Project/2023-07-20-individual_MR/dat/02_base_data/CystatinC/QC/CystatinC.QC.withPos.gz \
+    --beta  \
+    --binary-target F \
+    --bp BP \
+    --chr CHR \
+    --clump-kb 250kb \
+    --clump-p 1.000000 \
+    --clump-r2 0.100000 \
+    --cov /home/yujia/Project/2023-07-20-individual_MR/dat/04_pheno_covar_data/CystatinC/CAD/ukbb.covariate.prs.CystatinC.set1 \
+    --cov-factor Genotype_Batch,Gender \
+    --extract /home/yujia/Project/2023-07-20-individual_MR/dat/06_PRS_calculation/CystatinC/CAD/selected_snps_1e-08.csv \
+    --fastscore  \
+    --num-auto 22 \
+    --out CystatinC_prs \
+    --pheno /home/yujia/Project/2023-07-20-individual_MR/dat/04_pheno_covar_data/CystatinC/CAD/ukbb.phenotype.CystatinC.mgdL \
+    --print-snp  \
+    --pvalue P \
+    --score con-std \
+    --seed 2389825711 \
+    --snp SNP \
+    --stat BETA \
+    --target /mnt/data/yujia/GWAS_ukbb_maf0.001_info0.8/bed/allchrs/ukb_allchrs \
+    --thread 15
+
+Initializing Genotype file: 
+/mnt/data/yujia/GWAS_ukbb_maf0.001_info0.8/bed/allchrs/ukb_allchrs 
+(bed) 
+
+Start processing CystatinC.QC.withPos 
+================================================== 
+
+Only one column detected, will assume only SNP ID is 
+provided 
+
+Base file: 
+/home/yujia/Project/2023-07-20-individual_MR/dat/02_base_data/CystatinC/QC/CystatinC.QC.withPos.gz 
+GZ file detected. Header of file is: 
+CHR	BP	SNP	A1	A2	N	SE	P	BETA	MAF	N 
+
+Reading 100.00%
+1852906 variant(s) observed in base file, with: 
+1852759 variant(s) excluded based on user input 
+147 total variant(s) included from base file 
+
+Loading Genotype info from target 
+================================================== 
+
+443630 people (204889 male(s), 238674 female(s)) observed 
+443630 founder(s) included 
+
+2287775 variant(s) not found in previous data 
+3 variant(s) included 
+
+Phenotype file: 
+/home/yujia/Project/2023-07-20-individual_MR/dat/04_pheno_covar_data/CystatinC/CAD/ukbb.phenotype.CystatinC.mgdL 
+Column Name of Sample ID: FID+IID 
+Note: If the phenotype file does not contain a header, the 
+column name will be displayed as the Sample ID which is 
+expected. 
+
+There are a total of 1 phenotype to process 
+
+Start performing clumping 
+
+Clumping Progress: 33.33%Clumping Progress: 66.67%Clumping Progress: 100.00%
+Number of variant(s) after clumping : 3 
+
+Processing the 1 th phenotype 
+
+Phenotype is a continuous phenotype 
+123394 sample(s) without phenotype 
+320236 sample(s) with valid phenotype 
+
+Processing the covariate file: 
+/home/yujia/Project/2023-07-20-individual_MR/dat/04_pheno_covar_data/CystatinC/CAD/ukbb.covariate.prs.CystatinC.set1 
+============================== 
+
+Include Covariates: 
+Name	Missing	Number of levels 
+Gender	0	2 
+Genotype_Batch	0	106 
+PC1	0	- 
+PC2	0	- 
+PC3	0	- 
+PC4	0	- 
+PC5	0	- 
+PC6	0	- 
+PC7	0	- 
+PC8	0	- 
+PC9	0	- 
+PC10	0	- 
+Age	0	- 
+
+After reading the covariate file, 320236 sample(s) included 
+in the analysis 
+
+
+Start Processing
+Processing 0.00%Processing 100.00%Processing 100.00%
+There are 1 region(s) with p-value less than 1e-5. Please 
+note that these results are inflated due to the overfitting 
+inherent in finding the best-fit PRS (but it's still best 
+to find the best-fit PRS!). 
+You can use the --perm option (see manual) to calculate an 
+empirical P-value. 
+
+==================================================
+
+Currently running CystatinC on CAD.
+Running P-value cut-off 1e-08
+PRSice 2.3.5 (2021-09-20) 
+https://github.com/choishingwan/PRSice
+(C) 2016-2020 Shing Wan (Sam) Choi and Paul F. O'Reilly
+GNU General Public License v3
+If you use PRSice in any published work, please cite:
+Choi SW, O'Reilly PF.
+PRSice-2: Polygenic Risk Score Software for Biobank-Scale Data.
+GigaScience 8, no. 7 (July 1, 2019)
+2024-08-05 14:20:02
+/home/yujia/software/PRSice-235/PRSice_linux \
+    --a1 A1 \
+    --a2 A2 \
+    --bar-levels 1e-08,5e-08,7e-08,9e-08,1e-07,5e-07,7e-07,9e-07,1e-06,5e-06,7e-06,9e-06,1e-05,5e-05,0.0001,0.0005,0.001,0.005,0.01,0.05,0.1,0.5,1 \
+    --base /home/yujia/Project/2023-07-20-individual_MR/dat/02_base_data/CystatinC/QC/CystatinC.QC.withPos.gz \
+    --beta  \
+    --binary-target F \
+    --bp BP \
+    --chr CHR \
+    --clump-kb 250kb \
+    --clump-p 1.000000 \
+    --clump-r2 0.100000 \
+    --cov /home/yujia/Project/2023-07-20-individual_MR/dat/04_pheno_covar_data/CystatinC/CAD/ukbb.covariate.prs.CystatinC.set2 \
+    --cov-factor Genotype_Batch,Gender,Non_smoker,Previous_smoker,Current_smoker,Non_alcohol_drinker,Previous_alcohol_drinker,Current_alcohol_drinker,Cholesterol_lowering_medication,Blood_pressure_medication,Insulin,htn,t2dm,heart_failure,hemorrhage_stroke,ischemic_stroke \
+    --extract /home/yujia/Project/2023-07-20-individual_MR/dat/06_PRS_calculation/CystatinC/CAD/selected_snps_1e-08.csv \
+    --fastscore  \
+    --num-auto 22 \
+    --out CystatinC_prs \
+    --pheno /home/yujia/Project/2023-07-20-individual_MR/dat/04_pheno_covar_data/CystatinC/CAD/ukbb.phenotype.CystatinC.mgdL \
+    --print-snp  \
+    --pvalue P \
+    --score con-std \
+    --seed 2389825711 \
+    --snp SNP \
+    --stat BETA \
+    --target /mnt/data/yujia/GWAS_ukbb_maf0.001_info0.8/bed/allchrs/ukb_allchrs \
+    --thread 15
+
+Initializing Genotype file: 
+/mnt/data/yujia/GWAS_ukbb_maf0.001_info0.8/bed/allchrs/ukb_allchrs 
+(bed) 
+
+Start processing CystatinC.QC.withPos 
+================================================== 
+
+Only one column detected, will assume only SNP ID is 
+provided 
+
+Base file: 
+/home/yujia/Project/2023-07-20-individual_MR/dat/02_base_data/CystatinC/QC/CystatinC.QC.withPos.gz 
+GZ file detected. Header of file is: 
+CHR	BP	SNP	A1	A2	N	SE	P	BETA	MAF	N 
+
+Reading 100.00%
+1852906 variant(s) observed in base file, with: 
+1852759 variant(s) excluded based on user input 
+147 total variant(s) included from base file 
+
+Loading Genotype info from target 
+================================================== 
+
+443630 people (204889 male(s), 238674 female(s)) observed 
+443630 founder(s) included 
+
+2287775 variant(s) not found in previous data 
+3 variant(s) included 
+
+Phenotype file: 
+/home/yujia/Project/2023-07-20-individual_MR/dat/04_pheno_covar_data/CystatinC/CAD/ukbb.phenotype.CystatinC.mgdL 
+Column Name of Sample ID: FID+IID 
+Note: If the phenotype file does not contain a header, the 
+column name will be displayed as the Sample ID which is 
+expected. 
+
+There are a total of 1 phenotype to process 
+
+Start performing clumping 
+
+Clumping Progress: 33.33%Clumping Progress: 66.67%Clumping Progress: 100.00%
+Number of variant(s) after clumping : 3 
+
+Processing the 1 th phenotype 
+
+Phenotype is a continuous phenotype 
+123394 sample(s) without phenotype 
+320236 sample(s) with valid phenotype 
+
+Processing the covariate file: 
+/home/yujia/Project/2023-07-20-individual_MR/dat/04_pheno_covar_data/CystatinC/CAD/ukbb.covariate.prs.CystatinC.set2 
+============================== 
+
+Include Covariates: 
+Name	Missing	Number of levels 
+Gender	0	2 
+Genotype_Batch	0	106 
+4079-0.0	0	- 
+4080-0.0	0	- 
+189-0.0	0	- 
+Non_smoker	0	2 
+Previous_smoker	0	2 
+Current_smoker	0	2 
+Non_alcohol_drinker	0	2 
+Previous_alcohol_drinker	0	2 
+Current_alcohol_drinker	0	2 
+Cholesterol_lowering_medication	0	2 
+Blood_pressure_medication	0	2 
+Insulin	0	2 
+21001-0.0	0	- 
+23099-0.0	0	- 
+21002-0.0	0	- 
+PC1	0	- 
+PC2	0	- 
+PC3	0	- 
+PC4	0	- 
+PC5	0	- 
+PC6	0	- 
+PC7	0	- 
+PC8	0	- 
+PC9	0	- 
+PC10	0	- 
+htn	0	2 
+t2dm	0	2 
+heart_failure	0	2 
+hemorrhage_stroke	0	2 
+ischemic_stroke	0	2 
+Age	0	- 
+[1;33mWarning: More than 8.497795% of your samples were removed! 
+         You should check if your covariate file is correct [0m
+
+After reading the covariate file, 293023 sample(s) included 
+in the analysis 
+
+
+Start Processing
+Processing 0.00%Processing 100.00%Processing 100.00%
+There are 1 region(s) with p-value less than 1e-5. Please 
+note that these results are inflated due to the overfitting 
+inherent in finding the best-fit PRS (but it's still best 
+to find the best-fit PRS!). 
+You can use the --perm option (see manual) to calculate an 
+empirical P-value. 
+
+==================================================
+
+Currently running CystatinC on CAD.
+Running P-value cut-off 1e-08
+PRSice 2.3.5 (2021-09-20) 
+https://github.com/choishingwan/PRSice
+(C) 2016-2020 Shing Wan (Sam) Choi and Paul F. O'Reilly
+GNU General Public License v3
+If you use PRSice in any published work, please cite:
+Choi SW, O'Reilly PF.
+PRSice-2: Polygenic Risk Score Software for Biobank-Scale Data.
+GigaScience 8, no. 7 (July 1, 2019)
+2024-08-05 14:20:26
+/home/yujia/software/PRSice-235/PRSice_linux \
+    --a1 A1 \
+    --a2 A2 \
+    --bar-levels 1e-08,5e-08,7e-08,9e-08,1e-07,5e-07,7e-07,9e-07,1e-06,5e-06,7e-06,9e-06,1e-05,5e-05,0.0001,0.0005,0.001,0.005,0.01,0.05,0.1,0.5,1 \
+    --base /home/yujia/Project/2023-07-20-individual_MR/dat/02_base_data/CystatinC/QC/CystatinC.QC.withPos.gz \
+    --beta  \
+    --binary-target F \
+    --bp BP \
+    --chr CHR \
+    --clump-kb 250kb \
+    --clump-p 1.000000 \
+    --clump-r2 0.100000 \
+    --cov /home/yujia/Project/2023-07-20-individual_MR/dat/04_pheno_covar_data/CystatinC/CAD/ukbb.covariate.prs.CystatinC.set3 \
+    --cov-factor Genotype_Batch,Gender,Non_smoker,Previous_smoker,Current_smoker,Non_alcohol_drinker,Previous_alcohol_drinker,Current_alcohol_drinker,Cholesterol_lowering_medication,Blood_pressure_medication,Insulin,htn,t2dm,heart_failure,hemorrhage_stroke,ischemic_stroke \
+    --extract /home/yujia/Project/2023-07-20-individual_MR/dat/06_PRS_calculation/CystatinC/CAD/selected_snps_1e-08.csv \
+    --fastscore  \
+    --num-auto 22 \
+    --out CystatinC_prs \
+    --pheno /home/yujia/Project/2023-07-20-individual_MR/dat/04_pheno_covar_data/CystatinC/CAD/ukbb.phenotype.CystatinC.mgdL \
+    --print-snp  \
+    --pvalue P \
+    --score con-std \
+    --seed 2389825711 \
+    --snp SNP \
+    --stat BETA \
+    --target /mnt/data/yujia/GWAS_ukbb_maf0.001_info0.8/bed/allchrs/ukb_allchrs \
+    --thread 15
+
+Initializing Genotype file: 
+/mnt/data/yujia/GWAS_ukbb_maf0.001_info0.8/bed/allchrs/ukb_allchrs 
+(bed) 
+
+Start processing CystatinC.QC.withPos 
+================================================== 
+
+Only one column detected, will assume only SNP ID is 
+provided 
+
+Base file: 
+/home/yujia/Project/2023-07-20-individual_MR/dat/02_base_data/CystatinC/QC/CystatinC.QC.withPos.gz 
+GZ file detected. Header of file is: 
+CHR	BP	SNP	A1	A2	N	SE	P	BETA	MAF	N 
+
+Reading 100.00%
+1852906 variant(s) observed in base file, with: 
+1852759 variant(s) excluded based on user input 
+147 total variant(s) included from base file 
+
+Loading Genotype info from target 
+================================================== 
+
+443630 people (204889 male(s), 238674 female(s)) observed 
+443630 founder(s) included 
+
+2287775 variant(s) not found in previous data 
+3 variant(s) included 
+
+Phenotype file: 
+/home/yujia/Project/2023-07-20-individual_MR/dat/04_pheno_covar_data/CystatinC/CAD/ukbb.phenotype.CystatinC.mgdL 
+Column Name of Sample ID: FID+IID 
+Note: If the phenotype file does not contain a header, the 
+column name will be displayed as the Sample ID which is 
+expected. 
+
+There are a total of 1 phenotype to process 
+
+Start performing clumping 
+
+Clumping Progress: 33.33%Clumping Progress: 66.67%Clumping Progress: 100.00%
+Number of variant(s) after clumping : 3 
+
+Processing the 1 th phenotype 
+
+Phenotype is a continuous phenotype 
+123394 sample(s) without phenotype 
+320236 sample(s) with valid phenotype 
+
+Processing the covariate file: 
+/home/yujia/Project/2023-07-20-individual_MR/dat/04_pheno_covar_data/CystatinC/CAD/ukbb.covariate.prs.CystatinC.set3 
+============================== 
+
+Include Covariates: 
+Name	Missing	Number of levels 
+Gender	0	2 
+Genotype_Batch	0	106 
+4079-0.0	0	- 
+4080-0.0	0	- 
+189-0.0	0	- 
+Non_smoker	0	2 
+Previous_smoker	0	2 
+Current_smoker	0	2 
+Non_alcohol_drinker	0	2 
+Previous_alcohol_drinker	0	2 
+Current_alcohol_drinker	0	2 
+Cholesterol_lowering_medication	0	2 
+Blood_pressure_medication	0	2 
+Insulin	0	2 
+21001-0.0	0	- 
+23099-0.0	0	- 
+21002-0.0	0	- 
+PC1	0	- 
+PC2	0	- 
+PC3	0	- 
+PC4	0	- 
+PC5	0	- 
+PC6	0	- 
+PC7	0	- 
+PC8	0	- 
+PC9	0	- 
+PC10	0	- 
+30630-0.0	0	- 
+30640-0.0	0	- 
+30650-0.0	0	- 
+30660-0.0	0	- 
+30670-0.0	0	- 
+30690-0.0	0	- 
+30700-0.0	0	- 
+30710-0.0	0	- 
+30680-0.0	0	- 
+30730-0.0	0	- 
+30740-0.0	0	- 
+30750-0.0	0	- 
+30760-0.0	0	- 
+30770-0.0	0	- 
+30780-0.0	0	- 
+30790-0.0	0	- 
+30810-0.0	0	- 
+30830-0.0	0	- 
+30840-0.0	0	- 
+30860-0.0	0	- 
+30850-0.0	0	- 
+30870-0.0	0	- 
+30880-0.0	0	- 
+30890-0.0	0	- 
+htn	0	2 
+t2dm	0	2 
+heart_failure	0	2 
+hemorrhage_stroke	0	2 
+ischemic_stroke	0	2 
+Age	0	- 
+[1;33mWarning: More than 13.796700% of your samples were removed! 
+         You should check if your covariate file is correct [0m
+
+After reading the covariate file, 276054 sample(s) included 
+in the analysis 
+
+
+Start Processing
+Processing 0.00%Processing 100.00%Processing 100.00%
+There are 1 region(s) with p-value less than 1e-5. Please 
+note that these results are inflated due to the overfitting 
+inherent in finding the best-fit PRS (but it's still best 
+to find the best-fit PRS!). 
+You can use the --perm option (see manual) to calculate an 
+empirical P-value. 
+
+==================================================
+

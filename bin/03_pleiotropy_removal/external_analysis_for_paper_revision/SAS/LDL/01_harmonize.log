@@ -1,0 +1,57 @@
+nohup: ignoring input
+Currently we run on pvalue cutoff 1e-08.
+[1] 4605   15
+Harmonising LDL (s6zcJp) and CAD (owhYPo)
+Removing the following SNPs for incompatible alleles:
+rs12077128, rs2484240, rs41294823, rs77370416
+[1] 2378   12
+
+
+
+Finished running on pvalue cutoff 1e-08.
+
+=================================
+
+
+Currently we run on pvalue cutoff 1e-07.
+[1] 5693   15
+Harmonising LDL (s6zcJp) and CAD (owhYPo)
+Removing the following SNPs for incompatible alleles:
+rs12077128, rs2484240, rs41294823, rs77370416
+[1] 2916   12
+
+
+
+Finished running on pvalue cutoff 1e-07.
+
+=================================
+
+
+Currently we run on pvalue cutoff 1e-06.
+[1] 7155   15
+Harmonising LDL (s6zcJp) and CAD (owhYPo)
+Removing the following SNPs for incompatible alleles:
+rs12077128, rs2484240, rs41294823, rs77370416
+[1] 3697   12
+
+
+
+Finished running on pvalue cutoff 1e-06.
+
+=================================
+
+
+Currently we run on pvalue cutoff 1e-05.
+[1] 10048    15
+Harmonising LDL (s6zcJp) and CAD (owhYPo)
+Removing the following SNPs for incompatible alleles:
+rs12077128, rs142882529, rs2484240, rs41294823, rs77370416, rs8049333
+[1] 5190   12
+
+
+
+Finished running on pvalue cutoff 1e-05.
+
+=================================
+
+

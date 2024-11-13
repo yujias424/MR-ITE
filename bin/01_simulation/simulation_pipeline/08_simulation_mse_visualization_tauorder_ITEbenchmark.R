@@ -19,8 +19,7 @@ valid_snps <- c(20,40,60)
 tau_scene <- seq(1,8)
 sim_times <- seq(1,30)
 
-# tail_porp <- c(0.05, 0.1, 0.25, 0.5, 0.75, 1)
-tail_porp <- c(0.1)
+tail_porp <- c(0.05, 0.1, 0.25, 0.5, 0.75, 1)
 
 for (tp in tail_porp){
 
@@ -42,11 +41,11 @@ for (tp in tail_porp){
 
                 for (st in sim_times){
 
-                    tau_estimate <- fread(paste0("/home/yujia/Project/2023-07-20-individual_MR/res/01_simulation/tau/estimate/", 
+                    tau_estimate <- fread(paste0("/mnt/md0/yujia/project/2023-07-20-individual_MR/res/01_simulation/tau/estimate/", 
                                                     ps, "_", vs, "_", ts, "_", st, "_estimate.csv.gz"))
-                    tau_estimate_driv <- fread(paste0("/home/yujia/Project/2023-07-20-individual_MR/res/01_simulation/tau/estimate/", 
+                    tau_estimate_driv <- fread(paste0("/mnt/md0/yujia/project/2023-07-20-individual_MR/res/01_simulation/tau/estimate/", 
                                                 ps, "_", vs, "_", ts, "_", st, "_estimate_driv.csv.gz"))
-                    tau_std <- fread(paste0("/home/yujia/Project/2023-07-20-individual_MR/res/01_simulation/tau/std/", 
+                    tau_std <- fread(paste0("/mnt/md0/yujia/project/2023-07-20-individual_MR/res/01_simulation/tau/std/", 
                                                     ps, "_", vs, "_", ts, "_", st, "_std.csv.gz"))
 
                     ite_cf_mat <- as.data.frame(matrix(rnorm(10000 * 1, mean = tau_estimate$ITE_CF, sd = 0), nrow=10000))
@@ -132,7 +131,7 @@ for (tp in tail_porp){
 
             bxp_final <- bxp + 
                         stat_pvalue_manual(
-                            stat.test, label = "p.adj.signif", tip.length = 0.02, size = 6) + 
+                            stat.test, label = "p.adj.signif", tip.length = 0.02, size = 10) + 
                         xlab("Tau Scenarios") + ylab("Mean Squared Error") + ggtitle(paste0("Pleiotropy Scene: ", pleotropic.type, "; Invalid Snp Counts: ", invalid.snps.count)) +
                         theme(axis.text = element_text(size=35), 
                                 axis.title = element_text(size=35),
@@ -150,9 +149,9 @@ for (tp in tail_porp){
     p.final <- ((plot_1_20 | plot_1_40 | plot_1_60) /
                 (plot_2_20 | plot_2_40 | plot_2_60) /
                 (plot_3_20 | plot_3_40 | plot_3_60)) +
-                plot_annotation(tag_levels = 'A') & theme(plot.tag = element_text(size = 35))
+                plot_annotation(tag_levels = 'a') & theme(plot.tag = element_text(size = 45))
     
-    ggsave(paste0("/home/yujia/Project/2023-07-20-individual_MR/plot/mse/all_mse_", tp * 100,"_ITEbenchmark.png"), p.final, dpi=300, 
+    ggsave(paste0("/mnt/md0/yujia/project/2023-07-20-individual_MR/plot/mse/all_mse_", tp * 100,"_ITEbenchmark.png"), p.final, dpi=300, 
             width = 100, height = 60, units = "cm", scale = 1.6, limitsize = F)
     
 }

@@ -84,6 +84,7 @@ for (tp in top_porp){
                     ite_ivcf_all_mse_c_top <- c(ite_ivcf_all_mse_c_top, abs(ite_ivcf_all_mse_top))
                     ite_ivcf_few_mse_c_top <- c(ite_ivcf_few_mse_c_top, abs(ite_ivcf_few_mse_top))
 
+                    # break
                 }
 
                 print(summary(true_tau_mat$V1))
@@ -120,7 +121,6 @@ for (tp in top_porp){
 
             colnames(mse_df_res)[2:3] <- c("Methods", "MSE")
 
-            # break
         }
 
         if (first_ps){
